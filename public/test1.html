@@ -1,0 +1,309 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="AUTHOR" content="created by Doyle at http://free-templates.org">
+<meta name="KEYWORDS" content="replace, these, words, that, describe, your, site, and, page, contents, separated, by, commas">
+<meta name="DESCRIPTION" content="Here is where you put a short sentence or two describing this page and it's goals">
+<meta http-equiv="Page-Enter" content="revealTrans(Duration=0.5,Transition=12)">
+<meta http-equiv="Page-Exit" content="revealTrans(Duration=0.5,Transition=12)">
+<title>Test</title>
+<style>
+.spanstyle {
+  position:absolute;
+  visibility:visible;
+  top:-50px;
+  font-size:9pt;
+  font-family:arial;
+      font-weight:bold;
+  color:purple;
+}
+</style>
+<script>
+
+/*
+Cursor Trailor Text- By Peter Gehrig (http://www.24fun.ch/)
+Permission given to Dynamicdrive.com to feature script in it's archive.
+For full source code, installation instructions, and 1000's more DHTML scripts,
+visit http://dynamicdrive.com
+*/
+
+var x,y
+var step=20
+var flag=0
+
+// Your snappy message. Important: the space at the end of the sentence!!!
+var message="CHANGE THIS TEXT! "
+message=message.split("")
+
+var xpos=new Array()
+for (i=0;i<=message.length-1;i++) {
+  xpos[i]=-50
+}
+
+var ypos=new Array()
+for (i=0;i<=message.length-1;i++) {
+  ypos[i]=-50
+}
+
+function handlerMM(e){
+  x = (document.layers) ? e.pageX : document.body.scrollLeft+event.clientX
+  y = (document.layers) ? e.pageY : document.body.scrollTop+event.clientY
+  flag=1
+}
+
+function makesnake() {
+  if (flag==1 && document.all) {
+      for (i=message.length-1; i>=1; i--) {
+        xpos[i]=xpos[i-1]+step
+      ypos[i]=ypos[i-1]
+      }
+    xpos[0]=x+step
+    ypos[0]=y
+  
+    for (i=0; i<message.length-1; i++) {
+        var thisspan = eval("span"+(i)+".style")
+        thisspan.posLeft=xpos[i]
+      thisspan.posTop=ypos[i]
+      }
+  }
+  
+  else if (flag==1 && document.layers) {
+      for (i=message.length-1; i>=1; i--) {
+        xpos[i]=xpos[i-1]+step
+      ypos[i]=ypos[i-1]
+      }
+    xpos[0]=x+step
+    ypos[0]=y
+  
+    for (i=0; i<message.length-1; i++) {
+        var thisspan = eval("document.span"+i)
+        thisspan.left=xpos[i]
+      thisspan.top=ypos[i]
+      }
+  }
+    var timer=setTimeout("makesnake()",30)
+}
+
+</script>
+</head>
+
+<body bgcolor="#DBE0FF" background="grapestar.jpg" bgproperties="fixed" onLoad="makesnake()" style="width:100%;overflow-x:hidden;overflow-y:scroll">
+<script>
+<!-- Beginning of JavaScript -
+
+for (i=0;i<=message.length-1;i++) {
+    document.write("<span id='span"+i+"' class='spanstyle'>")
+  document.write(message[i])
+    document.write("</span>")
+}
+
+if (document.layers){
+  document.captureEvents(Event.MOUSEMOVE);
+}
+document.onmousemove = handlerMM;
+
+// - End of JavaScript - -->
+</script>
+<div align="center">
+  <center>
+  <table border="0" cellpadding="3" cellspacing="1" width="827" height="760">
+    <tr>
+      <td width="833" colspan="3" align="center" height="14"><b><font size="7" face="Storybook" color="#FFFFFF">Test</font></b></td>
+    </tr>
+    <tr>
+      <td width="833" colspan="3" align="center" height="28"><script>
+
+/*Current date script credit: 
+JavaScript Kit (www.javascriptkit.com)
+Over 200+ free scripts here!
+*/
+
+var mydate=new Date()
+var year=mydate.getYear()
+if (year < 1000)
+year+=1900
+var day=mydate.getDay()
+var month=mydate.getMonth()
+var daym=mydate.getDate()
+if (daym<10)
+daym="0"+daym
+var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+document.write("<small><font color='FFFFFF' face='Arial'><b>"+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small>")
+
+</script>
+
+</td>
+    </tr>
+    <tr>
+      <td width="138" height="648" valign="top" align="center">
+        <div align="center">
+          <table border="0" cellpadding="3" cellspacing="1" width="137">
+            <tr>
+              <td width="124" bgcolor="#660066">
+                <p align="center"><font color="#FFFFFF"><b>Header Text</b></font></td>
+            </tr>
+            <tr>
+              <td width="124" bgcolor="#FFFFFF">Link 1</td>
+            </tr>
+            <tr>
+              <td width="124" bgcolor="#FFFFFF">Link 2</td>
+            </tr>
+            <tr>
+              <td width="124" bgcolor="#FFFFFF">Link 3</td>
+            </tr>
+            <tr>
+              <td width="124" bgcolor="#FFFFFF">Link 4</td>
+            </tr>
+            <tr>
+              <td width="124" bgcolor="#FFFFFF">Link 5</td>
+            </tr>
+            <tr>
+              <td width="124" bgcolor="#FFFFFF">Link 6</td>
+            </tr>
+            <tr>
+              <td width="124" bgcolor="#FFFFFF">Link 7</td>
+            </tr>
+            <tr>
+              <td width="124" bgcolor="#FFFFFF">Link 8</td>
+            </tr>
+          </table>
+        </div>
+        <div align="center">
+          <table border="0" cellpadding="3" cellspacing="1" width="137" height="118">
+            <tr>
+              <td width="124" bgcolor="#FFFFFF" height="108">
+                <p align="center"><b>Put an ad or a button or whatever here</b></td>
+            </tr>
+          </table>
+        </div>
+        <div align="center">
+          <table border="0" cellpadding="3" cellspacing="1" width="136">
+            <tr>
+              <td width="125" bgcolor="#660066">
+                <p align="center"><font color="#FFFFFF"><b>Header Text</b></font></td>
+            </tr>
+            <tr>
+              <td width="125" bgcolor="#FFFFFF">Link 1</td>
+            </tr>
+            <tr>
+              <td width="125" bgcolor="#FFFFFF">Link 2</td>
+            </tr>
+            <tr>
+              <td width="125" bgcolor="#FFFFFF">Link 3</td>
+            </tr>
+            <tr>
+              <td width="125" bgcolor="#FFFFFF">Link 4</td>
+            </tr>
+            <tr>
+              <td width="125" bgcolor="#FFFFFF">Link 5</td>
+            </tr>
+            <tr>
+              <td width="125" bgcolor="#FFFFFF">Link 6</td>
+            </tr>
+            <tr>
+              <td width="125" bgcolor="#FFFFFF">Link 7</td>
+            </tr>
+            <tr>
+              <td width="125" bgcolor="#FFFFFF">Link 8</td>
+            </tr>
+            <tr>
+              <td width="125" bgcolor="#FFFFFF">Link 9</td>
+            </tr>
+          </table>
+        </div>
+        <div align="center">
+          <table border="0" cellpadding="3" cellspacing="1" width="136" height="122">
+            <tr>
+              <td width="125" align="center" bgcolor="#FFFFFF" height="38">88x31
+                button</td>
+            </tr>
+            <tr>
+              <td width="125" align="center" bgcolor="#FFFFFF" height="38">88x31
+                button</td>
+            </tr>
+            <tr>
+              <td width="125" align="center" bgcolor="#FFFFFF" height="38">88x31
+                button</td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td width="520" height="648" valign="top" bgcolor="#FFFFFF">
+        <p align="center"><b><font face="Arial" size="5">This would be the title
+        of the page</font></b>.</p>
+  </center>
+      <p align="left">     <b><font size="2"><font face="Arial">Here is where you could put the
+      main text and content of your site.  Include a couple paragraphs
+      describing your site and it's goals.  Without sounding stupid, try to
+      include as many of your keywords as you can.  This will help with
+      your search engine rankings</font>.</font></b></p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="3" cellspacing="1" width="518" height="384" bgcolor="#3D2B46">
+          <tr>
+            <td width="257" height="192" valign="top" align="center" bgcolor="#FFFFFF">Placing
+              a graphic in this square could increase the attractiveness of your
+              site.</td>
+            <td width="257" height="192" valign="top" align="center" bgcolor="#FFFFFF">You
+              could add a description of the graphic to the left, list your
+              products, or special events.</td>
+          </tr>
+          <tr>
+            <td width="257" height="192" valign="top" align="center" bgcolor="#FFFFFF">Add
+              more text here or whatever.  You are probably getting the
+              hang of it now.</td>
+            <td width="257" height="192" valign="top" align="center" bgcolor="#FFFFFF">If
+              you are going to add graphics to this square, stagger the images
+              to be in opposite squares.</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+      <p>     Add a closing paragraph that contains the
+      clincher. If you are selling a product, here is where you can put the
+      reason why the potential buyer cannot live without it.  A testimonial
+      or 2 would be great.   Or.... just pop a banner down here and
+      earn some extra money. </p>
+      <p align="center"><font size="2">Put a Guestbook or Counter here!<BR>Don't
+      have a free one?  <a href="http://www.bravenet.com?afilid=3813648466" target="_blank">CLICK
+      HERE</a></font></p>
+    </td>
+  <center>
+      <td width="155" height="648" valign="top" align="center">
+        <div align="center">
+          <table border="0" cellpadding="3" cellspacing="1" height="121" width="141">
+            <tr>
+              <td height="113" width="130" bgcolor="#FFFFFF" valign="middle" align="center"><b>This
+                area is ideally used for that 125X125 flashy banner ad.</b></td>
+            </tr>
+          </table>
+        </div>
+        <div align="center">
+          <table border="0" cellpadding="3" cellspacing="1" height="620" width="141">
+            <tr>
+              <td height="610" width="130" valign="top" align="center" bgcolor="#FFFFFF"><b>This
+                area is ideally used for a 120X600 skyscraper banner ad.</b>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+    <!-- PLEASE DO NOT REMOVE OR ALTER THE FOLLOWING SECTION GIVING FREE TEMPLATE CREDIT TO 
+HTTP://FREE-TEMPLATES.ORG -->
+      <td width="833" height="17" colspan="3" bgcolor="#3D2B46">
+        <p align="center"><b><font size="2" color="#FFFFFF">This template was provided
+        free by  <a href="http://www.free-templates.org">www.free-templates.org</a></font></b></td>
+    <!-- PLEASE DO NOT REMOVE OR ALTER THE ABOVE SECTION GIVING FREE TEMPLATE CREDIT TO 
+HTTP://FREE-TEMPLATES.ORG-->   
+    </tr>
+  </table>
+  </center>
+</div>
+
+</body>
+</html>

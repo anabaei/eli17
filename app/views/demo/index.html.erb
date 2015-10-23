@@ -1,0 +1,55 @@
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+<!-- Enable cross site access: (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en-US) -->
+
+<h1>Demo#index</h1>
+<p>Hello! RoR</p>
+
+
+<a href="/demo/hello"> Link To </a> <br>
+
+<%= link_to('hello page 2',{:controller => 'demo',:action => 'hello'}) %>
+<br>
+<%= link_to('holo',{:action => 'hello', :page => 44, :id => 20}) %>
+
+
+
+<% 
+require 'net/http'
+%>
+
+<script>
+$( document ).ready(function() {
+console.log("<%= puts 'result' %>");
+
+
+// Using YQL and JSONP
+$.ajax({
+    url:  "http://query.yahooapis.com/v1/public/yql",
+ 
+    // The name of the callback parameter, as specified by the YQL service
+    jsonp: "callback",
+ 
+    // Tell jQuery we're expecting JSONP
+    dataType: "jsonp",
+ 
+    // Tell YQL what we want and that we want JSON
+    data: {
+     //   q: "select title,abstract,url from search.news where query=\"cat\"",
+        format: "json"
+    },
+ 
+    // Work with the response
+    success: function( response ) {
+        console.log(response); // server response
+    }
+});
+
+
+
+});
+</script>
+
+

@@ -1,0 +1,113 @@
+
+<!-- split at <title> -->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<head> </head>
+<div class="container">
+
+<h3> Type Skus and gets Products Name</h3>
+
+<script>
+
+function me(sku){
+
+$.post("http://www.bcliquorstores.com/product/"+sku,  
+                        { 
+                        	 crossDomain: true,
+   
+                        },
+                        function(data)
+                          {   
+                       var ss = JSON.stringify(data);
+                        arr1 = data.split("<title>");
+                        arr2 = arr1[1].split("| BC Liquor Stores");
+                 //        console.log("here is resultss: "+arr2[0]);
+                // $("#person_lastname").val(document.getElementById('in1').value);
+             $("#output").append("<tr> <td> "+sku+" </td> <td>" + arr2[0] +"</td></tr>"); 
+              arr_me.push(arr2[0]);
+
+                            }); 
+
+                 }
+    function find(){
+     var temp = $("#input").val();
+     temp = temp.replace(/\n/g, ',');
+     temp_arr = temp.split(",");
+     var cnt = 0;
+     while (cnt < temp_arr.length)
+     {
+      console.log(temp_arr[cnt]);
+      me(temp_arr[cnt]);
+      cnt +=1;
+     }
+
+    // console.log(temp);
+    }  
+    function clean(){
+      location.reload();
+    }           
+      
+         $( document ).ready(function() {
+     //   console.log("DS"); 	
+      arr_me = [];
+     $("textarea").mouseover(function() {
+   //  $("table").empty();
+});
+         });
+</script>
+
+	<% params[:id] %>
+	<% params[:co] %>
+
+</script>
+
+<div class="col-md-4">
+<textarea rows="5" cols="30" id="input">
+</textarea>
+</div>
+<div class="col-md-4">
+  e.g:
+  <br>
+838417
+ <br>
+432013
+ <br>
+650077
+ <br>
+681403
+ <br>
+601757
+ <br>
+492520
+</div>
+<div class="col-md-12">
+<br>
+<div>
+
+<button  onclick="find()" type="button" class="btn btn-info">Find all!</button>
+<button  onclick="clean()" type="button" class="btn btn-danger">Clean </button>
+
+<table class="table">
+  <tr>
+    <th> SKU</th>
+    <th> Product Name </th>
+  </tr>
+   <tbody id="output">
+   
+   </tbody> 
+</table>
+
+</div>
+</html>
+
+
+
