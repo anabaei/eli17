@@ -1,55 +1,286 @@
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer"></script>
+   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=html" defer="defer"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"> My Blog</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><%= link_to('hello page 2',{:controller => 'demo',:action => 'hello'}) %></li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>My first Bootstrap website!</h1>      
+    <p>This page will grow as we add more and more components from Bootstrap...</p>      
+    <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-search"></span> Search</a>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="col-md-3"> 
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="col-md-3"> 
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div class="col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Submenu 1-1</a></li>
+            <li><a href="#">Submenu 1-2</a></li>
+            <li><a href="#">Submenu 1-3</a></li>                        
+          </ul>
+        </li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
+      </ul>
+    </div>
+    <div class="clearfix visible-lg"></div>
+  </div>
+</div>
+ prettyprint from this link <a href="https://github.com/google/code-prettify"> link </a>
+</body>
+</html
+  <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  <!--////////////////////////////////////////////////////////////// PCM WEB /////////////////////////////////////////////////////////////////////////////-->
+  <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <head>
+        <title> Amir </title>
+            
+        
+     <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <!-- split at <title> -->
+    
+
+    
+    
+    
+    
+  
+    <!--  <img src="images/ab.png" width="680" height="220"  style="margin: 3em 12em; border: none;">  -->
+    <!----------------------------------------------------- Accordion ---------------------------------------------------------------------------------------->
+    <!----------------------------------------------------- Accordion ---------------------------------------------------------------------------------------->
+    <!----------------------------------------------------- Accordion ----------------------------------------------------------------------------------------> 
+    
+    <div class="accordion" id="accordion2" >
+          <div class="accordion-group">
+            <div class="accordion-heading">
+                <br>
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                WHAT WE DO
+              </a>
+            
+            </div>
+            <div id="collapseOne" class="accordion-body collapse collapse in">
+              <div class="accordion-inner">
+                From needs analysis and specification development through to contract drafting and negotiations, we are able to provide a full spectrum of valuable procurement advice and services.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+             <legend></legend>
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                WHO WE ARE
+              </a>
+            
+            </div>
+            <div id="collapseTwo" class="accordion-body collapse collapse in">
+              <div class="accordion-inner ">
+                We are a team of procurement professionals providing support and advice on your purchasing of non-liquor goods and services.
+              </div>
+            </div>
+          </div>  
+          <legend ></legend>
+        </div>      
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------->
+
+            <!-- JS -->
+            <script type="text/javascript">
+              $(document).ready(function($) {
+                $('#accordion').find('.accordion-toggle').click(function(){
+
+                  //Expand or collapse this panel
+                  $(this).next().slideToggle('fast');
+
+                  //Hide the other panels
+                  $(".accordion-content").not($(this).next()).slideUp('fast');
+
+                });
+              });
+            </script>
+
+            <!-- CSS -->
+            <style>
+              .accordion-toggle {cursor: pointer;}
+              .accordion-content {display: none;}
+              .accordion-content.default {display: block;}
+            </style>
+
+            <!-- HTML -->
+            <div id="accordion">
+              <h4 class="accordion-toggle">Accordion 1</h4>
+              <div class="accordion-content default">
+                <p>Cras malesuada ultrices augue molestie risus.</p>
+              </div>
+              <h4 class="accordion-toggle">Accordion 2</h4>
+              <div class="accordion-content">
+                <p>Lorem ipsum dolor sit amet mauris eu turpis.</p>
+              </div>
+              <h4 class="accordion-toggle">Accordion 3</h4>
+              <div class="accordion-content">
+                <p>Vivamus facilisisnibh scelerisque laoreet.</p>
+              </div>
+            </div>
+
+<style>
 
 
-<!-- Enable cross site access: (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en-US) -->
+</style>
+            
+            <pre class="prettyprint lang-ruby linenums" >
+            class Voila {
+public:
+  // Voila
+  static const string VOILA = "Voila";
 
-<h1>Demo#index</h1>
-<p>Hello! RoR</p>
-
-
-<a href="/demo/hello"> Link To </a> <br>
-
-<%= link_to('hello page 2',{:controller => 'demo',:action => 'hello'}) %>
-<br>
-<%= link_to('holo',{:action => 'hello', :page => 44, :id => 20}) %>
-
+  // will not interfere with embedded <a href="#voila2">tags</a>.
+}
 
 
-<% 
-require 'net/http'
-%>
+</pre>
+            
+    
+        <pre class="prettyprint lang-html " >
+         &lt;button class=&quot;primary&quot;&gt;Button&lt;/button&gt;
+</pre>
 
-<script>
-$( document ).ready(function() {
-console.log("<%= puts 'result' %>");
+     <pre class="prettyprint lang-java">
+ /// Eclipse code to go and read from txt file the texts and try each on by one to pass 
+package gooogl;
 
+import java.io.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-// Using YQL and JSONP
-$.ajax({
-    url:  "http://query.yahooapis.com/v1/public/yql",
- 
-    // The name of the callback parameter, as specified by the YQL service
-    jsonp: "callback",
- 
-    // Tell jQuery we're expecting JSONP
-    dataType: "jsonp",
- 
-    // Tell YQL what we want and that we want JSON
-    data: {
-     //   q: "select title,abstract,url from search.news where query=\"cat\"",
-        format: "json"
-    },
- 
-    // Work with the response
-    success: function( response ) {
-        console.log(response); // server response
+public class gooogl {
+    
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        WebDriver driver = new FirefoxDriver(); 
+    //  driver.get("http://solo.test.bcldb.com/");
+    //  driver.findElement(By.className("yellow-button")).click(); 
+    //  driver.findElement(By.id("user")).sendKeys("amir.nabaei@bcldb.com");
+    //  driver.findElement(By.id("password")).sendKeys("Mahnazaz3");
+
+           // The name of the file to open.
+        String fileName = "sourc4.txt";
+
+        // This will reference one line at a time
+        String line = null;
+
+        try {
+            // FileReader reads text files in the default encoding.
+            FileReader fileReader = 
+                new FileReader(fileName);
+
+            // Always wrap FileReader in BufferedReader.
+            BufferedReader bufferedReader = 
+                new BufferedReader(fileReader);
+            
+            driver.get("http://solo.test.bcldb.com/");
+            driver.findElement(By.className("yellow-button")).click(); 
+            while((line = bufferedReader.readLine()) != null) {
+                driver.findElement(By.id("user")).sendKeys("amir.nabaei@bcldb.com"); 
+                driver.findElement(By.id("password")).sendKeys(line);
+                driver.findElement(By.tagName("input")).submit(); 
+         //     try
+       //       {
+//                
+//     //           // driver.findElement(By.className("yellow-button")); 
+          //    driver.findElement(By.linkText("GO TO MY APPLICATIONS"));
+        //       System.out.println(line);  
+         //     }
+//              
+        //      catch(NoSuchElementException ignored)
+        //      {
+             System.out.println(line);  
+//           // /.out.println(line);    
+          //    }
+                //  if (w == null)
+            //  {
+                //   System.out.println(w); 
+    
+            //  }
+                                 
+            }   
+
+            // Always close files.
+            bufferedReader.close();         
+        }
+        catch(FileNotFoundException ex) {
+            System.out.println(
+                "Unable to open file '" + 
+                fileName + "'");                
+        }
+        catch(IOException ex) {
+            System.out.println(
+                "Error reading file '" 
+                + fileName + "'");                  
+            // Or we could just do this: 
+            // ex.printStackTrace();
+        }
+        
+        
+        
+    //  driver.findElement(By.tagName("input")).submit();
+        
+        //driver.findElement(By.linkText("GO TO MY APPLICATIONS")).click();
     }
-});
+    
+    
 
+}
 
+    </pre>      
+    </body>
+</html>
 
-});
-</script>
+    
 
 
