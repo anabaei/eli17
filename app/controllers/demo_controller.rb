@@ -19,4 +19,8 @@ class DemoController < ApplicationController
    def pcms
     render :layout => false
    end
+
+    def pcm_content
+    render :layout => false
+   end
 end
