@@ -55,3 +55,5 @@ end
 group :production do
   gem 'pg'
 end
+
+gem 'rails-ajax', '~> 1.0'

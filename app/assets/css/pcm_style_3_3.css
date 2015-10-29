@@ -1,0 +1,19 @@
+ 
+ /* 100% web page in small screens */
+ div#right_nav 
+		   {
+           padding-right: 3%;
+          }
+  .col-md-10 
+		 {
+          margin-top: 1%;
+         }
+#gra_2  
+		 {
+          margin-top: -14%;
+         }
+    td a 
+      {
+	font-size:110%;
+   
+	}	

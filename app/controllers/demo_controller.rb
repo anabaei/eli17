@@ -1,9 +1,10 @@
 class DemoController < ApplicationController
-  layout false 
+  layout 'application'
   def index
   end
 
   def hello
+    render :layout => false
   	@id = params['id']
   	@page = params[:page]
   	@con = params[:controller]
@@ -11,4 +12,11 @@ class DemoController < ApplicationController
   def test
   	 headers['Access-Control-Allow-Origin'] = "*"
   end
+  def mc
+   render :layout => false
+  end
+   
+   def pcms
+    render :layout => false
+   end
 end

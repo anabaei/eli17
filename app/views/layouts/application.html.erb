@@ -3,12 +3,49 @@
 <head>
   <title>SimpleCms</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer"></script>
+   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=html" defer="defer"></script>
 </head>
+ <!-- Adding icon to rails  -->
+  <%= favicon_link_tag 'amir.png' %>
 <body>
+   <nav class="navbar navbar-default" style="box-shadow: 11px 8px 5px 0px rgba(50, 50, 50, 0.25);">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img width="26" height="26" class="navbar-band" src="/assets/amir.png"   class="img-circle"  style="margin-top: 16%; border:  border-radius:50%;">
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+      <!--   <li class="active"><a href="/demo">Home</a></li> -->
+        <li><a href="/demo/RoR"> Ruby on Rails</a></li>
+        <li><a href="/demo/web"> Web Design</a></li>
+        <li><a href="/demo/php"> PHP </a></li>
+        <li><a href="/demo/js"> JavaScript</a></li>
+        <li><a href="/demo/RoR"> Java</a></li>
+        <li><a href="/demo/mysql"> MySql </a></li>
+         <li><a href="/demo/pg"> PostgreSql</a></li>
+          <li><a href="/demo/linux"> Linux </a></li>
+          <li><a href="/demo/webgl"> WebGl</a></li>
+          <li><%= link_to('Cross Site JS',{:controller => 'demo',:action => 'hello'}) %></li>
+        <li><a href="/demo/words">words </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="jumbotron">
+    <h1>My first Bootstrap website!</h1>      
+    <p>This page will grow as we add more and more components from Bootstrap...</p>      
+   <!--  <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-search"></span> Search</a> -->
+  </div>
 
 <%= yield %>
-
+</div>
 </body>
 </html>
