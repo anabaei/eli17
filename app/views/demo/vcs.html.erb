@@ -1,3 +1,42 @@
 
 
 <title>Version Control System</title>
+
+<h2> Github  </h2>
+<p>
+ to deploy a new repository we go this process
+</p>
+
+<pre class="prettyprint lang-git">
+git init
+git add .
+git commit -am "my comment"
+git remote add origin https//github.com/myusername/myrepositoryName.git
+git push -u origin master
+</pre>
+
+<p>
+You can verify the remote in your git configuration:
+</p>
+<pre class="prettyprint lang-git">
+git remote -v
+</pre>
+
+
+<h2> Git on Heroku server </h2>
+
+<pre class="prettyprint lang-git">
+heroku login	
+git init
+git add .
+git commit -am "my comment"
+heroku git:remote -a myapponHeroku
+git push -u origin master
+</pre>
+
+<p>
+You may need  to associate a Git repository with an existing application. The heroku git:remote 
+</p>
+<pre class="prettyprint lang-git">
+heroku git:remote
+</pre>
