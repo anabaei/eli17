@@ -40,219 +40,24 @@
     <div class="clearfix visible-lg"></div>
   </div>
 </div>
- prettyprint from this link <a href="https://github.com/google/code-prettify"> link </a>
+
 </body>
 </html
-  <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-  <!--////////////////////////////////////////////////////////////// PCM WEB /////////////////////////////////////////////////////////////////////////////-->
-  <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-        <head>
-        <title> Amir </title>
-            
+
         
-     <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-        <!-- split at <title> -->
-    
 
     
-    
-    
-    
-  
-    <!--  <img src="images/ab.png" width="680" height="220"  style="margin: 3em 12em; border: none;">  -->
-    <!----------------------------------------------------- Accordion ---------------------------------------------------------------------------------------->
-    <!----------------------------------------------------- Accordion ---------------------------------------------------------------------------------------->
-    <!----------------------------------------------------- Accordion ----------------------------------------------------------------------------------------> 
-    
-    <div class="accordion" id="accordion2" >
-          <div class="accordion-group">
-            <div class="accordion-heading">
-                <br>
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                WHAT WE DO
-              </a>
+   
+
+
+
+
             
-            </div>
-            <div id="collapseOne" class="accordion-body collapse collapse in">
-              <div class="accordion-inner">
-                From needs analysis and specification development through to contract drafting and negotiations, we are able to provide a full spectrum of valuable procurement advice and services.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-group">
-            <div class="accordion-heading">
-             <legend></legend>
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                WHO WE ARE
-              </a>
-            
-            </div>
-            <div id="collapseTwo" class="accordion-body collapse collapse in">
-              <div class="accordion-inner ">
-                We are a team of procurement professionals providing support and advice on your purchasing of non-liquor goods and services.
-              </div>
-            </div>
-          </div>  
-          <legend ></legend>
-        </div>      
-
-<!--------------------------------------------------------------------------------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------------------------------------------------------------------------------->
-
-            <!-- JS -->
-            <script type="text/javascript">
-              $(document).ready(function($) {
-                $('#accordion').find('.accordion-toggle').click(function(){
-
-                  //Expand or collapse this panel
-                  $(this).next().slideToggle('fast');
-
-                  //Hide the other panels
-                  $(".accordion-content").not($(this).next()).slideUp('fast');
-
-                });
-              });
-            </script>
-
-            <!-- CSS -->
-            <style>
-              .accordion-toggle {cursor: pointer;}
-              .accordion-content {display: none;}
-              .accordion-content.default {display: block;}
-            </style>
-
-            <!-- HTML -->
-            <div id="accordion">
-              <h4 class="accordion-toggle">Accordion 1</h4>
-              <div class="accordion-content default">
-                <p>Cras malesuada ultrices augue molestie risus.</p>
-              </div>
-              <h4 class="accordion-toggle">Accordion 2</h4>
-              <div class="accordion-content">
-                <p>Lorem ipsum dolor sit amet mauris eu turpis.</p>
-              </div>
-              <h4 class="accordion-toggle">Accordion 3</h4>
-              <div class="accordion-content">
-                <p>Vivamus facilisisnibh scelerisque laoreet.</p>
-              </div>
-            </div>
-
-<style>
 
 
-</style>
-            
-            <pre class="prettyprint lang-ruby linenums" >
-            class Voila {
-public:
-  // Voila
-  static const string VOILA = "Voila";
-
-  // will not interfere with embedded <a href="#voila2">tags</a>.
-}
 
 
-</pre>
-            
-    
-        <pre class="prettyprint lang-html " >
-         &lt;button class=&quot;primary&quot;&gt;Button&lt;/button&gt;
-</pre>
 
-     <pre class="prettyprint lang-java">
- /// Eclipse code to go and read from txt file the texts and try each on by one to pass 
-package gooogl;
-
-import java.io.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
-public class gooogl {
-    
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        WebDriver driver = new FirefoxDriver(); 
-    //  driver.get("http://solo.test.bcldb.com/");
-    //  driver.findElement(By.className("yellow-button")).click(); 
-    //  driver.findElement(By.id("user")).sendKeys("amir.nabaei@bcldb.com");
-    //  driver.findElement(By.id("password")).sendKeys("Mahnazaz3");
-
-           // The name of the file to open.
-        String fileName = "sourc4.txt";
-
-        // This will reference one line at a time
-        String line = null;
-
-        try {
-            // FileReader reads text files in the default encoding.
-            FileReader fileReader = 
-                new FileReader(fileName);
-
-            // Always wrap FileReader in BufferedReader.
-            BufferedReader bufferedReader = 
-                new BufferedReader(fileReader);
-            
-            driver.get("http://solo.test.bcldb.com/");
-            driver.findElement(By.className("yellow-button")).click(); 
-            while((line = bufferedReader.readLine()) != null) {
-                driver.findElement(By.id("user")).sendKeys("amir.nabaei@bcldb.com"); 
-                driver.findElement(By.id("password")).sendKeys(line);
-                driver.findElement(By.tagName("input")).submit(); 
-         //     try
-       //       {
-//                
-//     //           // driver.findElement(By.className("yellow-button")); 
-          //    driver.findElement(By.linkText("GO TO MY APPLICATIONS"));
-        //       System.out.println(line);  
-         //     }
-//              
-        //      catch(NoSuchElementException ignored)
-        //      {
-             System.out.println(line);  
-//           // /.out.println(line);    
-          //    }
-                //  if (w == null)
-            //  {
-                //   System.out.println(w); 
-    
-            //  }
-                                 
-            }   
-
-            // Always close files.
-            bufferedReader.close();         
-        }
-        catch(FileNotFoundException ex) {
-            System.out.println(
-                "Unable to open file '" + 
-                fileName + "'");                
-        }
-        catch(IOException ex) {
-            System.out.println(
-                "Error reading file '" 
-                + fileName + "'");                  
-            // Or we could just do this: 
-            // ex.printStackTrace();
-        }
-        
-        
-        
-    //  driver.findElement(By.tagName("input")).submit();
-        
-        //driver.findElement(By.linkText("GO TO MY APPLICATIONS")).click();
-    }
-    
-    
-
-}
-
-    </pre>      
-    </body>
-</html>
 
     
 
