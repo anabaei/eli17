@@ -1,0 +1,26 @@
+
+
+
+
+  div#right_nav 
+		   {
+           padding-right: 6%;
+          }
+  .col-md-10 
+		 {
+          margin-top: -2%;
+         }	
+
+    .col-md-10 > .col-md-6 
+		 {
+          margin-top: -3%;
+         }			 
+		 
+     td a 
+      {
+	font-size: 110%; 
+    
+	} 
+      
+	  
+	 
