@@ -60,7 +60,21 @@ is a deployment setup for Rails. It automatically manages backend for apache and
 <h3>Image tag </h3>
 <p>
 <pre class="prettyprint lang-ruby">
-	<code>	 &lt%= image_tag("microsoft_logo.png", align: "right") %&gt which is equevalent of 
-		# &ltimg src="/assets/microsoft_icon.png" align="right"> </code>
+&lt%= image_tag("microsoft_logo.png", align: "right") %&gt which is equevalent of 
+# &ltimg src="/assets/microsoft_icon.png" align="right"> </code>
 </pre>		
 </p>
+
+<h3>Running application on localhost auxiliary server </h3>
+<p>
+  To run appication at the same time on local and heroku server, instead of changing the database.yml configurations, we only need to add these two on gemfile 
+</p>
+<pre class="prettyprint lang-ruby">
+group :development, :test do # <<<< :development, not devlopment
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
+</pre>
