@@ -23,4 +23,8 @@ class DemoController < ApplicationController
     def pcm_content
     render :layout => false
    end
+
+    def webgl
+    render :layout => false
+   end
 end

@@ -1,18 +1,63 @@
           
+<style>  
+h1,h2,h3
+  {
+  	font-family: 'Slabo 27px', serif;
+  }
+  p
+  {
+  	font-family: 'Lora', serif;
+  }
+</style>
 
 
+<h1> jQuery </h1>
+
+<p>
+	Adjust width of screen and send the width to a function which select specific stylesheet or even can select different contents and renders to the page.
+</p>
+
+<pre class="prettyprint lang-jquery " >
+  $(function()
+     adjuststyle($(this).width());
+     $(window).resize(function ()
+         {
+        adjuststyle($(this).width());
+         });
+  });
+</pre>
+adjuststyle function
+<pre class="prettyprint lang-jquery " >
+   function adjuststyle(x)
+   {
+   width = ParseInt(x);
+    if (width <970)
+	   {
+	     $("#defaut-stylesheet").attr("href", "css/style_3.css");
+	   }
+	     else  if (width <1229)
+	   {
+	     $("#defaut-stylesheet").attr("href", "css/style_2.css");
+	   }
+   
+   }
+&ltlink id="defaut-stylesheet" rel="stylesheet" type="text/css" href="css/style_1.css" />
+</pre>
 
 
+<h1> JavaScript </p>
+<h3>Stak vs Queue </h3>
+<p>
+	stack is FILA and queue is FIFO
+</p>
+<pre class="prettyprint lang-c " >
+stack= [];
+stack.push(2);stack.push(4);
+i = stack.pop(); 
+results:  i = 4 and stack = [2]
 
-
-<pre class="prettyprint lang-javascript linenums" >
-            class Voila {
-public:
-  // Voila
-  static const string VOILA = "Voila";
-
-  // will not interfere with embedded <a href="#voila2">tags</a>.
-}
-
-
+queue = [];
+queue.push(2);queue.push(6);
+i = stack.pop(); 
+results:  i = 2 and stack = [6]
 </pre>

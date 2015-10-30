@@ -1,10 +1,112 @@
 
+<style>
 
+h1,h2,h3
+  {
+  	font-family: 'Slabo 27px', serif;
+  }
+  p
+  {
+  	font-family: 'Lora', serif;
+  }
+</style>
 
-
-
-
-Compatible with Internet Explorer add the meta 
+<p>
+You can use prettyprint to snipet code form this 
+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/vibrant-ink/"> link </a>
+</p>
+<h3>
+Compatible with Internet Explorer 
+</h3>
 <pre class="prettyprint lang-html" >
   &lt meta http-equiv="X-UA-Compatible" content="IE=edge" &gt</pre>
 
+
+<h3> CSS Selectors </h3>
+<p> select all a's with href attribute starts with https
+</p> 
+<pre class="prettyprint lang-css" >
+ a[href ^= "https"]
+</pre>
+<p> select all a's with href attribute ends with .pdf 
+</p> 
+<pre class="prettyprint lang-css" >
+ a[href $= ".pdf"]
+</pre>
+<p> select all a's with href attribute contains amir 
+</p> 
+<pre class="prettyprint lang-css" >
+ a[href *= "amir"]
+</pre>
+<p> select every p element that is second child of its parent 
+</p> 
+<pre class="prettyprint lang-css" >
+ p:nth-child(2)
+</pre>
+<p> select every thing that is not p
+</p> 
+<pre class="prettyprint lang-css" >
+ :not(p)
+</pre>
+
+<p> select all p where parents is a div
+</p> 
+<pre class="prettyprint lang-css" >
+ div > p
+</pre>
+<p> select all p which is inside a div
+</p> 
+<pre class="prettyprint lang-css" >
+ div  p
+</pre>
+<p> select all p has no child
+</p> 
+<pre class="prettyprint lang-css" >
+ p:empty
+</pre>
+<p> select only ul that has id attribute
+</p> 
+<pre class="prettyprint lang-css" >
+ ul[id]
+</pre>
+<p> select last children of li that is children of name1
+</p> 
+<pre class="prettyprint lang-css" >
+ #name1 > li:last_child
+</pre>
+
+<h3> Accordion Bootstrap </h3>
+<p> after including jquery from <a href=""> here </a> and bootstrap cdn from <a href="http://getbootstrap.com/getting-started/"> link </a> </p>
+
+<pre class="prettyprint lang-html" >
+	&ltdiv class="accordion" id="accordion2" &gt						
+	  &ltdiv class="accordion-group"&gt						
+		&ltdiv class="accordion-heading"&gt					
+			&ltbr&gt				
+		  &lta class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"&gt					
+			WHAT WE DO				
+		  &lt/a&gt					
+		&lt/div&gt					
+		&ltdiv id="collapseOne" class="accordion-body collapse collapse in"&gt					
+		  &ltdiv class="accordion-inner"&gt					
+			From needs analysis and specification development through to contract drafting and negotiations				
+		  &lt/div&gt					
+		&lt/div&gt					
+	  &lt/div&gt						
+	  &ltdiv class="accordion-group"&gt						
+		&ltdiv class="accordion-heading"&gt					
+		 &ltlegend&gt&lt/legend&gt					
+		  &lta class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"&gt					
+			WHO WE ARE				
+		  &lt/a&gt					
+		&lt/div&gt					
+		&ltdiv id="collapseTwo" class="accordion-body collapse collapse in"&gt					
+		  &ltdiv class="accordion-inner "&gt					
+			We are a team of 				
+		  &lt/div&gt					
+		&lt/div&gt					
+	  &lt/div&gt  												
+	&lt/div&gt						
+</pre>
+
+<h2> <a href = "http://tympanus.net/codrops/2015/10/21/page-stack-navigation/" > Coderops </a> </h2>

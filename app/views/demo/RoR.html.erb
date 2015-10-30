@@ -1,0 +1,61 @@
+
+<style>  
+h1,h2,h3
+  {
+  	font-family: 'Slabo 27px', serif;
+  }
+  p
+  {
+  	font-family: 'Lora', serif;
+  }
+</style>
+
+<h3> a || = b</h3> 
+<p>
+unlike other lanuages, it doesnt mean a || a = b!. if a is false, nil or undefined then take b and set it to a, but if not stay with the same value.
+</p>
+
+<pre class="prettyprint lang-c">
+ a=3
+ a||=1  
+ => a=3
+
+ b= false or nil
+ b||=1
+ => b=1
+</pre>
+
+<h3> Params </h3>
+
+<p> 
+params equivalent to $_REQUEST, an HTTP Request variables, to convey variables  on different places. When a user request a page, params are set.  
+</p>
+<pre class="prettyprint lang-ruby">
+ http://www.example.com/?foo=1 & boo = 12c
+ params[:foo] = 1 , params[:boo] = 12c
+</pre>
+<p>
+	It can be hash inside another hash, two dimention hash.
+</p>
+<pre class="prettyprint lang-ruby">
+ http://www.example.com/?vote[:item] = 32
+ params[:vote][:item] = 32
+</pre>
+
+<h3> Migration</h3>
+<p> alter your db schema over time, at first schema starts with nothing and each migration add or even remove tables. </p>
+<p> Each migration creates table with primary key called id, wich added implicitly. You can do all migration in rails with rake db:migrate
+or one by one in db/migrate folder by rails g migrate name.</p>
+
+<h3>Phusion Passenger</h3>
+<p>
+is a deployment setup for Rails. It automatically manages backend for apache and nginx. 
+</p> 
+
+<h3>Image tag </h3>
+<p>
+<pre class="prettyprint lang-ruby">
+	<code>	 &lt%= image_tag("microsoft_logo.png", align: "right") %&gt which is equevalent of 
+		# &ltimg src="/assets/microsoft_icon.png" align="right"> </code>
+</pre>		
+</p>
