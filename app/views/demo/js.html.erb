@@ -45,6 +45,19 @@ adjuststyle function
 </pre>
 
 
+<h3> Pop up boostrap</h3> 
+ <pre class="prettyprint lang-javascript" >
+        <!-- Modal -->
+        &ltdiv class="modal fade" id="myModal" role="dialog">
+        &ltdiv class="modal-dialog">
+      <!-- Modal content-->
+        &ltimg src="images/pcm_guidline_pop.png" alt="Smiley face" style="width:105%;height:40%;">
+      &lt/div>
+        &lt/div>
+      <!--End of  Modal content-->
+  </pre>
+
+
 <h1> JavaScript </p>
 <h3>Stak vs Queue </h3>
 <p>
@@ -61,3 +74,28 @@ queue.push(2);queue.push(6);
 i = stack.pop(); 
 results:  i = 2 and stack = [6]
 </pre>
+
+
+<h1> Angular </h1>
+
+<p> a simple mirroring input function, you should add cdn first to your dom </p>
+
+
+
+<pre class="prettyprint lang-javascript" >
+&ltscript src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+//then add this into your body
+&ltdiv ng-app="">
+&ltinput type="text" ng-model="name" placeholder="Enter name here">
+&lth1>Hello {{name}}</h1>
+&lt/div>
+</pre>
+
+
+
+
+
+   
+    
+    
+    
