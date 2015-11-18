@@ -11,7 +11,12 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<head> </head>
+<head> 
+   <style>
+   .red { color:red; }
+   
+   </style>
+</head>
 <div class="container">
 
 <h3> Type Skus and gets Products Name</h3>
@@ -32,26 +37,78 @@ $.post("http://www.bcliquorstores.com/product/"+sku,
                         arr2 = arr1[1].split("| BC Liquor Stores");
                  //        console.log("here is resultss: "+arr2[0]);
                 // $("#person_lastname").val(document.getElementById('in1').value);
-             $("#output").append("<tr> <td> "+sku+" </td> <td>" + arr2[0] +"</td></tr>"); 
+             $("#output").append("<tr> <td> "+sku+"," +  " </td><td>" + arr2[0] + ".."+"</td></tr>"); 
               arr_me.push(arr2[0]);
-
+                 return arr_me;
                             }); 
 
                  }
     function find(){
+      
      var temp = $("#input").val();
      temp = temp.replace(/\n/g, ',');
      temp_arr = temp.split(",");
      var cnt = 0;
      while (cnt < temp_arr.length)
      {
-      console.log(temp_arr[cnt]);
+      //console.log(temp_arr[cnt]);
       me(temp_arr[cnt]);
       cnt +=1;
      }
 
-    // console.log(temp);
-    }  
+    arr_me[0] = cnt;
+  
+    }
+
+
+
+   function sort()
+   {
+    $("#amir").css('display','block');
+      counter = arr_me[0];
+      
+      console.log(temp_arr[2]);
+      $('#output tr:eq(0) td:eq(1)').addClass('red');
+    //  $('#output tr:eq(0) td:eq(1)').addClass('red');
+      //$('td:nth-child(1)')
+
+       mytbl = $('#output').text();
+     //  console.log(mytbl);
+       mytrs = mytbl.split("..");
+       //myskus = mytrs.split("<td>");
+
+       // if (temp_arr[0].indexOf('838417') !== -1)
+       //    {
+       //      console.log(mytrs[0]);
+       //     res=mytrs[0].split(",");
+       //     console.log(res[1]);
+       //    }
+     //  console.log(arr_me[0]);
+       for (i = 0; i < arr_me[0]; i++)
+          {
+            
+          // $("#amir").attr("value",$('#output tr:eq(i) td:eq(0)').text());
+
+            console.log(mytrs[i]);
+            console.log(temp_arr[i]);
+
+        for (j=0; j< arr_me[0]; j++)
+          {
+           if ( mytrs[j].indexOf(temp_arr[i]) > 1 ) 
+            {
+              console.log("**"+mytrs[j]);
+              var res=mytrs[j].split(",");
+              $("#newone").append("<tr> <td> "+temp_arr[i]+" </td> <td>" + res[1] +"</td></tr>"); 
+             }
+           }  
+          }
+   
+   $('table tr:eq(0)').addClass('red');
+    $("#amir_1").css('display','none');
+   }
+
+
+
     function clean(){
       location.reload();
     }           
@@ -59,8 +116,9 @@ $.post("http://www.bcliquorstores.com/product/"+sku,
          $( document ).ready(function() {
      //   console.log("DS"); 	
       arr_me = [];
+      $("#amir").css('display','none');
      $("textarea").mouseover(function() {
-   //  $("table").empty();
+   
 });
          });
 </script>
@@ -106,19 +164,37 @@ $.post("http://www.bcliquorstores.com/product/"+sku,
 <div>
 
 <button  onclick="find()" type="button" class="btn btn-info">Find all!</button>
-<button  onclick="clean()" type="button" class="btn btn-danger">Clean </button>
+<button  onclick="sort()" type="button" class="btn btn-success">Sort me</button>
+<button  onclick="clean()" type="button" class="btn btn-danger">cls </button>
 
-<table class="table">
+
+<span id ="amir">
+<table class="table" name="table">
   <tr>
     <th> SKU</th>
+    <th> Product Name </th>
+  </tr>
+   <tbody id="newone">
+   
+   </tbody> 
+</table>
+</span>
+
+
+<span id = "amir_1">
+<table class="table" name="table">
+  <tr>
+   <th> SKU</th>
     <th> Product Name </th>
   </tr>
    <tbody id="output">
    
    </tbody> 
 </table>
+</span>
 
 </div>
+
 </html>
 
 
