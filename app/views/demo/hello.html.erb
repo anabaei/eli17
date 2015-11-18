@@ -14,7 +14,7 @@
 <head> 
    <style>
    .red { color:red; }
-   
+    
    </style>
 </head>
 <div class="container">
@@ -89,14 +89,14 @@ $.post("http://www.bcliquorstores.com/product/"+sku,
             
           // $("#amir").attr("value",$('#output tr:eq(i) td:eq(0)').text());
 
-            console.log(mytrs[i]);
-            console.log(temp_arr[i]);
+            // console.log(mytrs[i]);
+            // console.log(temp_arr[i]);
 
         for (j=0; j< arr_me[0]; j++)
           {
            if ( mytrs[j].indexOf(temp_arr[i]) > 1 ) 
             {
-              console.log("**"+mytrs[j]);
+              // console.log("**"+mytrs[j]);
               var res=mytrs[j].split(",");
               $("#newone").append("<tr> <td> "+temp_arr[i]+" </td> <td>" + res[1] +"</td></tr>"); 
              }
@@ -106,7 +106,13 @@ $.post("http://www.bcliquorstores.com/product/"+sku,
    $('table tr:eq(0)').addClass('red');
     $("#amir_1").css('display','none');
    }
+   function hide()
+   {
+    
+    $('#amir td:nth-child(1)').css('display','none');
 
+
+   }
 
 
     function clean(){
@@ -163,9 +169,10 @@ $.post("http://www.bcliquorstores.com/product/"+sku,
 <br>
 <div>
 
-<button  onclick="find()" type="button" class="btn btn-info">Find all!</button>
-<button  onclick="sort()" type="button" class="btn btn-success">Sort me</button>
-<button  onclick="clean()" type="button" class="btn btn-danger">cls </button>
+<button  onclick="find()" type="button" class="btn btn-default">Find all!</button>
+<button  onclick="sort()" type="button" class="btn btn-default">Sort me</button>
+<button  onclick="hide()" type="button" class="btn btn-default"> hide skus</button>
+<button  onclick="clean()" type="button" class="btn btn-info">cls </button>
 
 
 <span id ="amir">
