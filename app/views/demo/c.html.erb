@@ -1,2 +1,53 @@
 
 <h1> C/C++</h1>
+
+<p>
+this is a <a href="http://www.cyberciti.biz/faq/howto-compile-and-run-c-cplusplus-code-in-linux/"> link</a> to show gcc exist or not and this is a <a href="http://www.radford.edu/~mhtay/CPSC120/VIM_Editor_Commands.htm"> link </a> for vim commands. 
+</p>
+
+<h3> struct vs class (c++) </h3>
+	<p>
+
+	struct defaults to public access and class defaults to private access.	When inheriting from them struct defaults to public inheritance and class defaults to private inheritance. So in class we have to mention it is puclic: 
+	</p>
+<pre class="prettyprint lang-c " >
+#include<iostream.h>
+#include<conio.h>
+using namespace std;
+
+main()
+{
+
+int hold;
+int array[5];
+cout&lt;&lt;"Enter 5 numbers:" &lt;&lt;endl;
+for(int i=0; i<5; i++) { cin>>array[i];
+}
+cout&lt;&lt;endl;
+cout&lt;&lt;"Orignally entered array by the user is: "&lt;&lt;endl;
+
+for(int j=0; j<5; j++)
+{
+cout<<array[j];
+cout<<endl;
+}
+cout<<endl;
+for(int i=0; i<4; i++)
+{
+for(int j=0; j<4; j++) { if(array[j]>array[j+1])
+{
+hold=array[j];
+array[j]=array[j+1];
+array[j+1]=hold;
+}
+}
+}
+cout&lt;&lt;"Sorted Array is: "&lt;&lt;endl;
+for(int i=0; i<5; i++)
+{
+cout&lt;&lt;array[i]&lt;&lt;endl;
+}
+
+getch();
+}
+</pre>
