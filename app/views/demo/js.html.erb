@@ -70,6 +70,58 @@ like this <a hre="http://jsfiddle.net/ZZYD4/">example </a> and <a href="http://j
 $('#mytable tr:eq(0) td:eq(1)').addClass('red');
 </pre>
 
+<style>
+*:hover
+{
+  text-decoration: none !important;
+}
+</style>
+
+<h3> append in jquery and remove </h3>
+<ul>
+  <li>Milk</li>
+  <li>Bread</li>
+  <li>Chips</li>
+  <li>Socks</li>
+</ul>
+  
+  <script>
+$( "li" ).hover(
+  function() {
+    $( this ).append( $( "<span> ***</span>" ) );
+     $( this ).append( $( "<li> __ || __ </li>" ) );
+    console.log($(this));
+  }, function() {
+    $( this ).find( "li:last" ).remove();
+  }
+);
+  </script>
+
+<pre class="prettyprint lang-html" >
+&lt ul &gt
+  &ltli&gtMilk&lt/li&gt
+  &ltli&gtBread&lt/li&gt
+  &ltli&gtChips&lt/li&gt
+  &ltli&gtSocks&lt/li&gt
+&lt/ul&gt
+  
+  &ltscript&gt
+$( "li" ).hover(
+  function() {
+    $( this ).append( $( " &ltspan&gt *** &lt/span&gt" ) );
+     $( this ).append( $( " &ltli&gt __ || __ &lt/li&gt" ) );
+    console.log($(this));
+  }, function() {
+    $( this ).find( "li:last" ).remove();
+  }
+);
+  &lt/script&gt
+</pre>
+
+
+
+
+
 
 
 <h1> JavaScript </p>
