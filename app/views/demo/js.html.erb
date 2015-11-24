@@ -78,15 +78,15 @@ $('#mytable tr:eq(0) td:eq(1)').addClass('red');
 </style>
 
 <h3> append in jquery and remove </h3>
-<ul>
-  <li>Milk</li>
-  <li>Bread</li>
-  <li>Chips</li>
-  <li>Socks</li>
+<ul >
+  <li class="yup">Milk</li>
+  <li class="yup">Bread</li>
+  <li class="yup">Chips</li>
+  <li class="yup">Socks</li>
 </ul>
   
   <script>
-$( "li" ).hover(
+$( ".yup" ).hover(
   function() {
     $( this ).append( $( "<span> ***</span>" ) );
      $( this ).append( $( "<li> __ || __ </li>" ) );
