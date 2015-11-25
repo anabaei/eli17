@@ -20,10 +20,10 @@ public class gooogl {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         WebDriver driver = new FirefoxDriver(); 
-    //  driver.get("http://solo.test.bcldb.com/");
-    //  driver.findElement(By.className("yellow-button")).click(); 
-    //  driver.findElement(By.id("user")).sendKeys("amir.nabaei@bcldb.com");
-    //  driver.findElement(By.id("password")).sendKeys("Mahnazaz3");
+      driver.get("http://solo.test.bcldb.com/");
+      driver.findElement(By.className("yellow-button")).click(); 
+     driver.findElement(By.id("user")).sendKeys("amir.nabaei@bcldb.com");
+     driver.findElement(By.id("password")).sendKeys(" );
 
            // The name of the file to open.
         String fileName = "sourc4.txt";
@@ -46,24 +46,7 @@ public class gooogl {
                 driver.findElement(By.id("user")).sendKeys("amir.nabaei@bcldb.com"); 
                 driver.findElement(By.id("password")).sendKeys(line);
                 driver.findElement(By.tagName("input")).submit(); 
-         //     try
-       //       {
-//                
-//     //           // driver.findElement(By.className("yellow-button")); 
-          //    driver.findElement(By.linkText("GO TO MY APPLICATIONS"));
-        //       System.out.println(line);  
-         //     }
-//              
-        //      catch(NoSuchElementException ignored)
-        //      {
-             System.out.println(line);  
-//           // /.out.println(line);    
-          //    }
-                //  if (w == null)
-            //  {
-                //   System.out.println(w); 
-    
-            //  }
+
                                  
             }   
 
@@ -79,8 +62,7 @@ public class gooogl {
             System.out.println(
                 "Error reading file '" 
                 + fileName + "'");                  
-            // Or we could just do this: 
-            // ex.printStackTrace();
+
         }
         
         
@@ -100,5 +82,90 @@ public class gooogl {
     <p>
         struct is as powerfull as class except it doesnt need initialize as class necessary
     </p>
+
+    <h3> Try many skus in web  </h3>
+
+
+
+<pre class="prettyprint lang-java">
+package gooogl;
+import java.io.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class gooogl {
+    
+    public static void main(String[] args) throws InterruptedException {
+        // TODO Auto-generated method stub
+            WebDriver driver = new FirefoxDriver();     
+            driver.get("http://bcliquorstores.com/");
+           
+            driver.findElement(By.cssSelector("a[href*='product-catalogue?type=win']")).click();    
+            driver.findElement(By.cssSelector("a[href*='product-catalogue?type=beer']")).click();
+            WebDriverWait wait1 = new WebDriverWait(driver, 30);
+            driver.findElement(By.cssSelector("a[href*='product-catalogue?type=spirits']")).click();
+            driver.findElement(By.cssSelector("a[href*='product-catalogue'")).click();       
+         // The name of the file to open.
+            String fileName = "sourc4.txt";
+            // This will reference one line at a time
+            String line = null;
+            try {
+                // FileReader reads text files in the default encoding.
+                FileReader fileReader = 
+                    new FileReader(fileName);
+                // Always wrap FileReader in BufferedReader.
+                BufferedReader bufferedReader = 
+                    new BufferedReader(fileReader);
+                while((line = bufferedReader.readLine()) != null)
+                {
+                  try {
+                    driver.findElement(By.id("edit-search-1")).sendKeys(line);
+                    driver.findElement(By.cssSelector(".form-submit")).click();
+                    driver.findElement(By.cssSelector("a[href$='/product/"+line+"']")).click();
+                    driver.get("http://bcliquorstores.com/");
+                  }
+                  catch(Exception e)
+                  {
+                      System.out.println(line);
+                      driver.findElement(By.cssSelector(".logo")).click();  
+                  }    
+                }
+                bufferedReader.close();         
+            }
+            catch(IOException ex) {
+                System.out.println(
+                    "Error reading file '" 
+                    + fileName + "'");                  
+            }
+    }
+}
+
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
