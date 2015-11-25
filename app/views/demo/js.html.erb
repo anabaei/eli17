@@ -90,15 +90,16 @@ $( ".yup" ).hover(
   function() {
     $( this ).append( $( "<span> ***</span>" ) );
      $( this ).append( $( "<li> __ || __ </li>" ) );
-    console.log($(this));
+   
   }, function() {
     $( this ).find( "li:last" ).remove();
+     console.log("CC"+$(this));
   }
 );
   </script>
 
 <pre class="prettyprint lang-html" >
-&lt ul &gt
+&ltul&gt
   &ltli&gtMilk&lt/li&gt
   &ltli&gtBread&lt/li&gt
   &ltli&gtChips&lt/li&gt

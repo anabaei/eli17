@@ -10,6 +10,7 @@ class DemoController < ApplicationController
   	@con = params[:controller]
   end
   def test
+    render :layout => false
   	 headers['Access-Control-Allow-Origin'] = "*"
   end
   def mc
