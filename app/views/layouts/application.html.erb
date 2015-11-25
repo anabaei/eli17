@@ -24,22 +24,41 @@
   <div class="container-fluid">
     <div class="navbar-header">
     <!--   <img width="26" height="26" class="navbar-band" src=""    class="img-circle"  style="margin-top: 16%; border:  border-radius:50%;"> -->
-    
-
     </div>
     <div>
       <ul class="nav navbar-nav">
       <!--   <li class="active"><a href="/demo">Home</a></li> -->
-        <li><a href="/demo/RoR"> Ruby on Rails</a></li>
-        <li><a href="/demo/web"> Web Design</a></li>
-        <li><a href="/demo/php"> PHP </a></li>
-        <li><a href="/demo/js"> JavaScript</a></li>
-        <li><a href="/demo/java"> Java</a></li>
-        <li><a href="/demo/c"> C/C++</a></li>
-        <li><a href="/demo/mysql"> MySql </a></li>
-         <li><a href="/demo/pg"> PostgreSql</a></li>
+        
+          <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Lanuages  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/demo/js"> JavaScript</a></li>
+            <li><a href="/demo/RoR"> Ruby on Rails</a></li>
+            <li><a href="/demo/java"> Java</a></li>
+            <li><a href="/demo/c"> C/C++</a></li>
+             <li><a href="/demo/php"> PHP </a></li>                      
+          </ul>
+        </li>
+         
+
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">DB  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/demo/mysql"> MySql </a></li>
+            <li><a href="/demo/pg"> PostgreSql</a></li>                      
+          </ul>
+        </li>  
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Design  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+             <li><a href="/demo/web"> Web Design</a></li>
+            <li><a href="/demo/webgl"> WebGl</a></li>                     
+          </ul>
+        </li>  
+
+
           <li><a href="/demo/linux"> Linux </a></li>
-          <li><a href="/demo/webgl"> WebGl</a></li>
+          
             <li><a href="/demo/vcs"> vcs</a></li>
               <li><a href="/demo/google_analytic"> google_analytic</a></li>
           <li><%= link_to('Cross Site JS',{:controller => 'demo',:action => 'hello'}) %></li>

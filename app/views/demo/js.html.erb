@@ -160,10 +160,30 @@ output:
 
 
 
+<pre class="prettyprint lang-javascript" >
+Change (overwrite) the text value of an HTML element:
+$("selector").text("New text")
+Change (append) the text value of an HTML element:
+$("selector").append("additional text")
+Clear the text value of an HTML element:
+$("selector").empty()
+Read the text of an HTML element:
+$value = $("selector").text()
+Read the attribute of an HTML element:
+$value = $("selector").attr("attributeName")
+Write the attribute value of an HTML element:
+$("selector").attr("attributeName", "attributeValue")
+Read the value of a form input element:
+$value = $("selector").val()
+Read the value of a form checkbox or radio button:
+//true if checked, false if not
+$trueOrFalse = $("selector").is(":checked")
+Write a value to a form input element:
+$("selector").val("New value")
+Change (overwrite) the HTML value of an element (eg: add new child elements):
+$("selector").html("&ltp>New html content&lt/p>")
 
-
-
-
+</pre>
 
 
 
