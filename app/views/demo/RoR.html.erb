@@ -9,12 +9,10 @@ h1,h2,h3
   	font-family: 'Lora', serif;
   }
 </style>
-
-
 <h2> Install and Run Ruby on Rails in Windows 7 <a href="/Install.pdf"> file </a></h2>
-
-
-
+<h3> </h3>
+<p>Learn how to configure a Ubuntu 14.04 server to deploy a Ruby on Rails 4 application. With nginx web server and postgresql database from <a href="http://www.rubytreesoftware.com/resources/ruby-on-rails-41-ubuntu-1404-server-configuration"> here </a>
+</p>
 <h3> a || = b</h3> 
 <p>
 unlike other lanuages, it doesnt mean a || a = b!. if a is false, nil or undefined then take b and set it to a, but if not stay with the same value.
@@ -67,7 +65,7 @@ is a deployment setup for Rails. It automatically manages backend for apache and
 
 <h3>Running application on localhost auxiliary server </h3>
 <p>
-  To run appication at the same time on local and heroku server, instead of changing the database.yml configurations, we only need to add these two on gemfile 
+  To run application at the same time on local and heroku server, instead of changing the database.yml configurations, we only need to add these two on gemfile 
 </p>
 <pre class="prettyprint lang-ruby">
 group :development, :test do # <<<< :development, not devlopment

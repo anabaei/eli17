@@ -48,14 +48,14 @@ adjuststyle function
 
 <h3> Pop up boostrap</h3> 
  <pre class="prettyprint lang-javascript" >
-        <!-- Modal -->
+         &lt!-- Modal -->
         &ltdiv class="modal fade" id="myModal" role="dialog">
         &ltdiv class="modal-dialog">
-      <!-- Modal content-->
+       &lt!-- Modal content-->
         &ltimg src="images/pcm_guidline_pop.png" alt="Smiley face" style="width:105%;height:40%;">
       &lt/div>
         &lt/div>
-      <!--End of  Modal content-->
+       &lt!--End of  Modal content-->
   </pre>
 <p>
 css attribute selectors: 
@@ -205,19 +205,19 @@ $("selector").html("&ltp>New html content&lt/p>")
 <h2> Ajax </h2>
 <pre class="prettyprint lang-javascript" >
 
- function me(sku){
-
-$.post("http://www.bcliquorstores.com/product/"+sku,  
-                        
-                        function(data)
-                          {   
+ function me(sku)
+           {
+              $.post("http://www.bcliquorstores.com/product/"+sku,  
+                        {
+                          send_one_variable: getElementById("example").value,      
+                        }
+                       function(data)
+                        {   
                         arr1 = data.split(",");
                         console.log("here is resultss: "+arr1[0]);
-             $("#output").append("<tr> <td> "+sku+"," +  " </td><td>" + arr2[0] + ".."+"</td></tr>"); 
-              arr_me.push(arr2[0]);
-                            }); 
-
-                 }
+                        }
+                  ); 
+         }
 </pre>
 
 
