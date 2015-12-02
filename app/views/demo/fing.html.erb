@@ -1,0 +1,21 @@
+<a href="http://www.aspforums.net/Threads/503259/Allow-only-Persian-Arabic-characters-in-TextBox-using-JavaScript/"> farsi ascii  codes &#1578; </a>
+
+
+<input id="dsugg">
+
+<script>
+
+$('#dsugg').keypress(function() {
+    var dInput = this.value;
+    if (dInput == "g")
+    {
+    	console.log(dInput);
+    }
+
+    console.log(dInput);
+    $("#out").html(dInput);
+});
+
+</script>
+
+<div id="out"></div>
