@@ -106,28 +106,33 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
 2- in rout: resources :drivrers
 3- rails g model driver first_name:string last_name:string 
 4-  rake db:migrate   (to update database)
-5- in driver controller:  
+5- in driver controller: 
+<pre class="prettyprint lang-ruby"> 
   def new
     @driver = Driver.new
   end
+ </pre>
 6- in new.html 
+<pre class="prettyprint lang-ruby">
    <% @driver = "D" %>
   <%= form_for @driver  do |f| %>
     <%= f.label :first_name %> 
     <%= f.text_field :first_name %> 
      <%= f.submit %> 
   <% end %>
+ </pre>
   naming convenion knows what things go where 
 7- 
+<pre class="prettyprint lang-ruby">
    def create 
     render text: params.inspect
    #@driver = Driver.new()
     end
-
+ </pre>
 8- controller send us a specific hash name params it does two things:
   - let us access things via symbols rather than strings 
   - we have to call special methods to what rails get or send it is a security measure of rails 
-
+<pre class="prettyprint lang-ruby">
  def create
   @driver = Driver.new (
    params.require(:ourKey).permit(:eachValueOfKey)
@@ -143,23 +148,25 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
     render 'new'
     end
  end
-
+ </pre>
 9- in rails c
  Driver.count
  Driver.last
 
  10- controller
+ <pre class="prettyprint lang-ruby">
  def index
     @drivers = Driver.all
   end
-
+ </pre>
   11- in index
-
+<pre class="prettyprint lang-ruby">
 <% @drivers.each do |driver| %>
   <%= driver.first_name %> 
 <% end %>
-
+ </pre>
 12 - call a model from controller
+<pre class="prettyprint lang-ruby">
     @zip_code = ZipCode.initialize()
 
     and in ZipCode model we fetch the last item first_name from Driver model 
@@ -167,7 +174,7 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
    def self.initialize(zipa) 
     return Driver.last.first_name
   end    
-
+ </pre>
 <h3> To pass instance variable from controller to view </h3>
 <p>
   use render "controller/view" and dont use redirect_to 
