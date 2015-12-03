@@ -114,19 +114,19 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
  </pre>
 6- in new.html 
 <pre class="prettyprint lang-ruby">
-   <% @driver = "D" %>
-  <%= form_for @driver  do |f| %>
-    <%= f.label :first_name %> 
-    <%= f.text_field :first_name %> 
-     <%= f.submit %> 
-  <% end %>
+   &lt;% @driver = "D" %>
+  &lt;%= form_for @driver  do |f| %>
+    &lt;%= f&middot;label :first_name %> 
+    &lt;%= f&middot;text_field :first_name %> 
+     &lt;%= f&middot;submit %> 
+  &lt;% end %>
  </pre>
   naming convenion knows what things go where 
 7- 
 <pre class="prettyprint lang-ruby">
    def create 
-    render text: params.inspect
-   #@driver = Driver.new()
+    render text: params&middot;inspect
+   #@driver = Driver&middot;new()
     end
  </pre>
 8- controller send us a specific hash name params it does two things:
@@ -135,9 +135,9 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
 <pre class="prettyprint lang-ruby">
  def create
   @driver = Driver.new (
-   params.require(:ourKey).permit(:eachValueOfKey)
+   params&middot;require(:ourKey).permit(:eachValueOfKey)
   )
-  @driver = Driver.new (params.require(:driver).permit(:first_name))
+  @driver = Driver&middot;new (params.require(:driver).permit(:first_name))
 
   now do somthing with our object
   render text: @driver.inspect
@@ -156,18 +156,18 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
  10- controller
  <pre class="prettyprint lang-ruby">
  def index
-    @drivers = Driver.all
+    @drivers = Driver&middot;all
   end
  </pre>
   11- in index
 <pre class="prettyprint lang-ruby">
-<% @drivers.each do |driver| %>
-  <%= driver.first_name %> 
-<% end %>
+&lt;% @drivers&middot;each do |driver| %>
+  &lt;%= driver&middot;first_name %> 
+&lt;% end %>
  </pre>
 12 - call a model from controller
 <pre class="prettyprint lang-ruby">
-    @zip_code = ZipCode.initialize()
+    @zip_code = ZipCode&middot;initialize()
 
     and in ZipCode model we fetch the last item first_name from Driver model 
 
@@ -181,10 +181,26 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
 </p>
  
 
+<h3> Soap </h3>
+<p>
+ We use savon  gem and then bundle install.
 
-
-
-
+  </p>
+In create controller or other methods we dumped savon 
+<pre class="prettyprint lang-ruby">
+ client = Savon.client(wsdl: "http://www.webservicex.net/uszip.asmx?WSDL")
+ response = client.call(:get_info_by_zip, message: { "USZip" => "90210" })
+  @res = response
+     if response.success?
+       data = response.to_array(:get_info_by_zip_response, :get_info_by_zip_result, :new_data_set, :table).first
+       if data
+          @state = data[:state]
+          @city = data[:city]
+          @area_code = data[:area_code]
+          @time_zone = data[:time_zone]       
+        end
+      end
+ </pre>
 
 
 
