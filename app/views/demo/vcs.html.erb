@@ -25,8 +25,13 @@ You can verify the remote in your git configuration:
 </p>
 <pre class="prettyprint lang-git">
 git remote -v
+To see the existing URL just do:
+git config remote.origin.url
+To set new remote: 
+git remote set-url origin &lt;yourURL>
+git help remote
 </pre>
-
+Or you can go to .git/config iside your app, and change URL
 
 <h3> Git on <a href="https://devcenter.heroku.com/articles/git">
 	Heroku server</a> </h3>
@@ -53,3 +58,4 @@ heroku git:remote
 <pre class="prettyprint lang-git">
 git checkout master
 </pre>
+
