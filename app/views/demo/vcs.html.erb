@@ -20,6 +20,12 @@ git remote add origin https//github.com/myusername/myrepositoryName.git
 git push -u origin master
 </pre>
 
+<p>When the last modification on remote repository was not with the same local app, first you have pull or fetch then using push. Pull containes fetch and merge </p>
+<pre class="prettyprint lang-git">
+Pull origin   # means get the repository codes and merged them with your local codes
+fetch  origin # means get repository only
+merge  
+</pre>
 <p>
 You can verify the remote in your git configuration:
 </p>
@@ -58,4 +64,5 @@ heroku git:remote
 <pre class="prettyprint lang-git">
 git checkout master
 </pre>
+
 
