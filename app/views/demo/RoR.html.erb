@@ -135,9 +135,11 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
    #@driver = Driver&middot;new()
     end
  </pre>
-8- controller send us a specific hash name params it does two things:
-  - let us access things via symbols rather than strings 
-  - we have to call special methods to what rails get or send it is a security measure of rails 
+8- controller send us a specific hash name <b> Params </b>. It does two imortant things:
+  <ul>
+    <li> let us access things via symbols rather than strings </li>
+    <li> we have to call special methods to what rails get or send it is a security measure of rails </li> 
+  </ul>
 <pre class="prettyprint lang-ruby">
  def create
   @driver = Driver.new (
@@ -187,12 +189,9 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
 <p>
   use render "controller/view" and dont use redirect_to 
 </p>
- 
-
 <h3> Soap </h3>
 <p>
  We use savon  gem and then bundle install.
-
   </p>
 In create controller or other methods we dumped savon 
 <pre class="prettyprint lang-ruby">
@@ -210,7 +209,6 @@ In create controller or other methods we dumped savon
       end
  </pre>
  <p>Then in new.html.erb we add the instace variables to display </p>
-
   <pre class="prettyprint lang-ruby">
     &lt;%= @state %>
     &lt;%= @city %>
@@ -273,7 +271,6 @@ def create
    end
 </pre>
 <p> Also we need and update method which would be the identical as craete </p>
-
 </div>
 
 
