@@ -224,7 +224,6 @@ def create
  ################################  SETIGN UP SAVON CLIENT AND THEN MAKE A REQUEST TO INVOKE ####################################### 
  ############################# ############################# #############################  ##################################### 
      client = Savon.client(wsdl: "http://esb.dev.bcldb.com:25011/LDB_Retail/ProductService?WSDL") 
-
    ## BELOW I USE SOAP UI READY CODE TO MAKE A REQUEST ##
     rest = %q(
         &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:prod="http://productservice.services.bcldb.com">
