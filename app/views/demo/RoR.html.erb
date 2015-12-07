@@ -145,7 +145,7 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
   )
   @driver = Driver&middot;new (params.require(:driver).permit(:first_name))
 
-  #now do somthing with our object
+  #now do somthing with our object, this is only for test
   render text: @driver.inspect
 
   if @driver.save
@@ -173,7 +173,7 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
   &lt;%= driver&middot;first_name %> 
 &lt;% end %>
  </pre>
-12 - call a model from controller
+12 - call a model from controller (just to save what we are looking for in database)
 <pre class="prettyprint lang-ruby">
     @zip_code = ZipCode&middot;initialize()
 
@@ -217,6 +217,63 @@ In create controller or other methods we dumped savon
     &lt;%= @area_code %>
     &lt;%= @time_zone %>
   </pre>
+<p> Also we can replace the create controller with below to get input from user and go search it as xml request from XML service.
+  The soap request has borrowed from a <a href="http://www.soapui.org/"> soap UI </a> request. 
+</p>
+ <pre class="prettyprint lang-ruby">
+def create
+      @driver = Driver.new(params.require(:driver).permit(:first_name))
+      if @driver.save
+      #  @zip_code = ZipCode.initialize(params[:driver].to_s)
+         @as = Driver.last.first_name
+   # client = Savon.client(wsdl: "http://www.webservicex.net/uszip.asmx?WSDL")
+ ############################# ############################# ############################# ######################################
+ ################################  SETIGN UP SAVON CLIENT AND THEN MAKE A REQUEST TO INVOKE ####################################### 
+ ############################# ############################# #############################  ##################################### 
+     client = Savon.client(wsdl: "http://esb.dev.bcldb.com:25011/LDB_Retail/ProductService?WSDL") 
+
+   ## BELOW I USE SOAP UI READY CODE TO MAKE A REQUEST ##
+    rest = %q(
+        &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:prod="http://productservice.services.bcldb.com">
+            &lt;soapenv:Header/>
+               &lt;soapenv:Body>
+                 &lt;prod:productBySKURequest>
+                    &lt;prod:sku>)+@as.to_s+%q( &lt;/prod:sku>
+                 &lt;/prod:productBySKURequest>
+              &lt;/soapenv:Body>
+            &lt;/soapenv:Envelope>
+            )
+    response = client.call(:get_product_by_sku, xml: rest)
+    #  client = Savon.client(wsdl: "http://www.webservicex.net/airport.asmx?WSDL")
+    # response = client.call(:get_airport_information_by_country, message: { "country" => @as })
+    #  client = Savon.client(wsdl: "http://esb.dev.bcldb.com:25011/LDB_Retail/ProductService?WSDL") 
+    # response = client.call(:get_product_by_sku, message: { "sku" => @as })
+
+ #############################  ENDING HITING THE SOAP  SERVICE ####################################### 
+ ############################## -##############################- ######################################## 
+       @res = response.to_array
+         if response.success?
+           data = response.to_array(:product_by_sku_response, :product).first
+     #########(only for zip code call) This part is to split response into parts that we want ###### ############################## ##############################
+       # data = response.to_array(:get_info_by_zip_response, :get_info_by_zip_result, :new_data_set, :table).first # here we dig into nested hash response to zip code 
+       # @data = response.to_array
+        if data
+       #    @state = data[:state]
+       #    @city = data[:city]
+       #    @area_code = data[:area_code]
+       #    @time_zone = data[:time_zone]
+            @name = data[:product_name]
+         end
+      ############################## ############################## ############################## ############################## 
+      end
+      render "drivers/new" # driver index 
+      else
+      render 'drivers/index'
+      end
+   end
+</pre>
+<p> Also we need and update method which would be the identical as craete </p>
+
 </div>
 
 
