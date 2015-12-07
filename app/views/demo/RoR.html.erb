@@ -8,6 +8,10 @@ h1,h2,h3
   {
   	font-family: 'Lora', serif;
   }
+  #contain
+  {
+   border: solid 1px  black; 
+  }
 </style>
 <h2> Install and Run Ruby on Rails in Windows 7 <a href="/Install.pdf"> file </a></h2>
 <h3> </h3>
@@ -99,7 +103,8 @@ instance variabales are transfered among controller and view. To contact with mo
 You will probably want to access data sent in by the user or other parameters in your controller actions. There are two kinds of parameters possible in a web application. The first are parameters that are sent as part of the URL, called query string parameters.(with get) The <b>query string </b>is everything after “?” in the URL. The second type of parameter is usually referred to as <b>POST</b> data. This information usually comes from an HTML form which has been filled in by the user. It’s called POST data because it can only be sent as part of an HTTP POST request. Rails does not make any distinction between query string parameters and POST parameters, and both are available in the params hash in your controller:
 Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_overview.html"> here </a>
 </p>
-<h3> make a simple soap cms app </h3>
+<h3><center> make a simple <b>soap </b> cms app </center></h3>
+ <div id="contain">
 <p>
  first 28 minutes of <a href="https://www.youtube.com/watch?v=yhPDXM2Enew"> this </a> tutorial is a basic form which I summarize into 12 steps as below: </p> 
 <p>1- rails g controller drivers index new </p>
@@ -121,8 +126,8 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
      &lt;%= f&middot;submit %> 
   &lt;% end %>
  </pre>
-  naming convenion knows what things go where 
-7- 
+ 7- naming convenion knows what things go where 
+ 
 <pre class="prettyprint lang-ruby">
    def create 
     render text: params&middot;inspect
@@ -139,19 +144,21 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
   )
   @driver = Driver&middot;new (params.require(:driver).permit(:first_name))
 
-  now do somthing with our object
+  #now do somthing with our object
   render text: @driver.inspect
 
   if @driver.save
-    redirect_to drivers_url  #or redirect_to :controller => 'drivers', :action => 'index'
+    render "drivers/new" #  redirect_to drivers_url  or redirect_to :controller => 'drivers', :action => 'index'
     else
     render 'new'
     end
  end
  </pre>
 9- in rails c
+<pre class="prettyprint lang-ruby">
  Driver.count
  Driver.last
+</pre>
 
  10- controller
  <pre class="prettyprint lang-ruby">
@@ -201,7 +208,7 @@ In create controller or other methods we dumped savon
         end
       end
  </pre>
-
+</div>
 
 
 
