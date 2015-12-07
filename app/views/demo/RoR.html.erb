@@ -138,21 +138,20 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
 8- controller send us a specific hash name <b> Params </b>. It does two imortant things:
   <ul>
     <li> let us access things via symbols rather than strings </li>
-    <li> we have to call special methods to what rails get or send it is a security measure of rails </li> 
+    <li> we have to call special methods to what rails get or send. It is a security measure of rails </li> 
   </ul>
 <pre class="prettyprint lang-ruby">
  def create
-  @driver = Driver.new (
-   params&middot;require(:ourKey).permit(:eachValueOfKey)
-  )
-  @driver = Driver&middot;new (params.require(:driver).permit(:first_name))
+ # Parse new method in Model Driver, and send result into @driver instant 
+ # @driver = Driver.new (params&middot;require(:ourKey).permit(:eachValueOfKey))
+   @driver = Driver&middot;new (params.require(:driver).permit(:first_name))
 
-  #now do somthing with our object, this is only for test
-  render text: @driver.inspect
+  # Check What is inside our instant
+  # render text: @driver.inspect
 
   if @driver.save
     render "drivers/new" #  redirect_to drivers_url  or redirect_to :controller => 'drivers', :action => 'index'
-    else
+  else
     render 'new'
     end
  end
@@ -175,12 +174,10 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
   &lt;%= driver&middot;first_name %> 
 &lt;% end %>
  </pre>
-12 - call a model from controller (just to save what we are looking for in database)
+12 - Also we can call another model from controller to save into another table
 <pre class="prettyprint lang-ruby">
     @zip_code = ZipCode&middot;initialize()
-
     and in ZipCode model we fetch the last item first_name from Driver model 
-
    def self.initialize(zipa) 
     return Driver.last.first_name
   end    
