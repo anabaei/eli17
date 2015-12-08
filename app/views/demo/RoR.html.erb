@@ -106,6 +106,14 @@ Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_ove
 <p>
  SOAP is designed for accessing remote objects, REST is not. REST supports passing media-types as simple as text/plain, which is far more primitive than dealing with an object.
   </p>
+  <p>
+    One major benefit of REST is that all you need to call and use it is a browser and a HTTP stack - pretty much every device and machine has that. So if ease of use and reach are you main goal - use REST.
+ </p>
+ <p>
+One of the major benefits of SOAP is that you have a WSDL service description and you can pretty much discover the service automatically, and generate a useable client proxy from that service description (generate the service calls, the necessary data types for the methods and so forth).
+
+So if discoverability and a strict, formal service description are more important to you, use SOAP (with the downside that you need a full-fledged SOAP client to call your service - your web browser won't be sufficient).
+  </p>
 <h3><center> make a simple <b>Soap </b> cms </center></h3>
  <div id="contain">
 <p>
