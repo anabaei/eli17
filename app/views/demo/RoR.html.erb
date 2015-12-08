@@ -15,7 +15,7 @@ h1,h2,h3
   }
 </style>
 <h2> Install and Run Ruby on Rails in Windows 7 <a href="/Install.pdf"> file </a></h2>
-<h3> </h3>
+
 <p>Learn how to configure a Ubuntu 14.04 server to deploy a Ruby on Rails 4 application. With nginx web server and postgresql database from <a href="http://www.rubytreesoftware.com/resources/ruby-on-rails-41-ubuntu-1404-server-configuration"> here </a> and <a href="http://www.rubytreesoftware.com/resources/ruby-on-rails-41-ubuntu-1404-server-configuration">
   here </a>
 </p>
@@ -102,6 +102,10 @@ instance variabales are transfered among controller and view. To contact with mo
 You will probably want to access data sent in by the user or other parameters in your controller actions. There are two kinds of parameters possible in a web application. The first are parameters that are sent as part of the URL, called query string parameters.(with get) The <b>query string </b>is everything after “?” in the URL. The second type of parameter is usually referred to as <b>POST</b> data. This information usually comes from an HTML form which has been filled in by the user. It’s called POST data because it can only be sent as part of an HTTP POST request. Rails does not make any distinction between query string parameters and POST parameters, and both are available in the params hash in your controller:
 Source From <a href="http://guides.rubyonrails.org/v2.3.11/action_controller_overview.html"> here </a>
 </p>
+<h3> Rest vs Soap</h3>
+<p>
+ SOAP is designed for accessing remote objects, REST is not. REST supports passing media-types as simple as text/plain, which is far more primitive than dealing with an object.
+  </p>
 <h3><center> make a simple <b>Soap </b> cms </center></h3>
  <div id="contain">
 <p>
@@ -271,6 +275,7 @@ def create
 
 <p> After installing slim gems we would have below codes. Slim is extremly sensitive to indentations! </p>
  <pre class="prettyprint lang-slim">
+  
 = form_for Product.new do |f|
   .field
     == f.label :sku
