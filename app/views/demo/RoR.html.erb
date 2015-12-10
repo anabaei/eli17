@@ -300,10 +300,10 @@ def create
 we use here form_tag and define a path and method and specific params to that.
 </p>
 <pre class="prettyprint lang-ruby">
-<%= form_tag(the_path,:method => "get", id: "search-form") do %>
-           <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>       
-      <%= submit_tag "Search", :name => nil %>
-  <% end %>
+&lt;%= form_tag(the_path,:method => "get", id: "search-form") do %>
+           &lt;%= text_field_tag :search, params[:search], placeholder: "Search Items" %>       
+      &lt;%= submit_tag "Search", :name => nil %>
+  &lt;% end %>
   In rout we define:
   get 'the' => 'products#the'
   In products controller:
