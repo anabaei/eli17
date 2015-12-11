@@ -54,6 +54,7 @@ git add .
 git commit -am "my comment"
 heroku git:remote -a myapponHeroku
 git push heroku master
+heroku run rake db:migrate
 </pre>
 
 <p>
