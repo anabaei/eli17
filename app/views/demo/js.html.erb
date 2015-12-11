@@ -120,6 +120,20 @@ $( "li" ).hover(
   &lt/script&gt
 </pre>
 
+<h3> Find which key is pressed & check the length </h3>
+ <pre class="prettyprint lang-javascript" >
+   $( "#idOfInputField" ).keyup(function(e) 
+   {
+    console.log(e.which)
+    var value = $(this).val();
+    if ( value.length > 4 && e.which != 8 ) 
+         {
+          $("#sth").click();
+        }
+   });
+</pre>
+
+
 
 
 
