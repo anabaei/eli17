@@ -330,3 +330,36 @@ Either   id: "submit_id" or :id => "submit_id"
 </p>
 
 <h2> RoR Ajax and jQuery </h2>
+
+<p>
+  First we define a form to call a method inside a controller by submiting the button as below.
+   Also we deine a path in route for that call:  
+</p>
+<pre class="prettyprint lang-ruby">
+ &lt;%= form_tag(products_ajaxcall_path, id: "searchajax", remote: true )do %&gt;
+ &lt;%= text_field_tag :search, params[:search], placeholder: "name" %&gt;  
+ &lt;%= submit_tag "Find me", class: "btn btn-info" ,:name =&gt; nil , id: "submi"%&gt;
+routes.rb
+post 'products/ajaxcall' =&gt; 'products#ajaxcall'
+</pre>
+<p>
+  In controller we define that method wchich will render the template we dedine there also two instans variables are passed through </p>
+  <pre class="prettyprint lang-ruby">
+   def ajaxcall
+    if params[:search]
+       @search = params[:search]
+       # do stuff with @search and put resutls into @re
+       @re =  response.to_array(:base_products_by_name_response)
+       @zz = "QWQW"
+      respond_to do |format|
+       format.js { render  :action => 'ajaxcall.js.erb', lcoals: { re: @re , amir: @zz} }
+      end
+         else        
+    end
+  end
+</pre>
+<p> And inside my ajaxcall.js.erb file:</p>
+ <pre class="prettyprint lang-ruby">
+$('#one').html("&lt;h1&gt;My Name  &lt;%= j render :text =>@zz.to_s %&gt; "); 
+$('#two').html("&lt;%=  render :text =&gt; @re.inspect %&gt;");
+</pre>
