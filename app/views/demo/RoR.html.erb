@@ -354,7 +354,7 @@ post 'products/ajaxcall' =&gt; 'products#ajaxcall'
        @search = params[:search]
        # do stuff with @search and put resutls into @re
        @re =  response.to_array(:base_products_by_name_response)
-       @zz = "QWQW"
+       @zz = "QWQW" # till here is enough for not Ajax
       respond_to do |format|
        format.js { render  :action => 'ajaxcall.js.erb', lcoals: { re: @re , amir: @zz} }
       end
@@ -369,3 +369,6 @@ $('#two').html("&lt;%=  render :text =&gt; @re.inspect %&gt;");
 OR
 $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
 </pre>
+
+<p> To have a simple form which pass params to a controller we only need to remove remote:true from form then 
+  instead of rendering a js, reander a page thats all </p>
