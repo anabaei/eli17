@@ -330,9 +330,13 @@ Either   id: "submit_id" or :id => "submit_id"
 </p>
 
 <h2> RoR Ajax and jQuery </h2>
+useful command to check what is inside params or insatnce variables
+<pre class="prettyprint lang-ruby">
+render :text =>params.inspect
+ </pre>
 
 <p>
-  First we define a form to call a method inside a controller by submiting the button as below.
+  First we define a form to call a method  by submiting the button as below.
    Also we deine a path in route for that call:  
 </p>
 <pre class="prettyprint lang-ruby">
@@ -362,4 +366,6 @@ post 'products/ajaxcall' =&gt; 'products#ajaxcall'
  <pre class="prettyprint lang-ruby">
 $('#one').html("&lt;h1&gt;My Name  &lt;%= j render :text =>@zz.to_s %&gt; "); 
 $('#two').html("&lt;%=  render :text =&gt; @re.inspect %&gt;");
+OR
+$('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
 </pre>
