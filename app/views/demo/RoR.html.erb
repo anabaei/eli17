@@ -365,7 +365,7 @@ post 'products/ajaxcall' =&gt; 'products#ajaxcall'
 <p> And inside my ajaxcall.js.erb file:</p>
  <pre class="prettyprint lang-ruby">
 $('#one').html("&lt;h1&gt;My Name  &lt;%= j render :text =>@zz.to_s %&gt; "); 
-$('#two').html("&lt;%=  render :text =&gt; @re.inspect %&gt;");
+$('#two').html("&lt;%=  render :text =&gt; &#64;re.inspect %&gt;");
 OR
 $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
 </pre>
@@ -374,12 +374,12 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
   instead of rendering a js, render a page thats all </p>
 
   <h3> initializing a params </h3>
-
-  <%= form_tag(products_find_path, id: "sear" )do %>  remote: true
-           <%= text_field_tag :nameOfparams, params[:nameOfparams] %>
-           <%= submit_tag "Find" %>
-  <% end %>
-
+<pre class="prettyprint lang-ruby">
+  &lt;%&#61; form_tag(products_find_path, id: &#34;sear&#34; )do %&gt;  remote: true
+           &lt;%&#61; text_field_tag :nameOfparams, params[:nameOfparams] %&gt;
+           &lt;%&#61; submit_tag "Find" %&gt;
+  &lt;% end %&gt;
+  </pre>
   Then inside controller just say
   <pre class="prettyprint lang-ruby">
     def find 
