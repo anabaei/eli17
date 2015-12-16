@@ -372,3 +372,19 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
 
 <p> To have a simple form which pass params to a controller we only need to remove remote:true from form then 
   instead of rendering a js, render a page thats all </p>
+
+  <h3> initializing a params </h3>
+
+  <%= form_tag(products_find_path, id: "sear" )do %>  remote: true
+           <%= text_field_tag :nameOfparams, params[:nameOfparams] %>
+           <%= submit_tag "Find" %>
+  <% end %>
+
+  Then inside controller just say
+  <pre class="prettyprint lang-ruby">
+    def find 
+      @var = params[:nameOfparams]
+      # do stufff
+      render "products/index" 
+    end
+  </pre>
