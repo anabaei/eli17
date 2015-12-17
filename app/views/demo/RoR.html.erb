@@ -388,3 +388,11 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
       render "products/index" 
     end
   </pre>
+
+  <h3> link_to tag </h3>
+  <pre class="prettyprint lang-ruby">
+  &lt;%= link_to 'Delete', product_path(j), method: :delete, data: { confirm: 'Are you sure?' } %&gt;
+    OR
+   &lt;%= link_to "My List!", action: "show", class: 'btn btn-danger' , id: "mylist" %&gt; 
+  </pre>
+  
