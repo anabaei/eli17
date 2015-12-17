@@ -389,10 +389,11 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
     end
   </pre>
 
-  <h3> link_to tag </h3>
+  <h3> link_to and button tag </h3>
   <pre class="prettyprint lang-ruby">
   &lt;%= link_to 'Delete', product_path(j), method: :delete, data: { confirm: 'Are you sure?' } %&gt;
     OR
    &lt;%= link_to "My List!", action: "show", class: 'btn btn-danger' , id: "mylist" %&gt; 
+
+   &lt;%= button_tag "PRINT", "anyaction", onclick: "printpage()", class: "btn btn-default", id: "print" %&gt; 
   </pre>
-  
