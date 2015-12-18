@@ -476,7 +476,7 @@ rails g model user email:string password_digest: string
   </p>
  <p>
 
-    13 <h3> creating login </h3> 
+   <h3> creating login </h3> 
    </p>
  <p>
     14- we need a session controller
@@ -565,9 +565,9 @@ rails g model user email:string password_digest: string
   make constrains for public not to access the page
 
   1- in  controller of destination page
-
+ <pre class="prettyprint lang-ruby">
   before_action :user_logged_in!
-
+ </pre>
 2 - we want to define that method (user_loged_in!)in whole application so we go to application contrller
 <pre class="prettyprint lang-ruby">
 def user_logged_in!
