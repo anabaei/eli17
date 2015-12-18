@@ -400,20 +400,35 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
 
 
 <h2> Authentication </h2>
+<p>
 1- rails g congtroller users new
+</p>
+<p>
 2- in routes. erb add 
  resources :users
+</p>
+<p>
 3- create a link 
+  <pre class="prettyprint lang-ruby">
   &lt;%= link_to 'register', new_user_path %&gt;
+  </pre>
+  </p>
+<p>
 4- create a model 
 rails g model user email:string password_digest: string
+</p>
+<p>
 5-   rake db:migrate
+</p>
+<p>
 6- in controller
   def new 
     @user = User.new
     end
-
+</p>
+<p>
     7- create a register page 
+    <pre class="prettyprint lang-ruby">
       &lt;%= form_for @user do |f| %&gt;
   &lt;br&gt;
     &lt;%= f.text_field :email %&gt;
@@ -421,12 +436,16 @@ rails g model user email:string password_digest: string
     &lt;%= f.submit %&gt;
   
   &lt;% end %&gt;
-
+  </pre>
+  </p>
+<p>
   8- inside user model add 
   has_secure_password 
   and add bcrypt ruby gem and bundle install
-
+</p>
+<p>
   9 - define creaet
+   <pre class="prettyprint lang-ruby">
    def create 
      @user = User.new(user_params)
      
@@ -443,41 +462,52 @@ rails g model user email:string password_digest: string
    def user_parans
       params.require(:user).permit( :email, :password)
    end
-
+ </pre>
    10 - in index we show the existed users
+    <pre class="prettyprint lang-ruby">
     &lt;% @users.each do |user| %&gt;
     &lt;%= user.email %&gt; 
     &lt;% end %&gt;
-
+   </pre>
+ </p>
+ <p>
     11- add 
     @user = User.all to that index controller
+  </p>
+ <p>
 
-    12 - Now registration is done
-    13 creating login 
-   
+    13 <h3> creating login </h3> 
+   </p>
+ <p>
     14- we need a session controller
     rails g controller session new 
-   
+   </p>
+ <p>
    15- in routes.rb
+    <pre class="prettyprint lang-ruby">
     resources :sessions, only: [:create]
     get '/login', to: 'sessions#new'
     get '/logout', to: 'sessions#destroy'
-
+  </pre>
+</p>
+ <p>
   16- in index view
+   <pre class="prettyprint lang-ruby">
    &lt;%= link_to 'Sign me', login_path %&gt;
-
+    </pre>
    17- create form_tag to call an specific action in login page
-
-  &lt;h1&gt; Login page   &lt;/h1&gt; 
-  
+  <pre class="prettyprint lang-ruby">
+  &lt;h1&gt; Login page   &lt;/h1&gt;  
   &lt;%= form_tag sessions_path do %&gt;
   &lt;%= text_field_tag 'email' %&gt;
   &lt;%= password_field_tag 'password' %&gt;
   &lt;%= submit_tag 'Log me!' %&gt;
   &lt;% end %&gt;
-
+  </pre>
+</p>
+<p>
   18- in sessions controller
-
+ <pre class="prettyprint lang-ruby">
   def create 
    user = User.find_by email: params[:email].downcase
       if user && user.authenticate(params[:password])
@@ -488,21 +518,31 @@ rails g model user email:string password_digest: string
       render 'new'
       end
   end
-
+</pre>
+</p>
+<p>
 19-  &lt;%= link_to 'Sign Out', logout_path %&gt;
+</p>
+<p>
 20-  def destroy
+  <pre class="prettyprint lang-ruby">
    session[:user_id] = nil
    flash[:notice] = "you are sign out now!"
    redirect_to root_url
   end
-
+</pre>
+</p>
+<p>
 21- in application controller
-
+   <pre class="prettyprint lang-ruby">
    def current_user
      User.find_by id: session[:user_id] if session[:user_id]
    end
-
+ </pre>
+</p>
+<p>
 23-   in index view
+ <pre class="prettyprint lang-ruby">
   &lt;% if current_user.present? %&gt;
         Welcome  &lt;%= current_user.email %&gt;
       # do something
@@ -510,14 +550,16 @@ rails g model user email:string password_digest: string
      # do something else
 
   &lt;% end %&gt;
-
+  </pre>
+</p>
   24- To also save everything with lower case letters on add this to user model, and also truncate all spaces (remove spaces in inputs)
 
+<pre class="prettyprint lang-ruby">
   def email=(value)
     value = value.strip.downcase
     write_attribute :email, value
   end
-
+  </pre>
   <h2> Athuorization </h2>
 
   make constrains for public not to access the page
@@ -527,15 +569,13 @@ rails g model user email:string password_digest: string
   before_action :user_logged_in!
 
 2 - we want to define that method (user_loged_in!)in whole application so we go to application contrller
-
+<pre class="prettyprint lang-ruby">
 def user_logged_in!
-
  return if current_user.present?
  flash[:alert] = "please sign in"
  redirect_to login_url
-
 end
-
+</pre>
 And end!
 
 
