@@ -390,6 +390,9 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
   </pre>
 
   <h3> link_to and button tag </h3>
+  <p>
+When j is an object of variable which is in .each for |j| loop here, to specify that user only.
+  </p>
   <pre class="prettyprint lang-ruby">
   &lt;%= link_to 'Delete', product_path(j), method: :delete, data: { confirm: 'Are you sure?' } %&gt;
     OR
