@@ -373,7 +373,7 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
 <p> To have a simple form which pass params to a controller we only need to remove remote:true from form then 
   instead of rendering a js, render a page thats all </p>
 
-  <h3> Define and passing a params to specific action controller from view  </h3>
+  <h2> Define and passing a params to specific action controller from view  </h2>
 <pre class="prettyprint lang-ruby">
   &lt;%&#61; form_tag(products_find_path, id: &#34;sear&#34; )do %&gt;  remote: true
            &lt;%&#61; text_field_tag :nameOfparams, params[:nameOfparams] %&gt;
@@ -387,6 +387,28 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
       # do stufff
       render "products/index" 
     end
+  </pre>
+
+  <h2>String Params and more </h2>
+<p>
+  From form_tag we can dedicate any params to input info, in controller it is necessary to pass params into a hashes with the exact same name of attributes in controller.  
+</p>
+<p>
+  The only reason below we pass params into a hash is because our model(service) attribute is service8. This is a good <a href="http://patshaughnessy.net/2014/6/16/a-rule-of-thumb-for-strong-parameters">hint</a> 
+  </p>
+
+<pre class="prettyprint lang-ruby">
+ def saveservice
+      hash = {} 
+      hash[:service8] = params[:ss]  
+      @d = Service.new(hash)
+      flash[:notice] = "it saved!"
+      redirect_to root_url 
+    else
+
+    end
+
+  end
   </pre>
 
   <h3> link_to and button tag </h3>
@@ -580,8 +602,6 @@ def user_logged_in!
 end
 </pre>
 And end!
-
-
 
 
 
