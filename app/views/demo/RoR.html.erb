@@ -389,7 +389,7 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
     end
   </pre>
 
-  <h2>String Params and more </h2>
+  <h2> Save into model attributes  </h2>
 <p>
   From form_tag we can dedicate any params to input info, in controller it is necessary to pass params into a hashes with the exact same name of attributes in controller.  
 </p>
@@ -405,9 +405,7 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
       flash[:notice] = "it saved!"
       redirect_to root_url 
     else
-
     end
-
   end
   </pre>
 
