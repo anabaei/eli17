@@ -569,7 +569,7 @@ rails g model user email:string password_digest: string
   &lt;% if current_user.present? %&gt;
         Welcome  &lt;%= current_user.email %&gt;
       # do something
-  &lt;% else %&gt;
+ &lt;% else %&gt;
      # do something else
 
   &lt;% end %&gt;
@@ -603,3 +603,62 @@ And end!
 
 
 
+<h2> Create a Booking system </h2>
+<ul>
+    <li>rails g booking </li>
+    <li> rails g controller welcomes index</li>
+    <li>rails g model service ser1:string ser2:string ser3:string ser4:string </li>
+    <li> rake db:migrate and fix the root
+      <pre class="prettyprint lang-ruby"> 
+         root 'welcomes#index'
+         get 'welcomes/index'
+         post 'welcomes/saveit' =&gt; 'welcomes#saveit'
+     </pre>
+    </li>
+    <li>Inside index.html
+      <pre class="prettyprint lang-ruby">  
+      &lt;%= form_tag(products_saveit_path, id: "s" )do %> 
+           &lt;%= text_field_tag :ser1, params[:ser1] %>
+           &lt;%= text_field_tag :ser2, params[:ser2] %>
+           &lt;%= text_field_tag :ser3, params[:ser3] %>
+           &lt;%= text_field_tag :ser4, params[:ser4] %>
+          &lt;%= submit_tag "save me" %>
+      &lt;% end %>
+     </pre></li>
+    <li> In welcome controller 
+       <pre class="prettyprint lang-ruby">
+           def index
+            @services= Service.all
+          end
+
+          def saveit
+              hash = {}
+              hash[:ser1] = params[:ser1]
+              hash[:ser2] = params[:ser2]
+              hash[:ser3] = params[:ser3]
+              hash[:ser4] = params[:ser4]
+              @s= Service.new(hash)
+              @s.save
+              redirect_to root_url 
+          end
+       </pre>
+    </li>
+    <li>In index to see the results
+
+ <pre class="prettyprint lang-ruby">   
+&lt;ul&gt;&lt;% if @services.nil? %&gt;
+    &lt;li&gt;  &lt;%= "empty" %&gt; &lt;/li&gt;
+  &lt;% else %&gt;
+    &lt;% @services.each do |u| %&gt;
+      &lt;li&gt;  &lt;%= u.ser1 %&gt; &lt;/li&gt;
+     &lt;li&gt;  &lt;%= u.ser2 %&gt; &lt;/li&gt;
+     &lt;li&gt;  &lt;%= u.ser3 %&gt; &lt;/li&gt;
+     &lt;li&gt;  &lt;%= u.ser4 %&gt; &lt;/li&gt;
+    &lt;% end %&gt;
+    &lt;/ul&gt;
+    &lt;% end %&gt;
+  </pre>
+
+     </li>
+    
+</ul>
