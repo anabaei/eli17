@@ -665,18 +665,19 @@ And end!
     
 </ul>
 
-<h2> Dynamic id With Ruby </h2>
+
 
 <h3> Pass variable from JavaScript into Ruby </h3>
 
 <pre class="prettyprint lang-html"> 
 &lt;script&gt;
-   cont = 8;
-   &lt;&#37;  session[:swing] = &#35;{cont} &#37;&gt; 
+ cont = 8;
+ &lt;&#37;  session[:swing] = &#35;{cont} &#37;&gt; 
 &lt;/script&gt;
 </pre>
 
-<h3> pass varibale from Ruby into Html </h3>
-
+<h3> pass varibale from Ruby into Html (Dynamic id)</h3>
+<pre class="prettyprint lang-html"> 
 &lt;&#37; &#64;counter = 1 &#37;&gt;
 &lt;li &lt;&#37;= "id=&#35;{&#64;counter}" &#37;&gt; &lt;/li&gt;
+</pre>
