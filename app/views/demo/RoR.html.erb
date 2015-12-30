@@ -42,6 +42,8 @@ unlike other lanuages, it doesnt mean a || a = b!. if a is false, nil or undefin
  => b=1
 </pre>
 
+<h3> Find_by <a href="http://apidock.com/rails/v4.0.2/ActiveRecord/FinderMethods/find_by"> text </h3>
+
 <h3> Params </h3>
 
 <p> 
@@ -646,19 +648,35 @@ And end!
     <li>In index to see the results
 
  <pre class="prettyprint lang-ruby">   
-&lt;ul&gt;&lt;% if @services.nil? %&gt;
-    &lt;li&gt;  &lt;%= "empty" %&gt; &lt;/li&gt;
-  &lt;% else %&gt;
-    &lt;% @services.each do |u| %&gt;
+&lt;ul&gt;&lt;&#37; if @services.nil? &#37;&gt;
+    &lt;li&gt;  &lt;&#37;= "empty" %&gt; &lt;/li&gt;
+  &lt;&#37; else %&gt;
+    &lt;&#37; @services.each do |u| %&gt;
       &lt;li&gt;  &lt;%= u.ser1 %&gt; &lt;/li&gt;
      &lt;li&gt;  &lt;%= u.ser2 %&gt; &lt;/li&gt;
      &lt;li&gt;  &lt;%= u.ser3 %&gt; &lt;/li&gt;
      &lt;li&gt;  &lt;%= u.ser4 %&gt; &lt;/li&gt;
-    &lt;% end %&gt;
+    &lt;&#37; end %&gt;
     &lt;/ul&gt;
-    &lt;% end %&gt;
+    &lt;&#37; end %&gt;
   </pre>
 
      </li>
     
 </ul>
+
+<h2> Dynamic id With Ruby </h2>
+
+<h3> Pass variable from JavaScript into Ruby </h3>
+
+<pre class="prettyprint lang-html"> 
+&lt;script&gt;
+   cont = 8;
+   &lt;&#37;  session[:swing] = &#35;{cont} &#37;&gt; 
+&lt;/script&gt;
+</pre>
+
+<h3> pass varibale from Ruby into Html </h3>
+
+&lt;&#37; &#64;counter = 1 &#37;&gt;
+&lt;li &lt;&#37;= "id=&#35;{&#64;counter}" &#37;&gt; &lt;/li&gt;
