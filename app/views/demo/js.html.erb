@@ -133,6 +133,41 @@ $( "li" ).hover(
    });
 </pre>
 
+ <h2> Make a Swing for a list   </h2>
+
+  <p>
+    First we have a list of items which we just dump all from database into page as below
+     </p>
+
+     &lt;h2>My List &lt;/h2&gt;
+  &lt;&#37; if @pros.nil? &#37;&gt;
+      &lt;&#37; else &#37;&gt;
+  &lt;table class = "table" &gt;
+    
+       &lt;&#37; @counter = 0 &gt;
+    
+      &lt;&#37; @pros.each do |j| %&gt;
+     &lt;tr &lt;&#37;= "id=#{@counter}" %&gt; &gt; 
+        &lt;td>
+        &lt;&#37;= j.sku &#37;&gt;
+        &lt;td>
+        &lt;td>
+          &lt;&#37;= j.name &#37;&gt;
+        &lt;td>
+        &lt;td&gt;&lt;&#37;= link_to 'Delete', product_path(j),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } &#37;&gt;&lt;td&gt;
+      <!--   <td>
+        <%=  %>
+        </td> -->
+      &lt;td&gt;&lt;&#37;= link_to 'Details', 'http://www.bcliquorstores.com/product/'+j.sku &#37;&gt;&lt;td&gt;
+      &lt;tr&gt;
+       &lt;&#37; @counter +=1 &#37;&gt;
+       &lt;&#37; end &#37;&gt; 
+      &lt;table&gt;
+     
+      &lt;&#37; end &#37;&gt; 
+  &lt;div&gt;
 
 
 
