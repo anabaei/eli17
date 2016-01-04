@@ -166,23 +166,50 @@ $( "li" ).hover(
 
 
 <p> 
-Now we 
+Now we assign defaults to variables when the page load.
 </p>
 <pre class="prettyprint lang-javascript" >
-           &#36;( document ).ready(function() {
-           count_hiting_next &#61; 0
-           start &#61; 0
-           en = "&lt;%&#61; @counter %&gt;";
-           total &#61; 0;
-           i &#61; 0; 
+ &#36;( document ).ready(function() {
+ count_hiting_next &#61; 0
+ start &#61; 0
+ en = "&lt;%&#61; @counter %&gt;";
+ total &#61; 0;
+ i &#61; 0; 
 
-           /////////// first hide all results ////////
-            while (i&lt;en) 
-            {
-              &#36;("#"+i).css("display", "none");
-              i +&#61;1;
-            }
+ /////////// first hide all results ////////
+  while (i&lt;en) 
+  {
+    &#36;("#"+i).css("display", "none");
+    i +&#61;1;
+  }
 </pre>
+<p>
+Nowe we define next key to show the next block and hide the previous ones
+</p>
+<pre class="prettyprint lang-javascript" >
+            $("#key").click(function() {
+               tempo_counter = 0;             
+              //// display only 3 icons and also go until you reaching end 
+              while (tempo_counter  &lt; 7 && total  &lt; en) 
+                {
+                  // count_hiting_next save how many times you pressed next and total check is it last one!
+                  selector = count_hiting_next + total;
+                $("#"+selector).css("display", "block");
+                 total +=1;
+                 tempo_counter +=1;
+                }
+                total -=1;
+           // console.log(" &lt;%=session[:swing]%&gt;");
+                 count_hiting_next +=1;
+            /// hide everything from 3 previouse ones
+              hidecounter = selector - 7;
+              while (hidecounter &gt; -1)
+              {
+                 $("#"+hidecounter).css("display", "none"); 
+                  hidecounter -=1;
+              }
+        });
+ </pre>
 
 <h1> JavaScript </p>
 <h3>Stak vs Queue </h3>
