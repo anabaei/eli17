@@ -669,42 +669,34 @@ And end!
     &lt;/ul&gt;
     &lt;&#37; end %&gt;;
 
-
-&lt;% if @services.nil? %>&gt;
-    &lt;%= "empty" %>&gt; 
-  &lt;% else %>&gt;
-    &lt;% @counter = 0 %>&gt;
-    &lt;% @services.each do |u| %>&gt;
-     
+&lt;% if @services.nil? %&gt;
+    &lt;%= "empty" %&gt; 
+  &lt;% else %&gt;
+    &lt;% @counter = 0 %&gt;
+    &lt;% @services.each do |u| %&gt;    
    
-   &lt;ul &lt;%= "id=#{@counter}" %> >&gt;  
-      &lt;li>  &lt;%= u.ser1 %> &lt;/li>&gt;
-       &lt;%  if u.ser1.empty? %> 
+   &lt;ul &lt;%= "id=#{@counter}" %&gt;  
+      &lt;li>  &lt;%= u.ser1 %> &lt;/li&gt;
+       &lt;%  if u.ser1.empty? %&gt; 
 
-           &lt;%= form_tag(welcome_change_path, id: "s" )do %>&gt;
-           &lt;% text_field_tag :change, params[:change] %>&gt;
-           &lt;%= submit_tag "replace" %>&gt;
-         &lt;% end %>&gt;
+           &lt;%= form_tag(welcome_change_path, id: "s" )do %&gt;
+           &lt;% text_field_tag :change, params[:change] %&gt;
+           &lt;%= submit_tag "replace" %&gt;
+         &lt;% end %&gt;
 
-          &lt;%=  render text: u.id %>&gt; 
-      &lt;% else %>&gt;
-        &lt;li>&gt;  
-
+          &lt;%=  render text: u.id %&gt; 
+      &lt;% else %&gt;
+        &lt;li&gt;  
      
-         &lt;li>&gt;  &lt;%=  "QQQQQQQ"+ u.ser1 %> &lt;/li>&gt;
+         &lt;li>&gt;  &lt;%=  "QQQQQQQ"+ u.ser1 %> &lt;/li&gt;
 
         &lt;/li>&gt;
-
-            &lt;% end %>&gt; 
-  <!--    <li>  <% u.ser3 %> </li>
-      <li>  <% u.ser4 %> </li> --> 
-         &lt;/ul&gt;>&gt;
-    &lt;% @counter +=1 %>&gt;
-    &lt;% end %>&gt;
-    
-     &lt;%= @counter %>&gt; 
-    &lt;% end %>&gt;
-
+            &lt;% end %&gt; 
+         &lt;/ul&gt;
+    &lt;% @counter +=1 %&gt;
+    &lt;% end %&gt;  
+     &lt;%= @counter %&gt; 
+    &lt;% end %&gt;
   </pre>
 
      </li>
