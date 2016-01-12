@@ -615,14 +615,14 @@ And end!
     <li>rails g model service ser1:string ser2:string ser3:string ser4:string </li>
     <li> rake db:migrate and fix the root
       <pre class="prettyprint lang-ruby"> 
-         root 'welcomes#index'
-         get 'welcomes/index'
-         post 'welcomes/saveit' =&gt; 'welcomes#saveit'
+         root 'welcome#index'
+         get 'welcome/index'
+         post 'welcome/saveit' =&gt; 'welcome#saveit'
      </pre>
     </li>
     <li>Inside index.html
       <pre class="prettyprint lang-ruby">  
-      &lt;%= form_tag(products_saveit_path, id: "s" )do %> 
+      &lt;%= form_tag(welcome_saveit_path, id: "s" )do %> 
            &lt;%= text_field_tag :ser1, params[:ser1] %>
            &lt;%= text_field_tag :ser2, params[:ser2] %>
            &lt;%= text_field_tag :ser3, params[:ser3] %>
@@ -646,6 +646,12 @@ And end!
               @s.save
               redirect_to root_url 
           end
+                 
+          def change
+            @temp = params[:change]
+            redirect_to root_url 
+          end
+
        </pre>
     </li>
     <li>In index to see the results
@@ -653,7 +659,7 @@ And end!
  <pre class="prettyprint lang-ruby">   
 &lt;ul&gt;&lt;&#37; if @services.nil? &#37;&gt; &gt;
     &lt;li&gt;  &lt;&#37;= "empty" %&gt; &lt;/li&gt;
-  &lt;&#37; else %&gt;
+  &lt;#37; else %&gt;
     &lt;&#37; @services.each do |u| %&gt;
       &lt;li&gt;  &lt;%= u.ser1 %&gt; &lt;/li&gt;
      &lt;li&gt;  &lt;%= u.ser2 %&gt; &lt;/li&gt;
@@ -661,7 +667,44 @@ And end!
      &lt;li&gt;  &lt;%= u.ser4 %&gt; &lt;/li&gt;
     &lt;&#37; end %&gt;
     &lt;/ul&gt;
-    &lt;&#37; end %&gt;
+    &lt;&#37; end %&gt;;
+
+
+&lt;% if @services.nil? %>&gt;
+    &lt;%= "empty" %>&gt; 
+  &lt;% else %>&gt;
+    &lt;% @counter = 0 %>&gt;
+    &lt;% @services.each do |u| %>&gt;
+     
+   
+   &lt;ul &lt;%= "id=#{@counter}" %> >&gt;  
+      &lt;li>  &lt;%= u.ser1 %> &lt;/li>&gt;
+       &lt;%  if u.ser1.empty? %> 
+
+           &lt;%= form_tag(welcome_change_path, id: "s" )do %>&gt;
+           &lt;% text_field_tag :change, params[:change] %>&gt;
+           &lt;%= submit_tag "replace" %>&gt;
+         &lt;% end %>&gt;
+
+          &lt;%=  render text: u.id %>&gt; 
+      &lt;% else %>&gt;
+        &lt;li>&gt;  
+
+     
+         &lt;li>&gt;  &lt;%=  "QQQQQQQ"+ u.ser1 %> &lt;/li>&gt;
+
+        &lt;/li>&gt;
+
+            &lt;% end %>&gt; 
+  <!--    <li>  <% u.ser3 %> </li>
+      <li>  <% u.ser4 %> </li> --> 
+         &lt;/ul&gt;>&gt;
+    &lt;% @counter +=1 %>&gt;
+    &lt;% end %>&gt;
+    
+     &lt;%= @counter %>&gt; 
+    &lt;% end %>&gt;
+
   </pre>
 
      </li>
@@ -683,4 +726,15 @@ And end!
 <pre class="prettyprint lang-html"> 
 &lt;&#37; &#64;counter = 1 &#37;&gt;
 &lt;li &lt;&#37;= "id=&#35;{&#64;counter}" &#37;&gt; &lt;/li&gt;
+</pre>
+
+<h2> Reverse actions in Rails </h2>
+
+For rake db:migrate we would have 
+<pre class="prettyprint lang-ruby">
+rake db:migrate:down VERSION=20100905201547
+</pre>
+and for generated controlelrs and models we have d 
+<pre class="prettyprint lang-ruby">
+rails d model service ser1:string 
 </pre>
