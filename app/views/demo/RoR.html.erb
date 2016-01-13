@@ -789,3 +789,10 @@ To test in console we have:
 
 
 <img src=" <%= asset_path('forkey.png') %>" >
+
+<h2> Access image in Heroku</h2>
+we use and put image in public folder then also run rake assets:precompile
+
+<pre class="prettyprint lang-html"> 
+&lt;img src=" &lt;%= asset_path('myimage.png') %&gt;" ;&gt;
+</pre>
