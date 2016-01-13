@@ -394,11 +394,11 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
     end
   </pre>
 
-  <p> To set a params from view as a an input hidden we have </p>
+  <p> To <b> set a params </b> from view as a an input hidden we have </p>
    <pre class="prettyprint lang-ruby">
       &lt;%= hidden_field_tag(:subaction, "anything") %&gt;
       Which set params[:subaction] = "anything"
-      and is equal to : &lt;input type="hidden" name="subaction" id="subaction" value="2"&gt;
+      and is equal to : &lt;input type="hidden" name="subaction" id="subaction" value="anything"&gt;
     </pre>
 
 
