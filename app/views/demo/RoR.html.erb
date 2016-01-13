@@ -773,3 +773,19 @@ def up
   end
 </pre>
 <p> To revert we have rake db:migrate VERSION=0</p>
+
+<h2> Associations in Rails </h2>
+
+<p> <b> One to One </b> </p>
+<p>
+We have relation among customer and order. In customer model, we define has one :order, and in order model we add belongs_to :customer. Also we need to define a foreign key inside order, so we run a migration and add customer_id to order table (each one has belongs_to should have foreign key). 
+To test in console we have:
+</p>
+ <p> my_order_object= Order.new </p>
+ <p> my_order_object.save </p>
+ <p> my_customer_object = Customer.new(name: "harchi")  </p>
+ <p> my_customer_object.order = my_order_object </p>
+ 
+
+
+<img src=" <%= asset_path('forkey.png') %>" >
