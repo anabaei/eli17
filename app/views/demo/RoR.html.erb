@@ -756,3 +756,20 @@ When click submit to set it we have
 f.button  :submit , name: "subaction",value: "update"
 </pre>
 We would have params[:subaction] = "update" in both scenarios
+
+<h2> Add column to model </h2>
+<p>
+We first create a migration with:
+
+<b> rails g migration anyname </b> 
+,then  inside the migration it is create we add any action then run rake db:migrate
+</p>
+<pre class="prettyprint lang-ruby">
+def up
+    add_column("Services", "name", :string)
+  end
+  def down
+    remove_column("Services", "name", :string)
+  end
+</pre>
+<p> To revert we have rake db:migrate VERSION=0</p>
