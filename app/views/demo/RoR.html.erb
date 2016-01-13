@@ -397,11 +397,10 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
   <p> To set a params from view as a an input hidden we have </p>
    <pre class="prettyprint lang-ruby">
       &lt;%= hidden_field_tag(:subaction, "anything") %&gt;
+      Which set params[:subaction] = "anything"
+      and is equal to : &lt;input type="hidden" name="subaction" id="subaction" value="2"&gt;
     </pre>
-    <p> Which set up params[:subaction] with anything. It produce this html </p>
-    <pre class="prettyprint lang-html">
-        &lt;input type="hidden" name="subaction" id="subaction" value="2"&gt;
-    </pre>
+
 
   <h2> Save into model attributes  </h2>
 <p>
