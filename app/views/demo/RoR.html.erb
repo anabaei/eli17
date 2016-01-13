@@ -400,13 +400,8 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
       Which set params[:subaction] = "anything"
       and is equal to : &lt;input type="hidden" name="subaction" id="subaction" value="anything"&gt;
     </pre>
-    <p> If it is inside a form_tag then we can send this params to a specific controller action </p>
-    <pre class="prettyprint lang-ruby">
-        &lt;%= form_tag(welcome_actionone_path, id: "s" )do %&gt;  
-                &lt;%= hidden_field_tag(:subaction, u.id) %&gt;
-                &lt;%= submit_tag "replace" %&gt;
-        &lt;% end %&gt;
-    </pre>
+    <p> If it is inside a form_tag then we can send this params to a specific controller action , exactly what we have in define and passing params section here.</p>
+   
   <h2> Save into model attributes  </h2>
 <p>
   From form_tag we can dedicate any params to input info, in controller it is necessary to pass params into a hashes with the exact same name of attributes in controller.  
