@@ -378,7 +378,7 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
 <p> To have a simple form which pass params to a controller we only need to remove remote:true from form then 
   instead of rendering a js, render a page thats all </p>
 
-  <h2> Define and passing a params to specific action controller from view  </h2>
+  <h2> Define and passing a params  </h2>
 <pre class="prettyprint lang-ruby">
   &lt;%&#61; form_tag(products_find_path, id: &#34;sear&#34; )do %&gt;  remote: true
            &lt;%&#61; text_field_tag :nameOfparams, params[:nameOfparams] %&gt;
@@ -393,6 +393,15 @@ $('#two').html("&lt;%=  render :text =&gt; params.inspect %&gt;");
       render "products/index" 
     end
   </pre>
+
+  <p> To set a params from view as a an input hidden we have </p>
+   <pre class="prettyprint lang-ruby">
+      &lt;%= hidden_field_tag(:subaction, "anything") %&gt;
+    </pre>
+    <p> Which set up params[:subaction] with anything. It produce this html </p>
+    <pre class="prettyprint lang-html">
+        &lt;input type="hidden" name="subaction" id="subaction" value="2"&gt;
+    </pre>
 
   <h2> Save into model attributes  </h2>
 <p>
@@ -618,6 +627,7 @@ And end!
          root 'welcome#index'
          get 'welcome/index'
          post 'welcome/saveit' =&gt; 'welcome#saveit'
+         post 'welcome/change' =&gt; 'welcome#change'
      </pre>
     </li>
     <li>Inside index.html
@@ -730,3 +740,15 @@ and for generated controlelrs and models we have d
 <pre class="prettyprint lang-ruby">
 rails d model service ser1:string 
 </pre>
+
+<h2> Set params </h2>
+
+Inside a form to set a params we need only have
+<pre class="prettyprint lang-ruby">
+  hidden_field_tag(:subaction, 'update') 
+</pre>
+When click submit to set it we have 
+<pre class="prettyprint lang-ruby">
+f.button  :submit , name: "subaction",value: "update"
+</pre>
+We would have params[:subaction] = "update" in both scenarios
