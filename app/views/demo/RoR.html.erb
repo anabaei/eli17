@@ -243,10 +243,10 @@ def create
  ############################# ############################# ############################# ######################################
  ################################  SETIGN UP SAVON CLIENT AND THEN MAKE A REQUEST TO INVOKE ####################################### 
  ############################# ############################# #############################  ##################################### 
-     client = Savon.client(wsdl: "http://esb.dev.bcldb.com:25011/LDB_Retail/ProductService?WSDL") 
+     client = Savon.client(wsdl: "http://esb.dev..............tService?WSDL") 
    ## BELOW I USE SOAP UI READY CODE TO MAKE A REQUEST ##
     rest = %q(
-        &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:prod="http://productservice.services.bcldb.com">
+        &lt;soapenv:Envelope xmlns:soapenv="http://schema........p/envelope/" xmlns:prod="http://product........db.com">
             &lt;soapenv:Header/>
                &lt;soapenv:Body>
                  &lt;prod:productBySKURequest>
@@ -258,7 +258,7 @@ def create
     response = client.call(:get_product_by_sku, xml: rest)
     #  client = Savon.client(wsdl: "http://www.webservicex.net/airport.asmx?WSDL")
     # response = client.call(:get_airport_information_by_country, message: { "country" => @as })
-    #  client = Savon.client(wsdl: "http://esb.dev.bcldb.com:25011/LDB_Retail/ProductService?WSDL") 
+    #  client = Savon.client(wsdl: "http://esb.dev.bcl.......vice?WSDL") 
     # response = client.call(:get_product_by_sku, message: { "sku" => @as })
 
  #############################  ENDING HITING THE SOAP  SERVICE ####################################### 
