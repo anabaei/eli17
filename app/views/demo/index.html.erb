@@ -8,13 +8,13 @@
   <title>Rain Effect Experiments | Demo 1 | Codrops</title>
  
 
- <%= stylesheet_link_tag "normalize", media: "all" %>
+ 
  
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
 
      <%= stylesheet_link_tag "demo", media: "all" %>
-
-    <%= stylesheet_link_tag "style1", media: "all" %>
+     <%= stylesheet_link_tag "style1", media: "all" %>
+     <%= stylesheet_link_tag "normalize", media: "all" %>
 
 
   <!--[if IE]>
@@ -23,23 +23,71 @@
 </head>
 
 <body class="demo-1">
-  <div class="image-preload">
-    <%= image_tag("amir.png") %>
-    <%= image_tag("public/drop-apha.png") %>
-   <%= image_tag("public/texture-rain-fg.png") %>
-   <%= image_tag("public/texture-rain-bg.png") %>
-   <%= image_tag("public/texture-sun-fg.png") %>
-   <%= image_tag("texture-sun-bg.png") %>
-   <%= image_tag("texture-fallout-fg.png") %>
-    <%= image_tag("texture-fallout-bg.png") %>
-     <%= image_tag("texture-drizzle-fg.png") %>
-      <%= image_tag("texture-drizzle-bg.png") %>
+ 
+<div class="image-preload">
+  <img src=" <%= asset_path('drop-color.png') %>" >
 
-
+      <img src=" <%= asset_path('drop-alpha.png') %>" >
+       <img src=" <%= asset_path('texture-rain-fg.png') %>" >
+        <img src=" <%= asset_path('texture-rain-bg.png') %>" >
+         <img src=" <%= asset_path('texture-sun-fg.png') %>" >
+          <img src=" <%= asset_path('texture-sun-bg.png') %>" >
+           <img src=" <%= asset_path('texture-fallout-fg.png') %>" >
+            <img src=" <%= asset_path('texture-fallout-bg.png') %>" >
+             <img src=" <%= asset_path('texture-drizzle-fg.png') %>" >
+              <img src=" <%= asset_path('texture-drizzle-bg.png') %>" >
+   
   </div>
+
   <div class="container">
  
-    
+      <header class="codrops-header">
+      <div class="codrops-links">
+        <a class="codrops-icon codrops-icon--prev" href="http://tympanus.net/Development/CardStackEffects/" title="Previous Demo"><span>Previous Demo</span></a>
+        <a class="codrops-icon codrops-icon--drop" href="http://tympanus.net/codrops/?p=25417" title="Back to the article"><span>Back to the Codrops article</span></a>
+      </div>
+      <h1>Rain &amp; Water Effects</h1>
+   <!--    <nav class="codrops-demos">
+        <a class="current-demo" href="index.html">Weather</a>
+        <a href="index2.html">Water</a>
+        <a href="index3.html">Video</a>
+      </nav> -->
+    </header>
+    <div class="slideshow">
+      <canvas width="1" height="1" id="container" style="position:absolute"></canvas>
+      <!-- Heavy Rain -->
+      <div class="slide" id="slide-1" data-weather="rain">
+        <div class="slide__element slide__element--date">Sunday, 24<sup>th</sup> of October 2043</div>
+        <div class="slide__element slide__element--temp">12°<small>C</small></div>
+      </div>
+      <!-- Drizzle -->
+      <div class="slide" id="slide-2" data-weather="drizzle">
+        <div class="slide__element slide__element--date">Saturday, 25<sup>th</sup> of October 2043</div>
+        <div class="slide__element slide__element--temp">18°<small>C</small></div>
+      </div>
+      <!-- Sunny -->
+      <div class="slide" id="slide-3" data-weather="sunny">
+        <div class="slide__element slide__element--date">Monday, 26<sup>th</sup> of October 2043</div>
+        <div class="slide__element slide__element--temp">25°<small>C</small></div>
+      </div>
+      <!-- Heavy rain -->
+      <div class="slide" id="slide-5" data-weather="storm">
+        <div class="slide__element slide__element--date">Wednesday, 28<sup>th</sup> of October 2043</div>
+        <div class="slide__element slide__element--temp">20°<small>C</small></div>
+      </div>
+      <!-- Fallout (greenish overlay with slightly greenish/yellowish drops) -->
+      <div class="slide" id="slide-4" data-weather="fallout">
+        <div class="slide__element slide__element--date">Tuesday, 27<sup>th</sup> of October 2043</div>
+        <div class="slide__element slide__element--temp">34°<small>C</small></div>
+      </div>
+      <nav class="slideshow__nav">
+        <a class="nav-item" href="#slide-1"><i class="icon icon--rainy"></i><span>10/24</span></a>
+        <a class="nav-item" href="#slide-2"><i class="icon icon--drizzle"></i><span>10/25</span></a>
+        <a class="nav-item" href="#slide-3"><i class="icon icon--sun"></i><span>10/26</span></a>
+        <a class="nav-item" href="#slide-5"><i class="icon icon--storm"></i><span>10/28</span></a>
+        <a class="nav-item" href="#slide-4"><i class="icon icon--radioactive"></i><span>10/27</span></a>
+      </nav>
+    </div>
     <p class="nosupport">Sorry, but your browser does not support WebGL!</p>
   </div>
   <!-- /container -->

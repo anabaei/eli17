@@ -1,6 +1,7 @@
 class DemoController < ApplicationController
   layout 'application'
   def index
+   render :layout => false
   end
 
   def hello
