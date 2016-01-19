@@ -7,7 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amir</title>
  
+<style>
+select 
+{
+  opacity: 0.1;
+}
 
+option
+{
+  opacity: 0.1;
+}
+
+</style>
  
  
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
@@ -48,8 +59,13 @@
         <a class="current-demo" href="/">Home</a>
         <a href="/demo/RoR"> Ruby on Rails</a>
         <a href="/demo/js"> JavaScript</a>
-
+         <select onchange="location= this.options[this.selectedIndex].value;">
+          <option value="/demo/java.html.erb"> Java</option>
+         </select>
+         
       </nav>
+
+
         <% d= Date.today %>
         <% d +=1 %>
         <% d1= d+1 %>
