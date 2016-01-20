@@ -68,7 +68,7 @@ option
 
         <% d= Date.today %>
       
-        <% d -=1 %>
+     
         <% d1= d+1 %>
         <% d2= d1+1 %>
         <% d3= d2+1 %>
@@ -78,7 +78,7 @@ option
       <canvas width="1" height="1" id="container" style="position:absolute"></canvas>
       <!-- Heavy Rain -->
       <div class="slide" id="slide-1" data-weather="rain">
-        <div class="slide__element slide__element--date"><%= d.strftime('%a %d %b %Y') %></div>
+        <div class="slide__element slide__element--date"><%= d.in_time_zone("Pacific Time (US & Canada)").strftime('%a %d %b %Y') %></div>
         <div class="slide__element slide__element--temp"> 
          7<small>C</small></div>
       </div>
