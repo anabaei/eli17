@@ -115,34 +115,34 @@ Compatible with Internet Explorer
 <p> after including jquery from <a href=""> here </a> and bootstrap cdn from <a href="http://getbootstrap.com/getting-started/"> link </a> </p>
 
 <pre class="prettyprint lang-html" >
-	&ltdiv class="accordion" id="accordion2" &gt						
-	  &ltdiv class="accordion-group"&gt						
-		&ltdiv class="accordion-heading"&gt					
-			&ltbr&gt				
-		  &lta class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"&gt					
+	&lt;div class="accordion" id="accordion2" &gt;						
+	  &lt;div class="accordion-group"&gt;						
+		&lt;div class="accordion-heading"&gt;					
+			&lt;br&gt;				
+		  &lt;a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"&gt;					
 			WHAT WE DO				
-		  &lt/a&gt					
-		&lt/div&gt					
-		&ltdiv id="collapseOne" class="accordion-body collapse collapse in"&gt					
-		  &ltdiv class="accordion-inner"&gt					
+		  &lt;/a&gt;					
+		&lt;/div&gt;					
+		&lt;div id="collapseOne" class="accordion-body collapse collapse in"&gt;					
+		  &lt;div class="accordion-inner"&gt;					
 			From needs analysis and specification development through to contract drafting and negotiations				
-		  &lt/div&gt					
-		&lt/div&gt					
-	  &lt/div&gt						
-	  &ltdiv class="accordion-group"&gt						
-		&ltdiv class="accordion-heading"&gt					
-		 &ltlegend&gt&lt/legend&gt					
-		  &lta class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"&gt					
+		  &lt;/div&gt;					
+		&lt;/div&gt;					
+	  &lt;/div&gt;						
+	  &lt;div class="accordion-group"&gt;						
+		&lt;div class="accordion-heading"&gt;					
+		 &lt;legend&gt&lt/legend&gt;					
+		  &lt;a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"&gt;					
 			WHO WE ARE				
-		  &lt/a&gt					
-		&lt/div&gt					
-		&ltdiv id="collapseTwo" class="accordion-body collapse collapse in"&gt					
-		  &ltdiv class="accordion-inner "&gt					
+		  &lt;/a&gt;					
+		&lt;/div&gt;					
+		&lt;div id="collapseTwo" class="accordion-body collapse collapse in"&gt;					
+		  &lt;div class="accordion-inner "&gt;					
 			We are a team of 				
-		  &lt/div&gt					
-		&lt/div&gt					
-	  &lt/div&gt  												
-	&lt/div&gt						
+		  &lt;/div&gt;					
+		&lt;/div&gt;					
+	  &lt;/div&gt;  												
+	&lt;/div&gt;						
 </pre>
 
 <h2> <a href = "http://tympanus.net/codrops/2015/10/21/page-stack-navigation/" > Coderops </a> </h2>
@@ -189,3 +189,19 @@ to cmd: copy then click right!
 <b><a href="http://whatis.techtarget.com/definition/operating-system-OS">An operating system</a> </b>
 	 (sometimes abbreviated as "OS") is the program that, after being initially loaded into the computer by a boot program, manages all the other programs in a computer.The other programs are called applications or application programs. The application programs make use of the operating system by making requests for services through a defined application program interface (API). 
 </p>
+
+<h2> Define absolute in Bootstrap grid </h2>
+
+<p> 
+ In any tag, we can define a tag inside it. Then the position of nested tag is fixed to his parent tag in all time. 
+</p>
+<pre class="prettyprint lang-html">
+   &lt;div class="col-md-5"&gt;
+    	&lt;div style="position:relative;"&gt;
+				&lt;img  src="images/Requisition_status_chart.png" style="" &gt;
+				&lt;div style="position:absolute; top:0px; left:100%;"&gt;
+				     &lt;img   src="images/PCMs_number_of_req.png" style=" " data-toggle="modal" data-target="#myModal"&gt;
+				&lt;/div&gt;
+		&lt;/div&gt;
+    &lt;/div&gt;
+</pre>
