@@ -206,17 +206,13 @@ to cmd: copy then click right!
  &lt;/div&gt;
 </pre>
 <p> second image position is totaly related to the poistion of first image.</p>
-<h2> Hover and Pop up  hint  </h2>
+<h2> Hover and Pop up <a href="#" data-toggle="tooltip" title="Hooray!"> hint </a> </h2>
 
-
-  <div href="#" data-toggle="tooltip" title="Hooray!">Hover over me</div>
-
- 
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();  
-});
-</script>
+	<script>
+	$(document).ready(function(){
+	    $('[data-toggle="tooltip"]').tooltip();  
+	});
+	</script>
 <pre class="prettyprint lang-html">
 &lt;div class="container"&gt;
   &lt;a href="#" data-toggle="tooltip" title="Hooray!">Hover over me&gt;/a&gt;
