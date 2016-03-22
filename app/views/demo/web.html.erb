@@ -215,7 +215,7 @@ to cmd: copy then click right!
 	</script>
 <pre class="prettyprint lang-html">
 &lt;div class="container"&gt;
-  &lt;a href="#" data-toggle="tooltip" title="Hooray!">Hover over me&gt;/a&gt;
+  &lt;a href="#" data-toggle="tooltip" title="Hooray!">Hover over me&lt;/a&gt;
 &lt;/div&gt;
  
 &lt;script&gt;
@@ -274,8 +274,73 @@ $(document).ready(function(){
       //      });
       &lt;/script&gt;
   </pre>
-  
 
-
-
+  <h2> Hover dropdown animation with jQuery </h2>
+    <pre class="prettyprint lang-html">
+        &lt;ul class="standard">
+      &lt;li style="list-style-image:url('/images/folder.png')" class="top_1">&lt;a href="" target="_blank" >Joint Accident Investigation (JAI)&lt;/a>
+        &lt;ul class="hide_1">
+          &lt;div class="accordion" id="accordion2" >
+                   &lt;div class="accordion-group">
+ 
+                     &lt;div class="accordion-heading">
+ 
+                     &lt;div class="accordion-heading">
+                      &lt;br>
+                         &lt;a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"  title="Click">
+                          &lt;li id="hide_2" style="list-style-image:url('/images/folder.png') margin-left: 72px; margin-top: -14px;" >    Preliminary JAI   &lt;span class="glyphicon glyphicon-menu-down" aria-hidden="true">&lt;/span>  &lt;/li>
+                         &lt;/a>
+                    &lt;/div>
+ 
+                    &lt;div id="collapseOne" class="accordion-body collapse">
+                          &lt;div class="accordion-inner">
+                           &lt;ul >
+                                &lt;li  style="list-style-image:url('/images/pdf.png')"> &lt;a href="PDFS/HUMAN RESOURCES/a1.pdf" target="_blank">WorkSafeBC Changes & Flowchart &lt;/a> &lt;/li>
+                                &lt;li  style="list-style-image:url('/images/pdf.png')"> &lt;a href="PDFS/HUMAN RESOURCES/6_Bill_9_Sample_Guide_PSC38_Part_A_vfinal.pdf" target="_blank"> Sample Guide &lt;/a> &lt;/li>
+                                &lt;li id="hide_2" style="list-style-image:url('/images/pdf.png')">  &lt;a href="PDFS/HUMAN RESOURCES/PSC_38_updated_prelim_JAI.pdf" target="_blank">PSC38 Part A Form &lt;/a>&lt;/li>
+                          &lt;/ul>
+                          &lt;/div>
+                    &lt;/div>
+                   &lt;/div>
+                 &lt;/div>
+                   &lt;div class="accordion-group">
+                    &lt;div class="accordion-heading">             
+                         &lt;a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"  title="Click">
+                           &lt;li style="list-style-image:url('/images/folder.png')">    Full JAI  &lt;span class="glyphicon glyphicon-menu-down" aria-hidden="true">&lt;/span> &lt;/li>
+                         &lt;/a>
+                    &lt;/div>
+                    &lt;div id="collapseTwo" class="accordion-body collapse">
+                          &lt;div class="accordion-inner ">
+                         
+                        &lt;ul>
+                         &lt;li style="list-style-image:url('/images/pdf.png')"> &lt;a href="PDFS/HUMAN RESOURCES/7_Bill_9_Full_Accident.pdf" target="_blank"> WorkSafeBC Changes & Flowchart &lt;/a> &lt;/li>
+                          &lt;li style="list-style-image:url('/images/pdf.png')"> &lt;a href="PDFS/HUMAN RESOURCES/8_Bill_9_Sample_Guide_PSC38_Part_B_vfinal.pdf" target="_blank">Sample Guide </a> </li>
+                          &lt;li id="hide_3" style="list-style-image:url('/images/pdf.png')"> &lt;a href="PDFS/HUMAN RESOURCES/PSC_38_updated_full_JAI.pdf" target="_blank">PSC38 Part B Form </a></li>
+                        &lt;/ul>
+                      &lt;/div>
+                   &lt;/div>
+                   &lt;/div>
+              &lt;/div> 
+      &lt;/ul>
+            &lt;/li>
+              &lt;li class="trick"><a href="http://www.worksafebc.com/forms/assets/PDF/6a.pdf" target="_blank">WorkSafeBC Form 6A: Workers Report of Injury</a>
+              &lt;/li>
+            &lt;/ul>
+&lt;script type="text/javascript">        
+                $( document ).ready(function() {
+                    $(".hide_1").hide();
+                 // $('[data-toggle="tooltip"]').tooltip();  
+                });
+            $(".top_1").mouseover(function(){
+                        $(".hide_1").show(700);
+                        });
+              $(".trick").mouseover(function(){
+                        $(".hide_1").hide(700);
+                        });
+               // $("#top_2").click(function(){
+                //         $("#hide_2").show();
+              
+                //         });
+              &lt;/script>
+   </pre>
 
