@@ -15,6 +15,20 @@ h1,h2,h3
 <h2> jQuery </h2>
 
 <p>
+  Choose all elements with a class name = sidehdr and everytime click on any item with this class, then toggle it (either hide or show). Selector here is first child of that class with ul div.
+</p>
+
+<pre class="prettyprint lang-jquery " >
+ 
+ $(".sidehdr").click(function(){
+   $('ul:first-child', this).slideToggle("fast");
+ });
+</pre>
+
+
+
+
+<p>
 	Adjust width of screen and send the width to a function which select specific stylesheet or even can select different contents and renders to the page.
 </p>
 
