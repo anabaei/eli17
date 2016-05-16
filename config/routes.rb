@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   #get 'demo/index'
   get '/demo/mc_home' => "demo#mc_home"
-  get '/demo/jj_hairsalon_app' => "demo#jj_hairsalon_app"
+  #get '/demo/jj_hairsalon_app' => "demo#jj_hairsalon_app"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   match ':controller(/:action(/:id))', :via => :get
