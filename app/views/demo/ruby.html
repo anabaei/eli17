@@ -82,7 +82,7 @@ end
 <img src=" <%= asset_path('varScope.png') %>" height="50%" width="50%">
 
 <h3> Code Blocks </h3>
-<p> In iterators or loops everything between do ... end is code block. Variables define inside block are accessible only inside the block and we define it variable scope</p>
+<p> In iterators or loops everything between do ... end or between {} are called code block. Variables define inside block are accessible only inside the block and we define it variable scope. </p>
 
 <h3> Find </h3>
 <p>  Go through of datas and if finds the block was true return the result</p>
@@ -90,38 +90,7 @@ end
 
 (1..10).include?(3)  # among numbers 1 to 10 which one include 3 ?
 
-
-<h1> <div id="weather"></div>
-</h1>
-<script type="text/javascript">
-	
-// Docs at http://simpleweatherjs.com
-$(document).ready(function() {
-  $.simpleWeather({
-    woeid: '2357536', //2357536
-    location: '',
-    unit: 'f',
-    success: function(weather) {
-      html = '<h2>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-      html += '<li>'+weather.alt.temp+'&deg;C</li></ul>';
-      
-      for(var i=0;i<weather.forecast.length;i++) {
-        html += '<p>'+weather.forecast[i].day+': '+weather.forecast[i].high+'</p>';
-      }
-  
-      $("#weather").html(html);
-    },
-    error: function(error) {
-      $("#weather").html('<p>'+error+'</p>');
-    }
-  });
-});
-
-
-
-</script>
+(1..10).find_all { |i|  i % 3 == 0 }  # returns all results
 
 
 
