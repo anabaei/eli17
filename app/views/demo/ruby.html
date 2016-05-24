@@ -78,10 +78,39 @@ fruits.each do |f|
 end
 </pre>
 
+varScope
+
+<img src=" <%= asset_path('varScope.png') %>" height="90%" width="90%">
+
 <h3> Code Blocks </h3>
-<p> </p>
+<p> In iterators or loops everything between do ... end is code block. Variables define inside block are accessible only inside the block and we define it variable scope</p>
+
+<h3> Find </h3>
+<p>  Go through of datas and if finds the block was true return the result</p>
+(1..10).find { |i|  i % 3 == 0 }  # returns 3, the first one on the list
+
+(1..10).include?(3)  # among numbers 1 to 10 which one include 3 ?
 
 
+<script type="text/javascript">
+	
+$.simpleWeather({
+	zipcode: '76309',
+	unit: 'f',
+	success: function(weather) {
+		html = '<h2>'+weather.city+', '+weather.region+'</h2>';
+		html += '<img style="float:left;" width="125px" src="images/weather/'+weather.code+'.png">';
+		html += '<p>'+weather.temp+'&deg; '+weather.units.temp+'<br /><span>'+weather.currently+'</span></p>';
+		html += '<a href="'+weather.link+'">View Forecast &raquo;</a>';
+
+		$("#weather").html(html);
+	},
+	error: function(error) {
+		$("#weather").html("<p>"+error+"</p>");
+	}
+});
+	
+</script>
 
 
 
