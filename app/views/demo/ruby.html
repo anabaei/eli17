@@ -78,9 +78,8 @@ fruits.each do |f|
 end
 </pre>
 
-varScope
 
-<img src=" <%= asset_path('varScope.png') %>" height="90%" width="90%">
+<img src=" <%= asset_path('varScope.png') %>" height="50%" width="50%">
 
 <h3> Code Blocks </h3>
 <p> In iterators or loops everything between do ... end is code block. Variables define inside block are accessible only inside the block and we define it variable scope</p>
@@ -92,6 +91,8 @@ varScope
 (1..10).include?(3)  # among numbers 1 to 10 which one include 3 ?
 
 
+<h1> <div id="weather"></div>
+</h1>
 <script type="text/javascript">
 	
 $.simpleWeather({
@@ -109,7 +110,7 @@ $.simpleWeather({
 		$("#weather").html("<p>"+error+"</p>");
 	}
 });
-	
+
 </script>
 
 
