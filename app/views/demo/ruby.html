@@ -26,6 +26,10 @@
 
 <h2> Ruby  </h2>
 
+<h3> Class </h3>
+<p>A class is a blueprint or template or set of instructions to build a specific type of object. Every object is built from a class </p>
+
+
 
 Run Ruby on a terminal single line 
 <pre class="prettyprint lang-ruby">
@@ -92,9 +96,45 @@ end
 
 (1..10).find_all { |i|  i % 3 == 0 }  # returns all results
 
+<h2> Helpers </h2>
+<p> Helper methods defines inside Ruby module, every time we create a controller Rails generate a helper file to match. Also we can create custom helpers just file name and module name must be matched. Helpers are good place to store codes we need to call them more often, and avoid repeating codes, also to avoid complex codes in view we can use helpers.</p>
 
 
 
+<h2> Ruby Module </h2>
+<p>  Module are written same as classes and they have methods and variables. However, unlike classes, you can’t create objects based on Ruby modules and you can’t additionally subclass them as you can with actually Ruby classes. You can use module by adding its functions to other classes. </p>
+
+<h2> REST </h2>
+<p> Rails MVC pattern encourage us to break up controllers by model.  REST help to change how we talk with our resources(models) in an application. Map new URL syntax to controller actions and learn HTTP verb to talk with resources. Default routs using hashes.   </p>
+
+<h3> HTTP Verbs </h3>
+<p> Get is for links or getting information from server. Post only use to create an item, to update new item we use Put or Patch, Put is for when we want to update resource completely and patch is for when we update a portion of resource.</p>
+
+<h3> Changes that REST requires in routing (RESTFUL Routs)</h3>
+<p> Using Resources to handle seven of CRUD actions. It is a shortcut to map all standard routs to standard actions</p>
+<pre class="prettyprint lang-ruby">
+resources : subjects do 
+  // customization
+  end
+</pre>
+<p> URL plus each HTTP verbs leads to each action </p>
+
+from lynda.com:
+<img src=" <%= asset_path('table_rest.png') %>" height="50%" width="50%">
+<p> REST links and forms helps us to have shorter paths instead of having controller action and id is equal to controllerName_path(id), and saves alot of typing </p>
+<pre class="prettyprint lang-ruby">
+{:controller => 'subject', :action => 'Show', :id => 5}
+OR
+Subject_path(5)
+</pre>
+from lynda.com:
+<img src=" <%= asset_path('table_rest2.png') %>" height="50%" width="50%">
+<h2> Relationship Types </h2>
+<p> We could go by reading the value of a table foreign key, and then finding the related record by making a second query with a foreign key. That would be a valid approach, but it is tedious. It would be better if we could define the relationships between our models and therefore between our tables.</p>
+<p>Active records provide us Associations. There are three main relational associations. One to one, one to many and many to many. </p>
+<p> In one to one there is a parent and child, foriegn key goes to child table to point out parent and child belongs to parent and parent has one child</p>
+<p> One to many is same as one to one but each parents has many childs </p>
+<p> Many to many we create a joint table to hold two foreing key, one for course for example one for students, so each students foreing key points out to a joint table which the pais of that key point out to the courses has second foriegn key </p>
 
 
 
