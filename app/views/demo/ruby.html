@@ -132,13 +132,19 @@ from lynda.com:
 <h2> Relationship Types </h2>
 <p> We could go by reading the value of a table foreign key, and then finding the related record by making a second query with a foreign key. That would be a valid approach, but it is tedious. It would be better if we could define the relationships between our models and therefore between our tables.</p>
 <p>Active records provide us Associations. There are three main relational associations. One to one, one to many and many to many. </p>
-<p> In one to one there is a parent and child, foriegn key goes to child table to point out parent and child belongs to parent and parent has one child</p>
+<p> In one to one there is a parent and child, foriegn key goes to child table to point out parent and child belongs to parent and parent has one child. To access from parent to child Rails give us a magic code: parentName.ChildName which returns child name. for another way we use foreing key in child to find parent. Also to set a new child to parentobject we should just say : parentObject.Childname = ChildObject. Moreover child.parent returns the parent object.</p>
 <p> One to many is same as one to one but each parents has many childs </p>
 <p> Many to many we create a joint table to hold two foreing key, one for course for example one for students, so each students foreing key points out to a joint table which the pais of that key point out to the courses has second foriegn key </p>
 
 
+Params are user specified data into application,
 
-
+<h2> Inheritance in Ruby  </h2>
+<p> There are three ways of inheritance in Ruby on Rails </p>
+<li> Action in parents implied in childs </li>
+<li> Action in childs override the same action in parent</li>
+<li> Super() in child class, method call the parent</li>
+This is a tutorial to the <a href="http://learnrubythehardway.org/book/ex44.html"> link </a>  </p>
 
 
 
