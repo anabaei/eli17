@@ -140,23 +140,51 @@ from lynda.com:
 Params are user specified data into application,
 
 <h2> Inheritance in Ruby  </h2>
-<p> There are three ways of inheritance in Ruby on Rails </p>
-<li> Action in parents implied in childs </li>
-<li> Action in childs override the same action in parent</li>
-<li> Super() in child class, method call the parent</li>
+<p>Inheritance is a relation between two classes, there are three types of inheritance in Ruby on Rails </p>
+<li> IMPLICIT: Action in parents implied in childs </li>
+<li> OVERRIDE: Action in childs override the same action in parent</li>
+<li> ALTER USIGN KEY WORD SUPER: Super() in child class, method call the parent</li>
 This is a tutorial to the <a href="http://learnrubythehardway.org/book/ex44.html"> link </a>  </p>
+<p> Multiinheritance through the module is possible in Ruby</p>
+<pre class="prettyprint lang-ruby">
+module Presenter
+  def to_html; end
+end
+
+class XmlDocument < Document
+  include Presenter
+  # can call the method to_html
+end
+</pre>
+
+<h2> Methods </h2>
+<p> Two types of methods : 
+<p>Class methods are methods that are called on a class and instance methods are methods that are called on an instance of a class. usefule <a href="http://www.railstips.org/blog/archives/2009/05/11/class-and-instance-methods-in-ruby/">link</a> </p>
+<pre class="prettyprint lang-ruby">
+Foo.bar # => "class method"
+Foo.new.baz # => "Instance methods"
+</pre>
+
+<h2> Encapsulation</h2>
+<p> Means hide the internal represenation of an object is hide from outside and reduce complexity from this <a href="https://samurails.com/interview/ruby-inheritance-encapsulation-polymorphism/"> link </a></p>
+<pre class="prettyprint lang-ruby">
+class Amir 
+attr_accessor :name
+   def initialize(name)
+    @name = name
+   end
+   def meth
+     puts "#{@name}"
+    end
+end
+</pre>
+install rvm by this <a href="http://railsapps.github.io/installrubyonrails-mac.html"> link </a> and the best <a href="http://railsapps.github.io/installrubyonrails-mac.html"> guide </a>
 
 
-
-
-
-
-
-
-
-
-
-
+<h2> Testing With FactoryGirl </h2>
+<p>One issue arises from capybara undocumented changes, so to solve it we change the type of default method in spec from require to 
+feautre from <a href="http://stackoverflow.com/questions/9059854/capybara-undefined-method-visit"> this </a>
+ </p>
 
 
 
