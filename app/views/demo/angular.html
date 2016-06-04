@@ -11,6 +11,9 @@
 <div ng-app="myApp" ng-controller="myCtrl">
 <!--     Name: <input ng-model="name"> -->
     <h1>You entered: {{name}}</h1>
+    <div id="edit" contenteditable="true">
+	Here is the element's original content
+	</div>
 </div>
 
 
@@ -20,7 +23,7 @@
 	var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
     $scope.name = "John Doe";
-    
+
 });
 
 </script>
