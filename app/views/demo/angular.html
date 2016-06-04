@@ -5,7 +5,17 @@
 
 <head>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-	<script src="/assets/angular_app.js"></script>
+	<!-- <script src="/assets/angular_app.js"></script> -->
+		<script type="text/javascript">
+		var app = angular.module('myapp', []);
+// define a controller
+app.controller('myctr', function($scope)
+   {
+   	$scope.name = "Amir";
+   });
+	</script>
+
+
 </head>
 
 <body ng-app="myapp" ng-model="myctr">
