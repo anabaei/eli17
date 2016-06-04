@@ -16,14 +16,23 @@
 	</div>
 </div>
 
- <%= form_tag(the_path, id: "search-form") do %>
+<!--  <%= form_tag(the_path, id: "search-form") do %>
        <%= text_field_tag :text, params[:text], placeholder: "Search Items" %> 
-     <!--   <%= text_field_tag :author, params[:author], placeholder: "Search Items" %> 
-       <%= text_field_tag :comment, params[:comment], placeholder: "Search Items" %>        -->
+      <%= text_field_tag :author, params[:author], placeholder: "Search Items" %> 
+       <%= text_field_tag :comment, params[:comment], placeholder: "Search Items" %>        
       <%= submit_tag "Search", :name => nil %> 
- <% end %>
+ <% end %> -->
+<% @user="SS" %>
+    
+      
+  <%= form_for @user, :url => the_path do |f| %>
+  <%= f.text_field :text %>
+  <%= f.text_field :author %>
+  <%= f.text_field :comment %>
+  <%= f.submit %>
 
 
+<% end %>
 <script type="text/javascript">
 
 

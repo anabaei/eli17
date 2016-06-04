@@ -33,9 +33,9 @@ class DemoController < ApplicationController
    
    def editsfuproject   
 
-      hash = {}
-      hash[:text] = params[:text]   
-      @d = Sfuproject.new(hash)
+     # hash = {}
+     # hash[:text, :author, :comment] = params[:text, :author, :comment]   
+      @d = Sfuproject.new(params.permit(:text, :author, :comment))
 
     if @d.save 
     
