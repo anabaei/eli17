@@ -31,11 +31,14 @@ class DemoController < ApplicationController
     render :layout => false
    end
    
-   def editsfuproject
-   
-   
-    if params[:search]
-     render root_path
+   def editsfuproject   
+
+      hash = {}
+      hash[:text] = params[:search]   
+      @d = Sfuproject.new(hash)
+
+    if @d.save 
+     render demo_angular_path
     else
     end
 

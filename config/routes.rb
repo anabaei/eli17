@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
   #get 'demo/index'
   get '/demo/mc_home' => "demo#mc_home"
+  get 'demo/angular' => "demo#angular"
+  post "the"  => "demo#editsfuproject"
+ # post 'd'=> 'demo#editsfuproject'
+  #get 'editsfu' => 'demo#editsfuproject'
   #get '/demo/jj_hairsalon_app' => "demo#jj_hairsalon_app"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+ #resources :demo
+
+#   collection do
+#     get '/editsfuproject', :as => :editsfuproject
+#   end
+# end
+
   match ':controller(/:action(/:id))', :via => :get
   # You can have the root of your site routed with "root"
   root 'demo#index'
