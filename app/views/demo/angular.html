@@ -1,25 +1,21 @@
 <DOCTYPE html>
 
 <h1> Angular </h1>
-<p> ng-app starts the Angular application and ng-model binds the value of HTML to application data.</p> 
+<p> </p> 
 
 <head>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
 	<!-- <script src="/assets/angular_app.js"></script> -->
-		<script type="text/javascript">
-		var app = angular.module('myapp', []);
-// define a controller
-app.controller('myctr', function($scope)
-   {
-   	$scope.name = "Amir";
-   });
-	</script>
+<div ng-app="myApp" ng-controller="myCtrl">
+    Name: <input ng-model="name">
+    <h1>You entered: {{name}}</h1>
+</div>
 
-
-</head>
-
-<body ng-app="myapp" ng-model="myctr">
-<div> {{name}} </div>
-</body>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = "John Doe";
+});
+</script>
 
 </DOCTYPE>
