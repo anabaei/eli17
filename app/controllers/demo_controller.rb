@@ -30,4 +30,15 @@ class DemoController < ApplicationController
     def webgl
     render :layout => false
    end
+   
+   def editsfuproject
+   
+   
+    if params[:search]
+     render root_path
+    else
+    end
+
+   end
+
 end

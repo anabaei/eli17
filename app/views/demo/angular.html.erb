@@ -9,22 +9,21 @@
 </head>
 
 <div ng-app="myApp" ng-controller="myCtrl">
-<!--     Name: <input ng-model="name"> -->
-    <h1>You entered: {{name}}</h1>
+
+   
     <div id="edit" contenteditable="true">
 	Here is the element's original content
 	</div>
 </div>
 
-
+<%= form_tag(editsfuproject_demo_controller_path,:method => "get", id: "search-form") do %>
+       <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>       
+      <%= submit_tag "Search", :name => nil %>
+<% end %>
 
 
 <script type="text/javascript">
-	var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-    $scope.name = "John Doe";
 
-});
 
 </script>
 </DOCTYPE>
