@@ -1,8 +1,6 @@
 
 // define which angular app is used
-var app = angular.module('myapp', []);
-// define a controller
-app.controller('myctr', function($scope)
-   {
-   	$scope.name = "Amir";
-   });
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = "John Doe";
+});
