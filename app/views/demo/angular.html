@@ -24,8 +24,8 @@
 app.controller('myCtrl', function($scope) {
     $scope.name = "John Doe";
 });
-
-app.controller('dovomi', function('$scope'){
+var app1 = angular.module('myApp', []);
+app1.controller('dovomi', function('$scope'){
 	$scope.name = "Amir";
 });
 </script>
