@@ -12,7 +12,7 @@
    <!--  Name: <input ng-model="name"> -->
     <h1>You entered: {{name}}</h1>
 </div>
-<div ng-app="myApp" ng-controller="dovomi">
+<div ng-app="myApp1" ng-controller="dovomi">
    <!--  Name: <input ng-model="name"> -->
     <h1>You entered: {{name}}</h1>
 </div>
@@ -24,7 +24,7 @@
 app.controller('myCtrl', function($scope) {
     $scope.name = "John Doe";
 });
-var app1 = angular.module('myApp', []);
+var app1 = angular.module('myApp1', []);
 app1.controller('dovomi', function('$scope'){
 	$scope.name = "Amir";
 });
