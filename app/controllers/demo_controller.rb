@@ -34,11 +34,12 @@ class DemoController < ApplicationController
    def editsfuproject   
 
       hash = {}
-      hash[:text] = params[:search]   
+      hash[:text] = params[:text]   
       @d = Sfuproject.new(hash)
 
     if @d.save 
-     render demo_angular_path
+      flash[:notice] = "it saved!"
+      redirect_to root_url 
     else
     end
 
