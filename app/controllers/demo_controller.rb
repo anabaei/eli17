@@ -38,8 +38,7 @@ class DemoController < ApplicationController
       @d = Sfuproject.new(hash)
 
     if @d.save 
-      flash[:notice] = "it saved!"
-      redirect_to root_url 
+    
     else
     end
 
