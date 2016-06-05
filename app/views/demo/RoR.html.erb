@@ -344,12 +344,12 @@ Either   id: "submit_id" or :id => "submit_id"
 <li> then in a view embed the form_for ruby </li>
 <pre class="prettyprint lang-ruby">
 #giving initialize to variable to skip a firt time running nil error
-<% @user="SS" %>    
-  <%= form_for @user, :url => the_path do |f| %>
-  <%= f.text_field :text %>
-  <%= f.text_field :author %>
-  <%= f.text_field :comment %>
-  <%= f.submit %>
+&lt;% @user="SS" %>    
+  &lt;%= form_for @user, :url => the_path do |f| %>
+  &lt;%= f.text_field :text %>
+  &lt;%= f.text_field :author %>
+  &lt;%= f.text_field :comment %>
+  &lt;%= f.submit %>
 </pre>
 <li> then in a controller related to that view we define a function </li>
 <pre class="prettyprint lang-ruby">
