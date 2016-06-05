@@ -22,10 +22,10 @@
        <%= text_field_tag :comment, params[:comment], placeholder: "Search Items" %>        
       <%= submit_tag "Search", :name => nil %> 
  <% end %> -->
-<% @user="SS" %>
+<% @token="SS" %>
     
       
-  <%= form_for @user, :url => the_path do |f| %>
+  <%= form_for @token, :url => the_path do |f| %>
   <%= f.text_area  :text,  cols: "130", rows: "10" %>
   <%= f.text_field :author %>
   <%= f.text_field :comment %>
