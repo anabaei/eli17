@@ -38,8 +38,9 @@ class DemoController < ApplicationController
       @d = Sfuproject.new(params.permit(:text, :author, :comment))
 
     if @d.save 
-    
+    render demo_angular_path
     else
+      render demo_angular_path
     end
 
    end
