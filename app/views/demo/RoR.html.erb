@@ -334,6 +334,32 @@ we use here form_tag and define a path and method and specific params to that. W
 Either   id: "submit_id" or :id => "submit_id"
 </p>
 
+<h2> Form_for helper </h2>
+<p> Form_tag is used for only one params, if they are a group of params we use form_for. </p>
+<li> first we generate a model with attributes like rails g model editsfuproject text:string author:string comment:string </li>
+<li> add a rest to roat to allow rails to find which controler#action to submit </li>
+<pre class="prettyprint lang-ruby">
+ post "the"  => "demo#editsfuproject"
+ </pre>
+<li> then in a view embed the form_for ruby </li>
+<pre class="prettyprint lang-ruby">
+#giving initialize to variable to skip a firt time running nil error
+<% @user="SS" %>    
+  <%= form_for @user, :url => the_path do |f| %>
+  <%= f.text_field :text %>
+  <%= f.text_field :author %>
+  <%= f.text_field :comment %>
+  <%= f.submit %>
+</pre>
+<li> then in a controller related to that view we define a function </li>
+<pre class="prettyprint lang-ruby">
+def editsfuproject   
+      @d = Sfuproject.new(params.permit(:text, :author, :comment))
+      if @d.save 
+      else
+end
+</pre>
+<br>
 <h2> RoR Ajax and jQuery </h2>
 useful command to check what is inside params or insatnce variables
 <pre class="prettyprint lang-ruby">
