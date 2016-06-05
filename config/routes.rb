@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/demo/mc_home' => "demo#mc_home"
   get 'demo/angular' => "demo#angular"
   post "the"  => "demo#editsfuproject"
+  post "update" => "demo#up"
  # post 'd'=> 'demo#editsfuproject'
   #get 'editsfu' => 'demo#editsfuproject'
   #get '/demo/jj_hairsalon_app' => "demo#jj_hairsalon_app"

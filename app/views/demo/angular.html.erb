@@ -16,17 +16,31 @@
 	</div>
 </div>
 
-<!--  <%= form_tag(the_path, id: "search-form") do %>
-       <%= text_field_tag :text, params[:text], placeholder: "Search Items" %> 
-      <%= text_field_tag :author, params[:author], placeholder: "Search Items" %> 
-       <%= text_field_tag :comment, params[:comment], placeholder: "Search Items" %>        
-      <%= submit_tag "Search", :name => nil %> 
- <% end %> -->
+
+
+<% @projects.each do |p| %>
+<%=  p.text.to_s    %>
+<%= p.id %>
+<br>
+<%  p.updated_at %>
+<% end %>
+
+<% @token1="SS" %>
+ <%= form_for @token1, :url => update_path do |y| %>
+  <%= y.text_area  :text,  cols: "130", rows: "10", :value => " " %>
+  <%= y.text_field :author %>
+  <%= y.text_field :comment %>
+  <%= y.submit %>
+<% end %>
+
+
+
+
 <% @token="SS" %>
     
       
   <%= form_for @token, :url => the_path do |f| %>
-  <%= f.text_area  :text,  cols: "130", rows: "10" %>
+  <%= f.text_area  :text,  cols: "130", rows: "10", :value => " " %>
   <%= f.text_field :author %>
   <%= f.text_field :comment %>
   <%= f.submit %>
@@ -34,7 +48,7 @@
 
 <% end %>
 <script type="text/javascript">
-
+s
 
 </script>
 </DOCTYPE>
