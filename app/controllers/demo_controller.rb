@@ -62,7 +62,7 @@ class DemoController < ApplicationController
       if @me.update_attributes(params.require(:inp).permit(:text, :author, :comment))
          @saveit = Sfuproject.new(params.require(:inp).permit(:text, :author, :comment))
          @saveit.save
-        @projects = Sfuproject.order(created_at: :desc) 
+        @projects = Sfuproject.order(created_at: :desc).limit(5) 
          render "demo/angular", :layout => 'cmpt475' 
         else
       end  
