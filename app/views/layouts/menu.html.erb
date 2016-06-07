@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Amir Nabaei Website</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <style>
+  #title {
+          text-shadow: 9px 9px 2px rgba(150, 150, 150, 1);
+          }
+  </style>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer"></script>
+   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=html" defer="defer"></script>
+   <link href='https://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+
+   <!-- Google Analytics   Rain Drops. Digital image. Wallpaperup. N.p., n.d. Web. 19 Jan. 2016.-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70754799-1', 'auto');
+  ga('send', 'pageview');
+ 
+</script>
+
+<!-- End Google Analytics -->
+
+
+</head>
+ <!-- Adding icon to rails  -->
+ 
+<body>
+   <nav class="navbar navbar-default" style="box-shadow: 11px 8px 5px 0px rgba(50, 50, 50, 0.25);">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <!--   <img width="26" height="26" class="navbar-band" src=""    class="img-circle"  style="margin-top: 16%; border:  border-radius:50%;"> -->
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+      <!--   <li class="active"><a href="/demo">Home</a></li> -->
+        
+          <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Lanuages  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/demo/js"> JavaScript</a></li>
+             <li><a href="/demo/jj_hairSalon_app"> iPhone App - Hair salon </a></li>
+ 
+             <li><a href="/demo/iphone_app_med"> iPhone App - Medicine </a></li>
+            <li><a href="/demo/RoR"> Ruby on Rails</a></li>
+            <li><a href="/demo/java"> Java</a></li>
+            <li><a href="/demo/c"> C/C++</a></li>
+             <li><a href="/demo/php"> PHP </a></li>  
+              <li><a href="/demo/ruby"> Ruby </a></li>                      
+          </ul>
+        </li>
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">DataBase  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/demo/mysql"> MySql </a></li>
+            <li><a href="/demo/pg"> PostgreSql</a></li>                      
+          </ul>
+        </li>  
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Design  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+             <li><a href="/demo/web"> Web Design</a></li>
+            <li><a href="http://eli17.herokuapp.com/demo/webgl"> WebGl</a></li>                     
+          </ul>
+        </li>  
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Projects  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+             <li><%= link_to('Cross Site JS',{:controller => 'demo',:action => 'hello'}) %></li>
+            <li><a href="/demo/google_analytic"> google_analytic</a></li>  
+            <li><a href="/demo/test"> Test case</a></li>
+            <li><a href="http://cmpt470.herokuapp.com"> Warehouese Inventory webSite</a></li>
+            <li><a href="http://cmp470.herokuapp.com "> Angular Live Search engine</a></li>
+             <li><a href="http://sunconsultingengineers.com/"> PHP Project</a></li>
+             <li role="separator" class="divider"></li> 
+             <li><a href="https://github.com/anabaei?tab=repositories"> Github </a></li>
+             <li><a href="http://amirnabaei.herokuapp.com/">Portfolio </a></li>  
+          </ul>
+        </li> 
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> More  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+
+            <li><a href="http://www.sfu.ca/fass/contact.html"> PHP&SQL Developer</a></li>
+            <li><a href="http://www.bcldb.com/about/contact"> Web Developr & Analytics</a></li>
+             <li><a href="http://www.youtube.com/watch?v=zI8YRVa8U-M"> RoR Find and save from WSDL</a></li>
+      
+            <li><a href="#"> Front End Dev</a></li>
+            <li role="separator" class="divider"></li> 
+            <li><a href="/demo/vcs"> vcs</a></li>
+            <li><a href="/demo/linux"> Linux </a></li> 
+            <li><a href="/demo/words">words </a></li>                
+          </ul>
+        </li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+ <!--  <div class="jumbotron"> -->
+     
+           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- add_3 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8784039367470812"
+             data-ad-slot="2861454880"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+  
+          
+   <!--  <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-search"></span> Search</a> -->
+  <!-- </div> -->
+<%= yield %>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- add_3 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8784039367470812"
+     data-ad-slot="2861454880"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+</div>
+</body>
+</html>

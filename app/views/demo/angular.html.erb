@@ -1,46 +1,54 @@
-<DOCTYPE html>
+<DOCTYPE! html>
 
-<h1> Angular </h1>
-<p> </p> 
-
-<head>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
- 
-</head>
-
-<div ng-app="myApp" ng-controller="myCtrl">
-
-   
-    <div id="edit" contenteditable="true">
-	Here is the element's original content
-	</div>
-</div>
-
-
+<h1> CMPT 475 </h1>
+ <h2> Assignment # 1 Group 10 </h2>
 
 
 <% if @me.nil? %>
 
 <% else %>
-<h2> <%= @me.id %> </h2><h2> <%= @me.text %> </h2>
+<div class="col-md-8">
+     <h2> <%= @me.text %> </h2>
+</div>
 <% end %>
+<div class="col-md-4"></div>
+
+
+<div class="col-md-12"> <legend></legend> <br> </div>
 
 
  <%= form_for :inp, :url => update_path do |y| %>
-  <%= y.text_area  :text,  cols: "130", rows: "10", :value => @me.text %>
-  <%= y.text_field :author %>
-  <%= y.text_field :comment %>
-  <%= y.submit %>
+ <div class="col-md-10"> 
+  <%= y.text_area  :text,  cols: "90", rows: "10", :value => @me.text %>
+  </div>
+  <div class="col-md-2"></div>
+
+ <div class="col-md-12"></div>
+   <div class="col-md-2">
+  <%= y.text_field :author, :placeholder => "author" %>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2">
+  <%= y.text_field :comment, :placeholder => "additional comment" %>
+  </div>
+    <div class="col-md-1"></div>
+  <div class="col-md-2">
+  <%= y.submit "Update it" %>
+  </div>
 <% end %>
 
+<div class="col-md-4"> </div>
+<div class="col-md-12"> <legend></legend> <br></div>
+
+<table class="table table-striped">
 <% @projects.each do |g| %>
- <%=  g.text %>
- <%=  g.id  %>
+<tr>
+ <td><%=  g.text %> </td>
+ <td><%=  g.author  %></td>
+ <td><%= g.created_at %></td>
+</tr>
 <% end %>
+</table>
 
 
-<script type="text/javascript">
-s
-
-</script>
 </DOCTYPE>

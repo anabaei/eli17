@@ -1,5 +1,5 @@
 class DemoController < ApplicationController
-  layout 'application'
+ layout "menu"
 
   def index
    render :layout => false
@@ -32,11 +32,12 @@ class DemoController < ApplicationController
    end
    
    def angular
-
+    
 
      @projects = Sfuproject.all  
      @me = Sfuproject.find_by id: 2
-     render "demo/angular"
+     render :layout => 'cmpt475'     
+     
      #redirect_to demo_angular_path(@find)
    end
 
@@ -62,7 +63,7 @@ class DemoController < ApplicationController
          @saveit = Sfuproject.new(params.require(:inp).permit(:text, :author, :comment))
          @saveit.save
         @projects = Sfuproject.order(created_at: :desc) 
-         render "demo/angular"
+         render "demo/angular", :layout => 'cmpt475' 
         else
       end  
    end
