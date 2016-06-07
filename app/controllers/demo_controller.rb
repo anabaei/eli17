@@ -32,8 +32,12 @@ class DemoController < ApplicationController
    end
    
    def angular
-      @projects = Sfuproject.all  
-    #  @find = Sfuproject.find_by id: 3
+
+
+     @projects = Sfuproject.all  
+     @me = Sfuproject.find_by id: 2
+     render "demo/angular"
+     #redirect_to demo_angular_path(@find)
    end
 
    def editsfuproject 
@@ -51,9 +55,14 @@ class DemoController < ApplicationController
    end
 
    def up
+
     @me = Sfuproject.find_by id: 2
-      if @me.update_attributes(params.permit(:text, :author, :comment))
-         render demo_angular_path
+    
+      if @me.update_attributes(params.require(:inp).permit(:text, :author, :comment))
+         @saveit = Sfuproject.new(params.require(:inp).permit(:text, :author, :comment))
+         @saveit.save
+        @projects = Sfuproject.order(created_at: :desc) 
+         render "demo/angular"
         else
       end  
    end
