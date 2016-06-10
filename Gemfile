@@ -59,3 +59,4 @@ end
 gem 'rails-ajax', '~> 1.0'
 gem 'open-weather'
 gem 'appsignal'
+gem 'simple_form'

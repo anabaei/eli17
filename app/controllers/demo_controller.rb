@@ -36,6 +36,7 @@ class DemoController < ApplicationController
 
      @projects = Sfuproject.all  
      @me = Sfuproject.find_by id: 2
+
      render :layout => 'cmpt475'     
      
      #redirect_to demo_angular_path(@find)
@@ -58,6 +59,7 @@ class DemoController < ApplicationController
    def up
 
     @me = Sfuproject.find_by id: 2
+
     
       if @me.update_attributes(params.require(:inp).permit(:text, :author, :comment))
          @saveit = Sfuproject.new(params.require(:inp).permit(:text, :author, :comment))
