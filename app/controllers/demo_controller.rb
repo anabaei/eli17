@@ -34,7 +34,7 @@ class DemoController < ApplicationController
    def angular
     
 
-     @projects = Sfuproject.all  
+     @projects = Sfuproject.order(created_at: :desc).limit(5)
      @me = Sfuproject.find_by id: 2
 
      render :layout => 'cmpt475'     
