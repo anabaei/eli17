@@ -822,3 +822,6 @@ we use and put image in public folder then also run rake assets:precompile
 <pre class="prettyprint lang-html"> 
 &lt;img src=" &lt;%= asset_path('myimage.png') %&gt;" ;&gt;
 </pre>
+
+<h2> Amazon Web Service S3 </h2>
+<p> To store files or images on Heroku it is better to use Amazon as an external resource. This <a href="https://www.youtube.com/watch?v=0_2VBDoowHs"></a> steps by steps explains for the first time opening acount in Amazon s3 and getting secret keys for heroku. Also to find logs this heroku logs -n 1500 is used. </p>
