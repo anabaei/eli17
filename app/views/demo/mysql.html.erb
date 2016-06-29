@@ -1,0 +1,33 @@
+<h2> MySQL </h2>
+
+<h3> Inner Join</h3>
+<p>
+To  combine the rows from two tables and create a result set containing only such records that are present in both the tables based on the joining condition (predicate).
+</p>
+
+<p> Show Database; displaying database </p>
+<p> Select User();  display current users</p>
+<p> Alter table2 ENGINE innodb; change a table to innoDB </p>
+<p> Select MONTH(January_timestamp) from table2; select month </p>
+<p> DECIMAL (5,2) ;  999.99 to -99.99 </p>
+<p> Select Current_Date(); </p>
+<p> Select myname from names LEFT JOIN armies USING (user_id); is same as below  </p>
+<p>Select myname from manes LEFT JOIN armies where names.user_id = armies.user_id; </p>
+<p> Describe table1; display structure of table </p>
+<p> Select LAST_INSERT_ID(); returns last value assigned by auto increment function </p>
+<p> Select names from table2 where ISNULL(lastname); select only lastnames are null </p>
+<p> create table months(month ENUM 'Jan', 'Feb','Mar'); ENUM limited the possible values go into table </p>
+<p> Select distintict users from table</p>
+<p> Float and Real has 4 bytes and Double is 8 bytes </p>
+<p> Return from 25th books ot hundred: select books from booktable LIMIT 25, 100; </p>
+<p> Retunr only 2,4,5,7 winners select namse from teams Where team_won IN (2,4,5,7); </p>
+<h3> Primary Key</h3>
+<p> Is used to uniquely identify each row in table. </p>
+
+<h3> REGEX and LIKE </h3>
+<p> Like has wildcard which allows you make it like pattern machtin. Rgex is pattern matching comparison and with some signs they can convert to like <a href="http://stackoverflow.com/questions/4078633/difference-between-like-and-regex-operator"> this</a></p>
+
+<p> Mysql interview <a href="http://www.tecmint.com/basic-mysql-interview-questions-for-database-administrators/"> questions</a> </p>
+
+
+
