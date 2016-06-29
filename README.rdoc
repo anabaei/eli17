@@ -1,28 +1,7 @@
-== README
+== nabaei.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This web log mainly uses front end tools like Bootstrap, jQuery and JavaScript to align content about new technologies that I learn and I hope they would be usefull for other users.
+Main index page is just a nice template which is modified by me only. The codecore website has nice ready free templates to use. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Test
+Since it is a front end application mainly there is no specific testing tools suggestion. 
