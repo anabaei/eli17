@@ -1,0 +1,15 @@
+$(dcoumnet).ready(function (){
+	$("p").click(function (){
+	$("div").html("");
+	$('[name="ElementNameHere"]').doStuff();
+	})
+
+})
+
+alert("DS")
+consol.log
+document.write("")
+document.getElemenetByID("DS").innerHTML = "DS"
+.text
+document.getElementsByClassName("stopButton")[0]
+document.getElementsByTagName("LI");
