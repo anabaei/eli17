@@ -37,14 +37,77 @@ An Actor: it does not mean neccessary a person, it can be another system,
 System : system
 use case: actuall process
 
+<img src="/assets/casest.png" align="right">
+
 <p>dealing with key processes and the concepts dealing with that process are extends, like maintaining library books the extends would be checking out the books, adding new books</p>
 
-
+<img src="/assets/usecase.png" align="right">
 <p>manager has more capability and inherit all features of sales person plus </p> 
 <p>sell car or tires inheritate all features from selling products plus, it means selling cars or tires has all standard features of selling a product plus some extentions. For example selling cars has garantee, maintaince fee ,external charges  </p>
 <p> sels person can sel products and here manager has more capability </p>
 
-
+<img src="/assets/activity.png" align="right">
 <h3> Activity Diagrams</h3>
 
-<p> Tells how the processes actually work. 
+<p> Tells how the processes actually work. </p>
+<p> we are starting with black dot but not limited to only one because in real software we dont have only one entry point same as exit </p>
+
+<p> swim reads are dotted lines to help user understand</p>
+<p> syncronization line is black bold line that process can devide and contaticate each other to enter to new process </p>
+
+<p>Diamond are used to if condition checking and in this case is used as to join two arrows to have better view as well </p>
+
+<p> Problem here receive payment should be above the fill order because after 
+	payment shipping should start, so create a tribgle above fill order from receive payment to  correct it </p>
+
+
+<img src="/assets/state.png" align="right">
+<h2> State Charts</h2>
+
+<p> explain the stats or entities, it is similar to activity diagram </p>
+
+<p> transitions are processes, it means they are the bobbles which serve us from one state to another state. It starts when the start change from a process</p>
+
+<p> we took the first order which is consider an action , and order consider a state of checkd , not all checked is a condition for the process to item tell us have all are checked? to transaction we have different scenarios. all item checkecd?  if not so the state of order becomes waiting. also we can cancel.
+all items are checked it goes to dispatched ready to ship and next state is delivered. so an order can have five different stetes and times. It can be cancel in three diferent states. It helps to identify what data goes from where to.   </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
