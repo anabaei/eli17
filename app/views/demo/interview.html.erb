@@ -1,0 +1,113 @@
+They look for more experice, somone to build from cracth a web application on relational databases, 
+smart, fundamental experience in web and mobile application development, like to grow with company 
+
+
+
+<h2> Interview questions</h2>
+
+
+<h3> CSS </h3>
+
+<p> translate() funtion can not move the postion of element in z-axis </p>
+
+<P> css classes are overwritten on each other for ul and li, li class will overrite on ul </P>
+<p> also class with id overwrite on general indication like ul li </p>
+
+<p> if both are suggesting one element with id, then the latest one is correct </p>
+
+
+<ul class="shopping-list" id="awesome">
+    <li><span>Milk</span></li>
+    <li class="favorite" id="must-buy"><span class="highlight">Sausage</span></li>
+</ul>
+
+
+#awesome .favorite:not(#awesome) .highlight {
+    color: red;
+}
+#awesome .highlight:nth-of-type(1):nth-last-of-type(1) {
+    color: blue;
+}
+
+
+it is red!
+
+
+<p> Unused style resources dont download by browser </p>
+
+<p> Display none will download to browser but doesnt show</p>
+<p> Visibility hidden will not download to browser </p>
+<P> @media only screen and (max-width: 33px) will stop older browsers from parsing the reminder of the selector </P>
+
+<p> overfelow in css and hidden !</p>
+<p> Screen size apply to browsers sized not devices </p>
+
+<h2> HTML </h2>
+
+<p> Keygen is a valid HTML5 </p>
+
+<p> bdo tag change the direction of a text</p>
+
+<p> figure and the tags </p>
+
+<p> when we want to add copyright informaiton inside a footer we should use small tag </p>
+
+<p> scoop attribute </p>
+
+<h2>JavaScript </h2>
+
+<p> inside the function variable does not availeble to outside</p>
+
+<p> type of function is always a function </p>
+
+
+
+<h2> SQL </h2>
+The ON clause defines the relationship between the tables.
+
+The WHERE clause describes which rows you are interested in.
+
+The WHERE clause cannot be used to restrict groups. The HAVING clause should be used.
+
+   SELECT subject_code, AVG (marks)
+   FROM students
+   HAVING AVG(marks) > 75
+   GROUP BY subject_code;
+
+<a href="http://www.tutorialspoint.com/sql/sql_interview_questions.htm"> sql interview </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
