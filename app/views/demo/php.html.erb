@@ -16,3 +16,10 @@ $str = 'This is a string, ';
 add_some_extra($str);
 echo $str;    // outputs 'This is a string, and something extra.'
 </pre>
+<pre class="prettyprint lang-php " >
+$a = '1';
+$b = &$a;
+$b = "2$b";
+echo $a.", ".$b;
+// output is 21,21
+</pre>
