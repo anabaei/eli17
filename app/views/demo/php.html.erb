@@ -6,3 +6,13 @@ By default, function arguments are passed by value (so that if the value of the 
 
 To have an argument to a function always passed by reference, prepend an ampersand (&) to the argument name in the function definition.
 </p>
+<pre class="prettyprint lang-php " >
+function add_some_extra(&$string)
+{
+    $string .= 'and something extra.';
+}
+
+$str = 'This is a string, ';
+add_some_extra($str);
+echo $str;    // outputs 'This is a string, and something extra.'
+</pre>
