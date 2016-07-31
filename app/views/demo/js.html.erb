@@ -34,8 +34,25 @@ in:gl5
 var add = new Function("x","y","return x + y");
 add(3,4); // returns 7!
 </pre>
-
-
+<p> Functions are first class values in javascript when we can </p>
+<ol>
+<li> Assign a function to a variable </li>
+<li> Store a function as a value into an array </li>
+<li> Pass a function to a function  </li>
+<li> Return a function from a function  </li>
+</ol>
+<p> Define an object (module) </p>
+<pre class="prettyprint lang-javascript " >
+var mymodul ={ 
+name: "amir",
+age: 99,
+sayname: function()  {document.write(this.name);},
+setname: function(new) {this.name = new;}
+};
+// to call it
+mymodul.sayname();
+mymodul.setname("jadid");
+</pre>
 
 <h2> jQuery </h2>
 
