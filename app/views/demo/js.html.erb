@@ -39,6 +39,27 @@ add(3,4); // returns 7!
 <li> Assign a function to a variable </li>
 <li> Store a function as a value into an array </li>
 <li> Pass a function to a function  </li>
+<pre class="prettyprint lang-javascript " >
+function add(first, second, callback){
+  console.log(first+second);
+  callback();
+}
+function done(){
+  console.log("done");
+}
+// call it, done can be any function
+add(2,3,done);
+</pre>
+
+<h3> Closure </h3>
+<p>A closure is a function defined inside another function (parent function), and has access to variables that are declared and defined in the parent function scope.The closure has access to variables in three scopes: </p>
+<ol type="I">
+<li>Variables declared in their own scope</li>
+<li>Variables declared in a parent function scope</li>
+<li>Variables declared in the global namespace</li>
+</ol>
+
+
 <li> Return a function from a function  </li>
 </ol>
 <p> Define an object (module) </p>
