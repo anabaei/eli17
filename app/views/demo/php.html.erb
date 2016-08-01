@@ -22,4 +22,14 @@ $b = &$a;
 $b = "2$b";
 echo $a.", ".$b;
 // output is 21,21
+//  because we connect the memory address of $a to $b, so any changes in variable $b will affect variable $a. 
 </pre>
+
+<h3> Errors </h3>
+In PHP there are three main type of errors:
+<ol type="I">
+<li>Notices – Simple, non-critical errors that are occurred during the script execution. An example of a Notice would be accessing an undefined variable.</li>
+<li>Warnings – more important errors than Notices, however the scripts continue the execution. An example would be include() a file that does not exist.</li>
+<li>Fatal – this type of error causes a termination of the script execution when it occurs. An example of a Fatal error would be accessing a property of a non-existent object or require() a non-existent file.</li>
+
+<h2> Laravel </h2>
