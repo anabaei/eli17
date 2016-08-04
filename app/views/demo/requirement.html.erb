@@ -40,7 +40,7 @@ list of values potentially create a use case.
 <p>  </p>
 
 <h4> Use Case Model</h4>
-
+<p>
 Bussiness rules : All should stand alone
 should stand alone 
 
@@ -51,9 +51,17 @@ card type --> there would be more extention for them -->
 Speed up the case models,
 
 An Actor: it does not mean neccessary a person, it can be another system, 
-
+</p>
+<p>
 System : system
 use case: actuall process
+</p>
+<p>
+Fill the order is a process, as a result for filling that order can result two different states for that order. once it is filled it created invoice notice that invoice is an entity, then printed invoice change the state to printed.
+Entities can be Customer a part of stating known which is existing customer, (cancel order is a process and even an state), product which can have multiple states like available, not available, back order, on order. States are results of products (entities). 
+</p>
+<p>Validate them: for our processes we use as history to check
+entity must have birth process and death process like invoice. somtitmes birth processes can come from some external process that talk with our system (SEP). </p>
 
 <img src="<%= asset_path('casest.png') %>">
 
@@ -67,7 +75,8 @@ use case: actuall process
 <img src="<%= asset_path('activity.png') %> ">
 <h3> Activity Diagrams</h3>
 
-<p> Tells how the processes actually work. </p>
+<p> Tells how the processes actually work. In front of all event list should be an state, it means each event work as a transition from one state to another state. Or create a matrix of all events in first row and all state on firt culomn, then below each event write the behaviuor which conclude to a state</p>
+
 <p> we are starting with black dot but not limited to only one because in real software we dont have only one entry point same as exit </p>
 
 <p> swim reads are dotted lines to help user understand</p>
@@ -90,9 +99,16 @@ use case: actuall process
 all items are checked it goes to dispatched ready to ship and next state is delivered. so an order can have five different stetes and times. It can be cancel in three diferent states. It helps to identify what data goes from where to.   </p>
 
 
+<h2> Class or Attribute </h2>
+<p> It depends on the context.  </p>
 
+<h2>Entity </h2>
+<p> Entity describes a state during the process. Between two process there is entity to store data. </p>
 
-
+<p>Entities(data tables) in below image:issue, title, publisher, grade(condition). Each entity has attributes like numbers, type etc... Then ask the relation, one grade can apply to many issue? or one issue has one grade only? </p>
+<p> Attributes: volume, issue date, purchase price, current value</p>
+<p> If two entities have many to many relation, then we have to 
+create a middle ware entity with one to many relation among them. </p>
 
 
 
