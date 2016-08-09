@@ -3,6 +3,7 @@
 <h2>VIM </h2>
 
 <h3>find a word </h3>
+<p> find (path) (type) (what) example: find . -name "Mus*"   would find in current directory names which start with Mus </p>
 <p> you can move cursor on any word then press * to find all </p>
 <p> type ? or / then the word you want to search, 3/amir will search for the third occurance of amir in text </p>
 <p> search with decimal or hex, searching with /\%d65 or with /\%x41 both find 'A' (character decimal 65 = hex 41),</p>
@@ -22,4 +23,32 @@ Runing an .exe file: ./amir.exe .Create a file : touch newfile. Creat directory:
 <P> Mounting a filesystem means make it accessible in specific subfiles or directory </P>
 <p> Chmod means change the accessiblily or lock/unock a file  </p>
 <p> to access a pachakge we use ls -qf /etc/pack returns all /etc/pacj </p>
+<h3> ls</h3>
+<p> ls -a -h -l or ls -ahl will list all human readable by long format</p>
+<img src=" <%= asset_path('file_permission.png') %>">
+
+<p> Read: can read not modify, write: can change the file but not read, x: execute it </p>
+<p>Two ways for change the mode permissions: Octal and Sybmbolic </p>
+
+<p> Octal uses variouse state of different values 4,2,1 to show read, write and execute  and the total would be the octal number for each group. </p>
+<img src=" <%= asset_path('Sybmbolic.png') %>">
+<p>  There are three operators here, too. "+" adds whichever permissions you specify to what's already there. "-" removes from whatever's there, and "=" resets the permissions to only whatever value you specify. So for example, to set my user permissions to read, write, and execute, I would use chmod u+rwx. To set my group permissions to only read, I would use chmod g=r, and to remove read, write and execute from others, I would write chmod o-rwx. </p>
+<img src=" <%= asset_path('octal.png') %>">
+<p> When a file is create at first the permision is 664(-rw-rw-r--). </p>
+
+<h3> Chown </h3>
+<p> To change the owner ship. sudo chown root test.sh </p>
+
+<h3> Pipes </h3>
+<img src=" <%= asset_path('pipes.png') %>">
+<p> 
+
+</p>
+
+
+
+
+
+
+
 
