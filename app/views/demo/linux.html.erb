@@ -25,13 +25,13 @@ Runing an .exe file: ./amir.exe .Create a file : touch newfile. Creat directory:
 <p> to access a pachakge we use ls -qf /etc/pack returns all /etc/pacj </p>
 <h3> ls</h3>
 <p> ls -a -h -l or ls -ahl will list all human readable by long format</p>
-<img src=" <%= asset_path('file_permission.png') %>">
+<img src=" <%= asset_path('file_persmission.png') %>">
 
 <p> Read: can read not modify, write: can change the file but not read, x: execute it </p>
 <p>Two ways for change the mode permissions: Octal and Sybmbolic </p>
 
 <p> Octal uses variouse state of different values 4,2,1 to show read, write and execute  and the total would be the octal number for each group. </p>
-<img src=" <%= asset_path('Sybmbolic.png') %>">
+<img src=" <%= asset_path('symbolic.png') %>">
 <p>  There are three operators here, too. "+" adds whichever permissions you specify to what's already there. "-" removes from whatever's there, and "=" resets the permissions to only whatever value you specify. So for example, to set my user permissions to read, write, and execute, I would use chmod u+rwx. To set my group permissions to only read, I would use chmod g=r, and to remove read, write and execute from others, I would write chmod o-rwx. </p>
 <img src=" <%= asset_path('octal.png') %>">
 <p> When a file is create at first the permision is 664(-rw-rw-r--). </p>
