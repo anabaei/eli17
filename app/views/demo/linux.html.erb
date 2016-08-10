@@ -2,8 +2,7 @@
 
 <h2>VIM </h2>
 
-<h3>find a word </h3>
-<p> find (path) (type) (what) example: find . -name "Mus*"   would find in current directory names which start with Mus </p>
+
 <p> you can move cursor on any word then press * to find all </p>
 <p> type ? or / then the word you want to search, 3/amir will search for the third occurance of amir in text </p>
 <p> search with decimal or hex, searching with /\%d65 or with /\%x41 both find 'A' (character decimal 65 = hex 41),</p>
@@ -37,20 +36,39 @@ Runing an .exe file: ./amir.exe .Create a file : touch newfile. Creat directory:
 <p> When a file is create at first the permision is 664(-rw-rw-r--). </p>
 
 <img src=" <%= asset_path('symbolic_octal.png') %>">
-
+<h3>find  </h3>
+<p> find (path) (type) (what) example: find . -name "Mus*"   would find in current directory names which start with Mus </p>
 <h3> Chown </h3>
-<p> To change the owner ship. sudo chown root test.sh </p>
+<p> To change the owner ship. sudo chown root test.sh or sudo chown amir test.sh</p>
 
 <h3> Pipes </h3>
 <img src=" <%= asset_path('pipes.png') %>">
 <p> 
-
+cat poems.txt | cat -n | tail -n 5
 </p>
+<h3> Wildcard</h3>
+<p> ? means any char instead of this one. * means any char or strings.</p>
+<p> man command gives the manual, A+control and E+control jump cursor to start and 
+end line</p>
+<p> mkdir -p new1/new2 would create inside a new1 foler a new2 foler </p>
+<h3> Cat </h3>
+<p> Cat filename.txt returns all content </p>
+<p> Cat head -n 5 amir.txt  returns first 5 lines </p>
+<p> Cat tail -n 30 amir.txt return last 30 lines </p>
+
+<img src=" <%= asset_path('cat_pipe.png') %>">
+
+<h3> Grep</h3>
+<p> grep prints lines of text that match a pattern. like grep "the" amir.txt returns all the inside txt file</p>
+<p> grep -n ""the" amir.txt returns texts included the word and their line numbers </p>
+<p> grep -i ""the" amir.txt is case insensitive both(the and The!)</p>
+<p> grep -v ""the" amir.txt omits lines we dont want to see</p>
+<p> grep -E ""[EYJK]" amir.txt shows the lines include either of these chars</p>
+<p> grep -E ""\w{6,}" amir.txt result:  all of the text strings longer than six characters are highlighted</p>
 
 
-
-
-
-
+<h3> AWK and SED</h3>
+<p> awk is really helpful for extracting particular data, sed is helpful for changing data. The most basic command in sed, replaces one string with another.</p>
+<p> sed s/orange/red/ amir.txt changes every occurance of orange with red</p>
 
 
