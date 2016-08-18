@@ -401,7 +401,26 @@ $("selector").html("&ltp>New html content&lt/p>")
 <h3> ng-app</h3>
 <p> Angular looking for ng-apps. It is a sign that Angular knows should consider this section.</p>
 
+<h3> {{  }} </h3>
+<p> Everything inside binding expressions is compile by Angular.</p>
+<p> Angular is Javascript so every javascrip code works there.</p>
 
+<h3> module </h3>
+<p>it is like main(). To create a module we use below code. First one is the name of module and the second one is dependencies to module. </p>
+<pre class="prettyprint lang-javascript" >
+var myvar= angular.module("mymodule",[]); 
+</pre>
+<h3>Controller </h3>
+<p> Is a function that controlls views, managing models, call a database to parse data. We pass a parameter($scope) to this function which attach a model(just a method) to this parameter. Then it can be seen in view</p>
+<h4> wire Controller to a module</h4>
+<p> first is modulename then we specify a new name for controller and the second is the controller name </p>
+<pre class="prettyprint lang-javascript" >
+myApp.controller("newname", controllername);
+</pre>
+<p> Now we registered the controller with a module. Now everytime we assosicate any angular app with that module name, then the controller is included as well.</p>
+<h4> Associate a module to Angular app</h4>
+<p> &ltdiv ng-app="mymodule" &gt then we have access to module and controller. </p>
+<p>Inside module,  &ltdiv ng-controller="contollername" &gt then we have access to attributes we defined at that controller</p>
 
 <pre class="prettyprint lang-javascript" >
 &ltscript src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
