@@ -1,0 +1,18 @@
+
+
+<h3> Recursion</h3>
+
+Sum a list of an array 
+
+static public sum(array, n){
+	if(n==0)
+	{
+	return array[0];
+	}
+	else
+	{
+	array[n] + sum(array, n-1);
+	}
+}
+call it by:
+sum(array, array.lengh);
