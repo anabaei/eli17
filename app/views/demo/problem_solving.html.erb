@@ -14,13 +14,8 @@ int my_fun()
     if (val1 == 1 && val2 == 0)
         return 1;   // // Will reach here with 0.24 probability
     return my_fun();  // will reach here with (1 - 0.24 - 0.24) probability
-}
-  
-int main()
-{
-    printf ("%d ", my_fun());
-    return 0;
-}
+} 
+int main(){   printf ("%d ", my_fun()); return 0;}
 </pre>
 <p><b>Q: </b>You are given a function foo() that represents a biased coin. When foo() is called, it returns 0 and 1 with 50% probablity, write a function to return 1 with 75% and 0 with 25% probablity.
 </p>
@@ -30,11 +25,9 @@ public int myfunc(){
 	if(var1==0 && var2 == 1){  // 25% prbablity
 	return 0;
 	}
-	else{return 1; // 1-%25 probablity} 
-}
-
-
+	else{return 1; // 1-%25 probablity} }
 </pre>
+<legend><br></legend>
 <h3> Recursion</h3>
 <pre class="prettyprint lang-java">
 <h4> Sum </h4>
@@ -97,7 +90,7 @@ for (i=0;i&lt;array.length;i++){
     }
 }
 </pre>
-
+<legend><br></legend>
 
 
 
