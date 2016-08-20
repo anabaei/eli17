@@ -1,7 +1,8 @@
 <h3> Problem Solving </h3>
 <p><b>Q: </b>You are given a function foo() that represents a biased coin. When foo() is called, it returns 0 with 60% probability, and 1 with 40% probability. Write a new function that returns 0 and 1 with 50% probability each. Your function should use only foo(), no other library method.
 </p>
-<p class="hascode"> <b> Solution </b>  
+
+<p> <b> Solution </b>  
  If we can somehow get two cases with equal probability, then we are done. We call foo() two times. Both calls will return 0 with 60% probability and 1 with 40%. Two pairs (0, 1) and (1, 0) So each pair has 2/5 * 3/5 probabaliry (%24). So the two cases appear with equal probability. The idea is to return consider only the two cases, return 0 in one case, return 1 in other case. For other cases [(0, 0) and (1, 1)], recur until you end up in any of the above two cases.
 <pre class="prettyprint lang-java">
 #include &lt;stdio.h>  
@@ -18,6 +19,7 @@ int my_fun()
 int main(){   printf ("%d ", my_fun()); return 0;}
 </pre>
 </p>
+
 <p><b>Q: </b>You are given a function foo() that represents a biased coin. When foo() is called, it returns 0 and 1 with 50% probablity, write a function to return 1 with 75% and 0 with 25% probablity.
 </p>
 <pre class="prettyprint lang-java">
@@ -99,8 +101,8 @@ for (i=0;i&lt;array.length;i++){
 
 
 <script>
- $(".hascode").click(function(){
-   $('pre:nth-child(1)', this).slideToggle("fast");
+ $("p").click(function(){
+   $('pre', this).slideToggle("fast");
  });
 </script>
 
