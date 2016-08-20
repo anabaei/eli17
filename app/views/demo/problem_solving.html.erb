@@ -1,9 +1,43 @@
-
-
-<h3> Recursion</h3>
-<h4> Sum </h4>
-Sum a list of an array 
+<h3> Problem Solving </h3>
+<p><b>Q: </b>You are given a function foo() that represents a biased coin. When foo() is called, it returns 0 with 60% probability, and 1 with 40% probability. Write a new function that returns 0 and 1 with 50% probability each. Your function should use only foo(), no other library method.
+</p>
+<p> <b> Solution </b>  
+ If we can somehow get two cases with equal probability, then we are done. We call foo() two times. Both calls will return 0 with 60% probability and 1 with 40%. Two pairs (0, 1) and (1, 0) So each pair has 2/5 * 3/5 probabaliry (%24). So the two cases appear with equal probability. The idea is to return consider only the two cases, return 0 in one case, return 1 in other case. For other cases [(0, 0) and (1, 1)], recur until you end up in any of the above two cases.</p>
 <pre class="prettyprint lang-java">
+#include &lt;stdio.h>  
+int my_fun() 
+{
+    int val1 = foo();
+    int val2 = foo();
+    if (val1 == 0 && val2 == 1)
+        return 0;   // Will reach here with 0.24 probability
+    if (val1 == 1 && val2 == 0)
+        return 1;   // // Will reach here with 0.24 probability
+    return my_fun();  // will reach here with (1 - 0.24 - 0.24) probability
+}
+  
+int main()
+{
+    printf ("%d ", my_fun());
+    return 0;
+}
+</pre>
+<p><b>Q: </b>You are given a function foo() that represents a biased coin. When foo() is called, it returns 0 and 1 with 50% probablity, write a function to return 1 with 75% and 0 with 25% probablity.
+</p>
+<pre class="prettyprint lang-java">
+public int myfunc(){
+	int var1 = foo(); int var2= foo();
+	if(var1==0 && var2 == 1){  // 25% prbablity
+	return 0;
+	}
+	else{return 1; // 1-%25 probablity} 
+}
+
+
+</pre>
+<h3> Recursion</h3>
+<pre class="prettyprint lang-java">
+<h4> Sum </h4>
 static public int sum(int[] array, n){
 	if(n==0)
 	{
@@ -30,3 +64,43 @@ public int fact(n){
 or 
    return n==0||n==1? 1:n*fact(n-1);
 </pre>
+<pre class="prettyprint lang-java">
+<h4> Fabocchini</h4>
+public int fab(n){
+	if (n==1 || n==0)
+	{return n}
+	else
+    {n+fab(n-1);}
+}
+</pre>
+<p>Write a function that given a list of non negative integers, arranges them such that they form the largest possible number. For example, given [50, 2, 1, 9], the largest formed number is 95021 </p>
+<pre class="prettyprint lang-java">
+public int big(int[] array)
+{
+int[] sort;
+int temp;
+for (i=0;i&lt;array.length;i++){
+	   for(j=i+1;j&lt;array.length;j++)
+	   { if(array[i]&lt;array[j])
+           { temp = array[j];
+              array[j] = array[i];
+              array[i] = temp;
+           }
+	   }
+    }
+    // now array is sorted
+  int  n=0;
+    while(n&lt;array.length)
+    {
+    System.out.print(array[n]);
+    n++;
+    }
+}
+</pre>
+
+
+
+
+
+
+
