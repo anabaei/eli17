@@ -1,12 +1,13 @@
 
 
 <h3> Recursion</h3>
+<h4> Sum </h4>
 Sum a list of an array 
 <pre class="prettyprint lang-java">
-static public sum(array, n){
+static public int sum(int[] array, n){
 	if(n==0)
 	{
-	return array[0];
+	return array[n];
 	}
 	else
 	{
@@ -14,5 +15,18 @@ static public sum(array, n){
 	}
 }
 call it by:
-sum(array, array.lengh);
+sum(array, array.length-1);
+</pre>
+<pre class="prettyprint lang-java">
+<h4>Factorial </h4>
+public int fact(n){
+	if(n==1){
+	return 1
+	}
+	else{
+	n*fact(n-1)
+	}
+}
+or 
+   return n==0||n==1? 1:n*fact(n-1);
 </pre>
