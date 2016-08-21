@@ -1,6 +1,6 @@
 
 <style>
-	p {
+	p > pre {
 		border-style: groove;
 		padding: 1%;
 		background-color: #f2f2f2;
@@ -13,7 +13,7 @@
 
 <p> <b> Solution </b>  
  If we can somehow get two cases with equal probability, then we are done. We call foo() two times. Both calls will return 0 with 60% probability and 1 with 40%. Two pairs (0, 1) and (1, 0) So each pair has 2/5 * 3/5 probabaliry (%24). So the two cases appear with equal probability. The idea is to return consider only the two cases, return 0 in one case, return 1 in other case. For other cases [(0, 0) and (1, 1)], recur until you end up in any of the above two cases.
- <span> 
+
 <pre class="prettyprint lang-java">
 #include &lt;stdio.h>  
 int my_fun() 
@@ -27,7 +27,7 @@ int my_fun()
     return my_fun();  // will reach here with (1 - 0.24 - 0.24) probability
 } 
 int main(){   printf ("%d ", my_fun()); return 0;}
-</pre></span>
+</pre>
 
 </p>
 
