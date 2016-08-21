@@ -1,6 +1,6 @@
 
 <style>
-	p  pre {
+	.hascode {
 		border-style: groove;
 		padding: 1%;
 		background-color: #f2f2f2;
@@ -11,7 +11,7 @@
 <p><b>Q: </b>You are given a function foo() that represents a biased coin. When foo() is called, it returns 0 with 60% probability, and 1 with 40% probability. Write a new function that returns 0 and 1 with 50% probability each. Your function should use only foo(), no other library method.
 </p>
 
-<p> <b> Solution </b>  
+<p class="hascode"> <b> Solution </b>  
  If we can somehow get two cases with equal probability, then we are done. We call foo() two times. Both calls will return 0 with 60% probability and 1 with 40%. Two pairs (0, 1) and (1, 0) So each pair has 2/5 * 3/5 probabaliry (%24). So the two cases appear with equal probability. The idea is to return consider only the two cases, return 0 in one case, return 1 in other case. For other cases [(0, 0) and (1, 1)], recur until you end up in any of the above two cases.
 
 <pre class="prettyprint lang-java">
@@ -31,7 +31,7 @@ int main(){   printf ("%d ", my_fun()); return 0;}
 
 </p>
 
-<p><b>Q: </b>You are given a function foo() that represents a biased coin. When foo() is called, it returns 0 and 1 with 50% probablity, write a function to return 1 with 75% and 0 with 25% probablity.
+<p class="hascode"><b>Q: </b>You are given a function foo() that represents a biased coin. When foo() is called, it returns 0 and 1 with 50% probablity, write a function to return 1 with 75% and 0 with 25% probablity.
 </p>
 <pre class="prettyprint lang-java">
 public int myfunc(){
@@ -41,13 +41,27 @@ public int myfunc(){
 	}
 	else{return 1; // 1-%25 probablity} }
 </pre>
-<p><b>Q:  </b> </p>
+<p><b>Q:Given Two classes A & B. How will B know if an instance of A is already created?  </b> </p>
+<p class="hascode"> Solution: created constructor and make it to false for class B, only if class A existed its contrstuct chagne the boolean to True</p>
+<pre class="prettyprint lang-java">
+Class B{
+	boolean iscreated;
+	B(){
+	iscreated = false;
+	}
+}	
+Class A{
+	A(objB){
+      objB.iscreated = True;
+	}
+}
+</pre>
 
 
 <legend><br></legend>
-<h3> Recursion</h3>
+<h3 class="hascode"> Recursion</h3>
 <pre class="prettyprint lang-java">
-<h4> Sum </h4>
+<h4 > Sum </h4>
 static public int sum(int[] array, n){
 	if(n==0)
 	{
@@ -83,7 +97,7 @@ public int fab(n){
     {n+fab(n-1);}
 }
 </pre>
-<p>Write a function that given a list of non negative integers, arranges them such that they form the largest possible number. For example, given [50, 2, 1, 9], the largest formed number is 95021 </p>
+<p class="hascode">Write a function that given a list of non negative integers, arranges them such that they form the largest possible number. For example, given [50, 2, 1, 9], the largest formed number is 95021 </p>
 <pre class="prettyprint lang-java">
 public int big(int[] array)
 {
