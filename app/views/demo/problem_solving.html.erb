@@ -1,7 +1,7 @@
 
 <style>
 	.hascode {
-		border-style: groove;
+		
 		padding: 1%;
 		background-color: #f2f2f2;
 	}
@@ -56,6 +56,26 @@ Class A{
 	}
 }
 </pre>
+
+<p> Given a sorted (increasing order) array, write an algorithm to create a binary tree with minimal height.</p>
+<p class="hascode">
+Solution:recursively create a tree with mid value and send the array[mid] to that node info
+</p>
+<pre class="prettyprint lang-java">
+	public func(int[] array, int start, int end)
+	{
+	if(start>end) {return null;}
+	int mid = start + (end-start)/2;
+	Node n = new Node();
+	n.info = array[mid];
+	n.left = func(array, start, mid-1 );
+	n.right = func(array, mid+1, end);
+	return n;
+	}
+</pre>
+<h4> Breath Depth Search and First Search Graph </h4>
+<p> In depth search we use Stack and in depth we use queue to keep track of vertices we have to keep visiting  </p>
+<p> Diffrence between graph and tree is in tree we dont have loop in graph we  have</p>
 
 
 <legend><br></legend>
