@@ -20,9 +20,27 @@
 ,Postgre SQL
 ,Informix
 ,DB2 </b></p>
-<p> Each Database management system has two parts</p>
+<p><b> Each Database management system has two parts: </b> </p>
 <li> Server components. One part is database engine to comunicatie with database to parse, retrive. Another part is job schedualer in order to find who has done what on database and another part is finding most effiecient way to retrive data </li>
 <li> Client components. Tools for querying data like SQL DEVELOPER.</li>
+<legend> </legend>
+<h2> Subsets of SQL </h2>
+<li>  Data manipulation language.  It works with data and we can rollback or undo them  SELECT, INSERT, UPDATE, and DELETE
+</li>
+<li>  Data defination language. It changes the structure of database and we can not rollback them  CREATE, ALTER, DROP(to remove a table) and TRUNCATE(to wipe off all data on a table)
+</li>
+<li>  Data control language. It changes the access to database, who is allow to see what, same as GRANT REVOKE and DENY
+</li>
+<li>  Transaction control language COMMIT, ROLLBACK, SAVEPOINT. Transaction is logical operation with sql. Like an account transfering from one person's account to another. It requires two steps.
+<li> Update one account to retrieve data from it</li>
+<li> Then another update to the person who wanted to tranfer money to</li>
+<p> We can not do these two steps at once. So these two update statement (DML statement) create one transaction. Transaction has to all DML statement happen or none of them therefore there is rollback in each transaction. </p>
+ </li>
+
+<legen> </legen>
+<P> <b>Entity</b> is the object which has several attributes or columns. Common entities are customer, user, client, product which each one is a table. <p>
+<P> <b> Tuples or Records </b>  is a complete collection of data. It means an entire row holding information about one thing. </P>
+
 
 
 <h1> Oracle </h1>
@@ -36,6 +54,7 @@ show pagesize;
 set pagesize  150;
 set linesize 140; 
 </pre>
+
 
 
 
