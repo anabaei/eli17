@@ -32,16 +32,19 @@
 <li>  Data control language. It changes the access to database, who is allow to see what, same as GRANT REVOKE and DENY
 </li>
 <li>  Transaction control language COMMIT, ROLLBACK, SAVEPOINT. Transaction is logical operation with sql. Like an account transfering from one person's account to another. It requires two steps.
+ <ol>
 <li> Update one account to retrieve data from it</li>
 <li> Then another update to the person who wanted to tranfer money to</li>
+ </ol>
 <p> We can not do these two steps at once. So these two update statement (DML statement) create one transaction. Transaction has to all DML statement happen or none of them therefore there is rollback in each transaction. </p>
  </li>
 
 <legen> </legen>
 <P> <b>Entity</b> is the object which has several attributes or columns. Common entities are customer, user, client, product which each one is a table. <p>
 <P> <b> Tuples or Records </b>  is a complete collection of data. It means an entire row holding information about one thing. </P>
-
-
+<p> <b> Primary Key </b> is a unique identifier for our entities. PK can not be null. Some call it artificial or sorted number which doesnt do anything except be a unique identifer. Everything that is not primary key we call it non-primary. </p> 
+<p> <b>none-primary key </b> every column which is not primary key. </p>
+<p> <b> </b> </p>
 
 <h1> Oracle </h1>
 
@@ -58,34 +61,3 @@ set linesize 140;
 
 
 
-<p> Relational database presents our data into a collection of tables.</p>
-<p> Using sql developer as a tool to collect data from database</p>
-
-
-<p>Database server parse our queries we asked, it sort the data and retrive, there is also a job scheduler to determie who has passed the what.  </p>
-<p> Structure Query Language </p>
-
-
-<h3> DML </h3>
-<p> data manipulation language, everything facing with data deletign inserting, select, update  </p>
-
-<h3> DDL </h3>
-<p> 
-data defination language, change the structure of database
-alter table, truncate, drop table
-</p>
-
-<h3> DCL </h3>
-<p> 
-data control language has to do with access and permission
-who is allow to things
-</p>
-
-<>TCL
-<p>Transacttion, support for example transfering someone  money from one account to another, it can not be done at the same time. Transaction can be a logical operation inside the database, Transaction should be all or nothing. All are happened or noneof them happened. It meanes our commit can rollback and save it. </p>
-
-<p> We always can rollback DML but you can not rollback DDL.</p>
-
-40 next topic
-
-<p> </p> 
