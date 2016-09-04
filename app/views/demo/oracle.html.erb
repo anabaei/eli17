@@ -61,11 +61,35 @@ set pagesize  150;
 set linesize 140; 
 </pre>
 
+<p> <b> Data Model </b> The process of defining and processing of information call data model. We need to identify what are the entities and attributes are and define the relationship among tables. It should be clear how the tables and attributes are and always ask question. </p>
 
-
-
-
-
+<h3> Basic DML  </h3>
+<p><b> Select </b> </p>
+<p> <b> Insert</b> </p>
+<pre class="prettyprint lang-sql">
+Insert into students(
+   student_id,
+   name,
+   grade,
+ ) VALUES (
+	1,
+	'Amir',
+	'C'
+);
+</pre>
+<p><b> Update </b> </p>
+<pre class="prettyprint lang-sql">
+Update 
+  students
+SET
+  grade = 'A+'
+;
+</pre>
+<p> <b> Delete</b> </p>
+<pre class="prettyprint lang-sql">
+DELETE FROM students 
+WHERE name = 'Amir'
+</pre>
 
 
 
