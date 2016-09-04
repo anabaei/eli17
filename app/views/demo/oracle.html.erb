@@ -52,6 +52,16 @@
 <p><b> Many to Many Relationship</b> We create a link table with a composite primary key of each table and make one to many relationship. Student can enroll in many courses and a class can have many students. If in student table we have a grade attribute and we want to find all the student grades in one class. This is a good <a href="http://stackoverflow.com/questions/7296846/how-to-implement-one-to-one-one-to-many-and-many-to-many-relationships-while-de"> link </a> </p>
 </p>
 
+<p><b> Composite Primary key </b>
+<pre class="prettyprint lang-sql">
+CREATE TABLE student_class 
+(
+    studentId INT REFERENCES student,
+    classId INT REFERENCES class,
+    PRIMARY KEY(studentId, classId)
+);
+</pre>
+
 <h3 class="title"> Set out put SQL Developer</h3>
 <p class="code">with below codes we can check the size and set it to customized version</p>
 <pre class="prettyprint lang-sql">
