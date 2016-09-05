@@ -1,6 +1,7 @@
 
 
 <img src=" <%= asset_path('funny_group.jpg') %>" >
+<a href="https://www.techonthenet.com/sql_server/foreign_keys/foreign_delete.php"> SQL SERVER ADVANCED </a>
 
 <h2> Different Usage of Databases</h2>
 <li>Online Transaction Processing- OLTP. It uses for checking the data transactions </li>
@@ -45,6 +46,7 @@
 <P> <b> Tuples or Records </b>  is a complete collection of data. It means an entire row holding information about one thing. </P>
 <p> <b> Primary Key </b> is a unique identifier for our entities. PK can not be null. Some call it artificial or sorted number which doesnt do anything except be a unique identifer. Everything that is not primary key we call it non-primary. </p> 
 <p> <b>none-primary key </b> every column which is not primary key. </p>
+<div class="alert alert-warning"> Parents dont know their children but children know them. </div>
 <p> <b>Foreign Key </b> is a column on child table referencing unique identifier on parent table. </p>
 <pre class="prettyprint lang-sql">
 CREATE TABLE MENTOR1 (
@@ -57,11 +59,13 @@ men number(20),
 CONSTRAINT fk_men FOREIGN KEY (men) REFERENCES MENTOR1(MEN_ID)
 );
 </pre>
-<p> <b> Cascade </b>  dropping a table which is a parent of another table gives an error because the refrence would lose its source. To avoid we can delete first the parent then child or use cascade code</p>
-
-drop table mentor1 CASCADE CONSTRAINTS;
+<p> <b> Cascade </b> This way foreign key keeps <b> data integrity </b>.  Dropping a table which is a parent of another table gives an error because the refrence would lose its source. To avoid we can delete first the parent then child or use cascade code</p>
+<p> Below code command to drop all constraints refers to this table  then drop table (suggested)</p>
 <pre class="prettyprint lang-sql">
+drop table mentor1 CASCADE CONSTRAINTS;
+</pre>
 OR ADD this in table
+<pre class="prettyprint lang-sql">
 ...
  CONSTRAINT fk_men FOREIGN KEY (men) REFERENCES MENTOR1(MEN_ID) ON DELETE CASCADE 
  ON UPDATE CASCADE  
@@ -70,7 +74,7 @@ OR ADD this in table
 
 <p> <b> Self Refrential Relationship</b> for example  an entity  student whith attribue call tutor. Also each tutor is a student so it would be a foriegn key with student id refering to student table. </p>
 <b> One to Many Relationship </b>
-<div class="alert alert-warning"> Parents dont know their children but children know them. </div>
+
 <p><b> Many to Many Relationship</b> We create a link table with a composite primary key of each table and make one to many relationship. Student can enroll in many courses and a class can have many students. If in student table we have a grade attribute and we want to find all the student grades in one class. This is a good <a href="http://stackoverflow.com/questions/7296846/how-to-implement-one-to-one-one-to-many-and-many-to-many-relationships-while-de"> link </a> </p>
 </p>
 
