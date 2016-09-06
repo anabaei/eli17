@@ -137,7 +137,7 @@ SQL is case insensitive only inside quotes it is.
 </div>
 
 <P> varchar should be always single quote. Only some cases we allow to use double quote which remove free space for us </P>
-<p> put all syntax capital </p>s
+<p> put all syntax capital </p>
 
 <h2> Select </h2>
 
@@ -146,25 +146,57 @@ ID here is an alians for student_id
 </br>
 <pre class="prettyprint lang-sql">
 Select
-  Student_id AS ID
+  student_id AS ID
 FROM students;
 </pre>
 
 <b> Recognize NULL </b>
-find all NULL names.
+find all names that are not NULL. So we dont have equal(=) to NULL!
 </br>
 <pre class="prettyprint lang-sql">
 Select
-  Student_id AS ID, 
+  student_id AS ID, 
   name
 FROM students
 WHERE NOT name IS NULL;
 </pre>
 
+<b> Substitute NULL with a default value</b>
+find all names that are  NULL and show "name is not accesible"
+</br>
+<pre class="prettyprint lang-sql">
+Select
+  student_id AS ID, 
+  name
+  nvl(name, 'name is not accesible'),
+  nvl(student_id, 0),    -- when it is numeric
+  nvl(to_char(student_id) AS ID 'student id is not available')  -- only after converting the replacement can be strings
+ FROM students;
+</pre>
 
+<b> Order By </b>
 
+</br>
+<pre class="prettyprint lang-sql">
+Select
+  student_id AS ID, 
+  name
+ FROM students
+ ORDER BY name;
+</pre>
 
+<b> Thin Air Dual </b>
+<pre class="prettyprint lang-sql">
+SELECT
+  44 + 43
+FROM dual;
 
+SELECT 
+  'youuuu', 
+  1,  
+  SYSDATE  
+FROM dual;
+</pre>
 
 
 
