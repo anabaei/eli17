@@ -136,12 +136,13 @@ WHERE name = 'Amir'
 SQL is case insensitive only inside quotes it is.
 </div>
 
-<P> varchar should be always single quote </P>
-<p> put all syntax capital </p>
+<P> varchar should be always single quote. Only some cases we allow to use double quote which remove free space for us </P>
+<p> put all syntax capital </p>s
 
 <h2> Select </h2>
 
 <b> Renaming a column </b>
+ID here is an alians for student_id 
 </br>
 <pre class="prettyprint lang-sql">
 Select
@@ -149,7 +150,16 @@ Select
 FROM students;
 </pre>
 
-
+<b> Recognize NULL </b>
+find all NULL names.
+</br>
+<pre class="prettyprint lang-sql">
+Select
+  Student_id AS ID, 
+  name
+FROM students
+WHERE NOT name IS NULL;
+</pre>
 
 
 
