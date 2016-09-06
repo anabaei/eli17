@@ -59,6 +59,11 @@ men number(20),
 CONSTRAINT fk_men FOREIGN KEY (men) REFERENCES MENTOR1(MEN_ID)
 );
 </pre>
+<h4> Constraint</h4>
+<p> SQL constraints are used to specify rules for the data in a table and use for naming!
+
+ If there is any violation between the constraint and the data action, the action is aborted by the constraint. from this <a href = "http://www.w3schools.com/sql/sql_constraints.asp"> refrence </a></p>
+
 <p> <b> Cascade </b> This way foreign key keeps <b> data integrity </b>.  Dropping a table which is a parent of another table gives an error because the refrence would lose its source. To avoid we can delete first the parent then child or use cascade code</p>
 <p> Below code command to drop all constraints refers to this table  then drop table (suggested)</p>
 <pre class="prettyprint lang-sql">
@@ -119,7 +124,7 @@ Insert into students(
 Update 
   students
 SET
-  grade = 'A+'
+  grade = 'A+', name = 'Amir'
 ;
 </pre>
 <p> <b> Delete</b> </p>
@@ -131,10 +136,63 @@ WHERE name = 'Amir'
 SQL is case insensitive only inside quotes it is.
 </div>
 
-<h3> Constraint</h3>
-<p> SQL constraints are used to specify rules for the data in a table.
+<P> varchar should be always single quote </P>
+<p> put all syntax capital </p>
 
- If there is any violation between the constraint and the data action, the action is aborted by the constraint. from this <a href = "http://www.w3schools.com/sql/sql_constraints.asp"> refrence </a></p>
+<h2> Select </h2>
+
+<b> Renaming a column </b>
+</br>
+<pre class="prettyprint lang-sql">
+Select
+  Student_id AS ID
+FROM students;
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
