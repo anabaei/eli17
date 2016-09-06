@@ -159,6 +159,12 @@ Select
   name
 FROM students
 WHERE NOT name IS NULL;
+--  NULL = NULL    is false
+--  NULL <> NULL   is false
+--  NULL != NULL   is false 
+ 
+ However,
+ NULL IS NULL   is true
 </pre>
 
 <b> Substitute NULL with a default value</b>
@@ -198,12 +204,28 @@ SELECT
 FROM dual;
 </pre>
 
-
-
-
-
-
-
+<b> DATES</b>
+<p> Dates saved in date format. To see them as non numeric format we can define how to display as here we say firt month, then date then year.
+But first we have to convert to char becuse they are in date type.</p>
+<pre class="prettyprint lang-sql">
+SELECT 
+   name,
+   to_char(bd,'Month, dd, yyyy') 
+FROM  Students;
+</pre>
+<p> To compare or filter dates it is better to convert them them to Date (they may have different format of yymmdd so by defining the format everything we keep integrity) rather than converting to char first then compare.
+<pre class="prettyprint lang-sql">
+SELECT 
+   name,
+   to_char(bd,'Month, dd, yyyy') AS Birthday
+FROM  Students
+WHERE bd >= TO_DATE('apr-11-2000','mon-dd-yyyy');
+</pre>
+This one is <b> incorrect: </b>
+WHERE to_char(bd,'mon-dd-yyyy') >= 'apr-11-2000';
+<br>
+<p>
+It compares one char letter with the same one. for examle if f > a so returns true. if our month is february! </p>
 
 
 
