@@ -205,6 +205,7 @@ FROM dual;
 </pre>
 
 <b> DATES</b>
+
 <p> Dates saved in date format. To see them as non numeric format we can define how to display as here we say firt month, then date then year.
 But first we have to convert to char becuse they are in date type.</p>
 <pre class="prettyprint lang-sql">
@@ -213,6 +214,10 @@ SELECT
    to_char(bd,'Month, dd, yyyy') 
 FROM  Students;
 </pre>
+<p>Inside the database, dates stored in one internal numeric format
+(probably floating point).  It is not necessary to convert from one date
+format to another because inside the database there is only one format. </p>
+<p> Therefore anytime we stored data we use to_date() function, and any time reading date we use to_char().</p>
 <p> To compare or filter dates it is better to convert them them to Date (they may have different format of yymmdd so by defining the format everything we keep integrity) rather than converting to char first then compare.
 <pre class="prettyprint lang-sql">
 SELECT 
@@ -226,22 +231,44 @@ WHERE to_char(bd,'mon-dd-yyyy') >= 'apr-11-2000';
 <br>
 <p>
 It compares one char letter with the same one. for examle if f > a so returns true. if our month is february! </p>
+<pre class="prettyprint lang-sql">
+Monday the Twenty-Three of August, Nineteen ninty-eight 
+</pre>
+To have a bove foramt we should use 
+<pre class="prettyprint lang-sql">
+Select 
+   to_char(bd,'fmDay "the" fmDdspth "of" fmMonth, fmYear') 
+FROM students;
+</pre>
+<b> Alias </b>
+Defining a table with alias then it knows only alias as the table
 
 
+<h3> Union </h3>
+<p> combining rows(records) from one query  to another table. We have to select same number of columns from each row with the same data type and then combine them. Union remove duplicate but union all does not. </p>
 
+<div class="alert alert-warning">
+On the contrary join combine columns of two tables and rows while UNION combines only rwos on same columns </div>
 
+<h3> Intersect</h3>
+<p> It shows only the selected columns which are identical in both tables</p>
+<div class="alert alert-warning"> Join can do the same as Intersect by joining two tables on columnss have in common
+</div>
 
+<h3> Minus </h3>
+<p> It removes the selected item from the table </p> 
 
-
-
-
-
-
-
-
-
-
-
+<h3> Aggregtion </h3>
+<p>All aggregation functions (Count, Max, Min,..) ignores null and they only consider aggretaion clause or queries that exists. For example COUNT(company.name) consider only companies having name. </p>
+<p> <b> Group BY </b> Finds the distinct groups of aggregation clauses. It comes after where and before order by. </p>
+<p><b>Everytime </b> quering a column by aggregtion we need group function . Process start of <b> select </b> then <b> Group By </b> and then <b>Select</b></p>
+<div class="alert alert-info">
+SELECT SUM(pay) FROM customers;
+returns: 1 8943
+SELECT name, SUM(pay) FROM customers; 
+-- It doesnt make sence because system can not figure out this sum is for all data or some people because name should supposely be dedicated to each row of sum here. So they define Group BY!
+SELECT name, sum(pay) FROM customers Group By name;
+</div>
 
 
 
