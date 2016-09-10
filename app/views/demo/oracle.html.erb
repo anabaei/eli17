@@ -263,18 +263,34 @@ On the contrary join combine columns of two tables and rows while UNION combines
 <p> <b> Group BY </b> Finds the distinct groups of aggregation clauses. It comes after where and before order by. </p>
 <p><b>Everytime </b> quering a column by aggregtion we need group function . Process start of <b> select </b> then <b> Group By </b> and then <b>Select</b></p>
 <div class="alert alert-info">
-SELECT SUM(pay) FROM customers;
-returns: 1 8943
-SELECT name, SUM(pay) FROM customers; 
--- It doesnt make sence because system can not figure out this sum is for all data or some people because name should supposely be dedicated to each row of sum here. So they define Group BY!
-SELECT name, sum(pay) FROM customers Group By name;
+SELECT SUM(pay) FROM customers;<br>
+returns: 1 8943<br>
+SELECT name, SUM(pay) FROM customers;<br> 
+-- It doesnt make sence because system can not figure out this sum is for all data or some people because name should supposely be dedicated to each row of sum here. So they define Group BY!<br>
+SELECT name, sum(pay) FROM customers Group By name; 
 </div>
-
-
-
-
-
-
+<p>Therefore we can say every non aggregation column has to be in group by  </p>
+<div class="alert alert-success">
+  For each in query means group by with that column.
+</div>
+<p> Q:we have tables trades and companies. What the price total is for each trade and what the company was </p>
+<p> It means trade and company are unique so we can use group by.  And use sum to add prices for each group.</p>
+<pre class="prettyprint lang-sql">
+SELECT
+   co.company_id,
+   co.NAME,
+   SUM(tr.price_total)
+FROM company co
+  JOIN trade tr
+    ON tr.stock_id = co.stock_id
+GROUP BY co.company_id, co.name
+ORDER BY sum(tr.price_total) DESC;
+</pre>
+<h3> Having </h3>
+<p>It comes for filtering aggregation function. We can not use where, because where process before group by. </p>
+<div class="alert alert-WARNING">
+  Process is 1- FROM, 2- JOINS, 3- WHERE, 4- GROUP BY, 5- HAVING, 6- SELECT, 7- ORDER BY
+  </div>
 
 
 
