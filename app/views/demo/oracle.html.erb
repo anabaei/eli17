@@ -334,7 +334,8 @@ CREATE SEQUENCE seq
    INCREMENT BY 1
    START WITH 7;
  </pre>
-The way to call it is :
+ <b> NEXTVAL </b> is a defined function.
+The way to call it is as below:
 <pre class="prettyprint lang-sql">
 INSERT INTO broker (
   id,
@@ -344,10 +345,18 @@ INSERT INTO broker (
   'Andrew',
   'Wiltshire');
 </pre>
-NEXTVAL is defined function.
+<p> Everytime we call seq by NEXTVAL it increment it by one. Even if we call it by a dumy table like dual like: <br>
+SELECT  broker_id_seq.NEXTVAL FROM dual; <br>
 
+<b> CURRVAL </b> showing the current value of the sequence as below
+<pre class="prettyprint lang-sql">
+SELECT 
+   broker_id_seq.CURRVAL
+FROM dual;
+</pre>
 
-
+<h3> Adding multiple rows</h3>
+<p>  </p>
 
 
 
