@@ -327,6 +327,9 @@ SELECT MAX(pay) FROM assignment
 </pre>
 How to get third MAX value! 
 
+
+<h2> PL/SQL</h2>
+
 <h3>Sequences </h3>
 <p> It is useful when you want automatically increment one value. By below code we create a sequence start from 7 and increment one by one everytime is called. </p>
 <pre class="prettyprint lang-sql">
@@ -371,15 +374,44 @@ FROM consultant;
 alter sequence seq
   increment by 10;
 </pre>
-<div class="alert alert-info"> We also allow to put MAXVALUE 20 when defining sequence, but we dont allow to choose start values from select somewhere. The only solution is using procedure for that </div>
+<div class="alert alert-info"> We allow to put MAXVALUE 20 when defining sequence. We dont allow to choose start values from select somewhere. The only solution is using procedure for that </div>
 
+<h3>PL/SQL Basic Block </h3>
+<p>One main reason to use PL/SQL is to set transactions. Like geting money from one account and transfer into another one. All should 
+be done or if fail none should happen. </p>
+<div class="alert alert-info">
+/*  PL/SQL Basic Block <br> 
+</br>
+[ DECLARE ]  -- declare local variables (optional) <br>
+BEGIN  <br>
+<br>
+EXCEPTION  -- (optional) <br>
+END; <br>
+/ 
+</div>
 
+<h3> If Then ELSE </h3>
+<p>We can not use select inside If statements, but we can have a select after <b> THEN </b> . We just allow to use <b> SELECT INTO </b> a variable then use comparison. </p>
+<pre class="prettyprint lang-sql">
+DECLARE 
+  l_next_id NUMBER(6);
+BEGIN
+  SELECT MAX(broker_id)
+      INTO l_next_id
+  FROM broker;
 
-
-
-
-
-
+  IF l_next_id IS NULL THEN
+     l_next_id := 1;
+  ELSE
+     l_next_id := l_next_id + 1;
+  END IF;
+ 
+  EXECUTE IMMEDIATE
+     'CREATE SEQUENCE broker_id_seq INCREMENT BY 1 START WITH ' || to_char(l_next_id,'999');
+END;
+/
+</pre>
+<div class="alert alert-info"><b>EXECUTE IMMEDIATE</b> It creates a sequence which incrementing by 1 and starting form l_next_id with max 999 </div>
 
 
 
