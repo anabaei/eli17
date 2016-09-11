@@ -308,7 +308,7 @@ WHERE EXISTS is used only in correlated subquery. In where EXISTS we dont choose
 <p> If we want to check all the companies in all the places. We have to check for each place either a company exists or not.(ofcourse in this case we could do it with inner join)</p>
 <h3> correlated subquery </h3>
 <p>In subquery we refrences information that comes form outer query.  </p>
-<p> some codes are unavoidable to write subquery like this. If we want to find maximum share, the only way we could use group by shares which returns all shares but to have only one max share we have to use correlated sub as below</p>
+<p> some codes are unavoidable to write subquery like this. If we want to find maximum share, the only way we could use group by shares which returns all shares but to have only one max and not a list of group by share we have to use correlated sub as below</p>
 <pre class="prettyprint lang-sql">
 SELECT 
   shares,
@@ -327,10 +327,24 @@ SELECT MAX(pay) FROM assignment
 </pre>
 How to get third MAX value! 
 
-
-
-
-
+<h3>Sequences </h3>
+<p> It is useful when you want automatically increment one value. By below code we create a sequence start from 7 and increment one by one everytime is called. </p>
+<pre class="prettyprint lang-sql">
+CREATE SEQUENCE seq
+   INCREMENT BY 1
+   START WITH 7;
+ </pre>
+The way to call it is :
+<pre class="prettyprint lang-sql">
+INSERT INTO broker (
+  id,
+  name,
+) VALUES (
+  seq.NEXTVAL,
+  'Andrew',
+  'Wiltshire');
+</pre>
+NEXTVAL is defined function.
 
 
 
