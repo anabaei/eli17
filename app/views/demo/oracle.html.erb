@@ -379,14 +379,12 @@ alter sequence seq
 <h3>PL/SQL Basic Block </h3>
 <p>One main reason to use PL/SQL is to set transactions. Like geting money from one account and transfer into another one. All should 
 be done or if fail none should happen. </p>
-<div class="alert alert-info">
-/*  PL/SQL Basic Block <br> 
-</br>
-[ DECLARE ]  -- declare local variables (optional) <br>
-BEGIN  <br>
-<br>
-EXCEPTION  -- (optional) <br>
-END; <br>
+<pre class="prettyprint lang-sql">
+/*  PL/SQL Basic Block 
+[ DECLARE ]  -- declare local variables (optional) 
+BEGIN  
+EXCEPTION  -- (optional) 
+END; 
 / 
 </div>
 
@@ -412,8 +410,8 @@ END;
 /
 </pre>
 <div class="alert alert-info"><b>EXECUTE IMMEDIATE</b> It creates a sequence which incrementing by 1 and starting form l_next_id with max 999 </div>
-
-
+<h3> Stored Procedures</h3>
+<p> Has all functionality that a basic block has
 
 
 
