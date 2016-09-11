@@ -364,13 +364,14 @@ SELECT
    name,
 FROM consultant;
 </pre>
-<br> <br>
+<br> 
+<h3> Alter Sequence </h3>
 <div class="alert alert-warning ">We can alter the sequence by below code. While we can not alter the start point. </div>
 <pre class="prettyprint lang-sql">
 alter sequence seq
   increment by 10;
 </pre>
-
+<div class="alert alert-info"> We also allow to put MAXVALUE 20 when defining sequence, but we dont allow to choose start values from select somewhere. The only solution is using procedure for that </div>
 
 
 
