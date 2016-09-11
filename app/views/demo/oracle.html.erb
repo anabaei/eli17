@@ -356,9 +356,14 @@ FROM dual;
 </pre>
 
 <h3> Adding multiple rows</h3>
-<p>  </p>
-
-
-
+<p>Below code brings all data from consultant table and insert into broker table, everytime increment broker id </p>
+<pre class="prettyprint lang-sql">
+INSERT INTO broker (broker_id, name)
+SELECT 
+   seq.nextval, 
+   name,
+FROM consultant;
+</pre>
+<div class="alert alert-warning ">We can alter the sequence by below code. While we can not alter the start point. </div>
 
 
