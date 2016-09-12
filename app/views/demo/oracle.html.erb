@@ -411,8 +411,31 @@ END;
 </pre>
 <div class="alert alert-info"><b>EXECUTE IMMEDIATE</b> It creates a sequence which incrementing by 1 and starting form l_next_id with max 999 </div>
 <h3> Stored Procedures</h3>
-<p> Has all functionality that a basic block has
+<p> Has all functionality that a basic block has </p>
+<p> <b> Input parameters </b> Should define as a parameter local variable which look at for example at the table stock and column name and get input from that type of column and dedicate to the variable p_stock_name </p>
+<pre class="prettyprint lang-sql">
+CREATE OR REPLACE PROCEDURE transfer 
+  (p_from_account IN accounts.accountno%TYPE, 
+   p_to_account IN accounts.accountno%TYPE,
+   p_transfer_amount IN NUMBER)                -- can use datatype without size
+AS
+BEGIN
+  UPDATE accounts
+   SET balance = balance - p_transfer_amount
+  WHERE accountno = p_from_account;
+  
+  UPDATE accounts
+    SET balance = balance + p_transfer_amount
+  WHERE accountno = p_to_account;
+  
+  COMMIT;
+END;
+/
 
+TO RUN
+
+exec transfer(2,1,25);
+</pre>
 
 
 
