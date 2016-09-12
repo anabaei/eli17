@@ -437,12 +437,47 @@ TO RUN
 exec transfer(2,1,25);
 </pre>
 
+<h3> Insert value </h3>
+<p> If we put & before variables it asks user to input amount </p>
+<pre class="prettyprint lang-sql">
+exec transfer(&from_account,&to_account,&amount_to_transfer);
+</pre>
+It runs transfer procedure by asking users 
 
+<p> In below example we define firstname and lastname to define and have a broker_id internaly define to manipulate some function on it</p>
 
+<pre class="prettyprint lang-sql">
+CREATE OR REPLACE PROCEDURE insert_broker (
+  p_first_name IN broker.first_name%type,
+  p_last_name IN broker.last_name%type)
+AS
+  -- Declare local variables
+  l_broker_id NUMBER(6,2) NULL;    
+BEGIN
+  SELECT MAX(broker_id) -- taking highest value for variable
+  INTO l_broker_id
+  FROM broker;
+  
+  -- Example of IF statement
+  IF l_broker_id IS NULL THEN
+     l_broker_id := 1;
+  ELSE
+     l_broker_id := l_broker_id + 1;
+  END IF;
+  
+  INSERT INTO broker (broker_id, first_name, last_name)
+  VALUES (l_broker_id, p_first_name, p_last_name);
+  
+  COMMIT;
+END;
+/
+show errors procedure insert_broker; 
 
+EXEC insert_broker('Jane','Duff');
 
-
-
+-- Ampersand Variables - Lets you write what you want into the query.
+EXEC insert_broker('&first_name','&last_name');
+</pre>
 
 
 
