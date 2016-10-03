@@ -1,0 +1,314 @@
+<h2> Design Pattern </h2>
+
+
+
+<p>Sometimes you need to create different constructors and people create multiple constructors with variation in parameters</p>
+
+
+<h4> Builder </h4>
+<p> This pattern solve the problem what constructor use? </p>
+<p> Builder is created by static inner class it creates an instance of an object that is building </p>
+ <div class="alert alert-warning"> Negate the need for exposed setters </div> 
+
+
+
+
+
+
+<p>People use constructor for  </p>
+
+<ol>
+<li> Complex constructor </li>
+<li> When you want the creation of these objects are independent from main object</li>
+<li> Builder knows the specific and noboldy else does</li>
+
+</ol>
+
+
+
+
+<p> String builder is a built in builder and a great example of this class to show the usefull ness of this pattern </p>
+
+<p> we get the instance of a builder and append them and since we are using string we use toString mehod . It has a mehtod to append every thing we want to string <b> rather than using plus sign or cancat operate </b> inside the string object.
+it is faster use  </p>
+<pre class="prettyprint lang-java">
+package builder;
+public class Builder {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		StringBuilder builder = new StringBuilder();
+		builder.append("this is an example");
+		builder.append("of the builder");
+		System.out.println(builder.toString());
+	}
+}
+</pre>
+
+
+<h3> Build an implementation of Buildere </h3>
+
+
+
+<h4> A simple application to order a sandwich </h4>
+
+<p> Source -> generate getter and setters </p>
+
+
+<pre class="prettyprint lang-java">
+package builder;
+public class Dinner {
+	 private String bread;
+	 private String dressing;
+	 private String condiment;
+	 private String meat;
+	 
+	 
+	public String getBread() {
+		return bread;
+	}
+	public void setBread(String bread) {
+		this.bread = bread;
+	}
+	public String getDressing() {
+		return dressing;
+	}
+	public void setDressing(String dressing) {
+		this.dressing = dressing;
+	}
+	public String getCondiment() {
+		return condiment;
+	}
+	public void setCondiment(String condiment) {
+		this.condiment = condiment;
+	}
+	public String getMeat() {
+		return meat;
+	}
+	public void setMeat(String meat) {
+		this.meat = meat;
+	}	 	
+}
+</pre>
+
+<b> To run this we have </b>
+
+<pre class="prettyprint lang-java">
+package builder;
+public class Builder {
+
+	public static void main(String[] args) {
+	Dinner obj = new Dinner();
+		obj.setBread("wheat");
+		obj.setDressing("Mayo");
+		obj.setCondiment("Lettuce");
+		obj.setMeat("Ham");
+		
+		System.out.println(obj.getBread());
+		System.out.println(obj.getCondiment());
+		System.out.println(obj.getMeat());
+		System.out.println(obj.getDressing());
+	}
+}
+</pre>
+<p> It works fine and facilitae what we want, but there are some problems it is not immutable, even if we comment out all setter but it still run and dont have an idea what a real order should looks like. </p>
+<div class="alert alert-info"> Problem  here is we have a structure without parameters, also for every indiviudal item we have a getter and setter which is not immutable, and after we create it we can change it. </div>
+
+<p> Next step we use <b> telescping </b> constructor to see if this one solves the problem </p>
+
+
+<pre class="prettyprint lang-java">
+package builder;
+public class Builder {
+
+	public static void main(String[] args) {
+	Dinner obj = new Dinner("Wheat", "Mayo", "Lettuce", "Ham");
+	<!-- 	obj.setBread("wheat");
+		obj.setDressing("Mayo");
+		obj.setCondiment("Lettuce");
+		obj.setMeat("Ham"); -->
+		
+		System.out.println(obj.getBread());
+		System.out.println(obj.getCondiment());
+		System.out.println(obj.getMeat());
+		System.out.println(obj.getDressing());
+	}
+}
+</pre>
+
+
+<div class="alert alert-info">  you can see that our constructor build upon another. But what happen if we want to build a sandwich that we dont want a bread? or condomnet! So this example wont do this and we have to add another contstructor just for that! </div>
+<b> To cover all possiblity who knows how many constructors we need!
+4! </b>
+ </p>
+
+
+<pre class="prettyprint lang-java">
+package builder;
+public class Dinner {
+	 private String bread;
+	 private String dressing;
+	 private String condiment;
+	 private String meat;
+	 public Dinner(String bread){
+     this.bread = bread;		
+	}
+	 public Dinner(String Bread, String Condement)
+	 {
+		 this(Bread);
+		 this.condiment = Condement;
+	 }
+	 public Dinner(String Bread, String Condement, String dressing)
+	 {
+		 this(Bread, Condement);
+		 this.dressing = dressing;
+	 }
+	 public Dinner(String Bread, String Condement, String dressing, String meat)
+	 {
+		 this(Bread, Condement, dressing);
+		 this.meat = meat;
+	 }
+	public String getBread() {
+		return bread;
+	}
+	public String getDressing() {
+		return dressing;
+	}
+	public String getCondiment() {
+		return condiment;
+	}
+	public String getMeat() {
+		return meat;
+	}	 	
+}	 
+</pre>
+
+<div class="alert alert-sucess">  So far by these problems we have to build a builder </div>
+
+<p> Addign all members of a class inside the static class. First it seems kind of redundant but we create the same fields we have in Dinner or outer class
+. The reason is that the </p>
+
+
+<p> Then we create a constructtor <b> inside static class </b>, we can <b> mandate </b> people to have some paramaters by this
+one for example at least have one bread always! </p>
+<div class="alert alert-warning">  The catch here we return the instance of this or the object in each method.  It means the builder object </div>
+
+<pre class="prettyprint lang-java">
+package builder;
+
+public class Dinner {
+	
+	public static class Builder{
+		// here we implement builder
+		 private String bread;
+		 private String dressing;
+		 private String condement;
+		 private String meat;
+		
+		 // we can force that but we dont care here!
+		 public Builder(){
+			 
+		 }
+		 
+		 // Now we implement the builder
+		 public Dinner build()
+		 {
+			 return new Dinner(this);
+		 }
+		 
+		 // Now we are going to build some mehtods
+		 public Builder bread(String bread){
+			 this.bread= bread;
+			 // return the object of builder 
+			 return this;
+			 
+		 }
+		 public Builder condement(String condement){
+			 this.condement= condement;
+			 return this;
+			 
+		 }
+		 public Builder meat(String meat){
+			 this.meat= meat;
+			 return this;
+			 
+		 }
+		 public Builder dressing(String dressing){
+			 this.dressing= dressing;
+			 return this;
+			 
+		 }
+		
+	}
+
+	 private String bread;
+	 private String dressing;
+	 private String condement;
+	 private String meat;
+	
+	 public Dinner(Builder builder){
+		 
+     this.bread = builder.bread;
+     this.condement = builder.condement;
+     this.dressing = builder.dressing;
+     this.meat = builder.meat;
+		 
+		 
+	}
+
+	public String getBread() {
+		return bread;
+	}
+
+	public String getDressing() {
+		return dressing;
+	}
+
+	public String getCondiment() {
+		return condement;
+	}
+
+	public String getMeat() {
+		return meat;
+	}	 	
+}
+</pre>
+
+
+<pre class="prettyprint lang-java">
+package builder;
+
+public class Builder {
+
+	public static void main(String[] args) {
+
+		
+	Dinner.Builder obj = new Dinner.Builder();
+	obj.bread("wheat").meat("Ham").dressing("mayo").condement("lettuce");
+	
+	Dinner dinner = obj.build();
+	
+		System.out.println(dinner.getBread());
+		System.out.println(dinner.getCondiment());
+		System.out.println(dinner.getMeat());
+		System.out.println(dinner.getDressing());
+	}
+}
+
+</pre>
+
+
+<h3> issues</h3>
+
+<li> Increase complexity</li>
+<p> In computer sicence we know when complexity increase generally a problem can go from deterministic class to nondeterministic polynomial which refers to a different hypothetical model of computation and solve the problem in NP polynomial time. <a href="http://www.esi2.us.es/~mbilbao/complexi.htm"> refrence </a> </p>
+
+<br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br>
+<div class="alert alert-warning"> 
+<h1> Questions?! </h1>
+</div>
+<br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br>
+
+
+
+
+

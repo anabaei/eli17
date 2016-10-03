@@ -144,13 +144,27 @@ Is a technique that a single set of code can be used by several processes at dif
 
 
 <p> <b> </b> </p> 
-<p> <b> Absuloute Path</b> Specifies the path of current file or directory regardless of current location </p> 
+<p> <b> Absuloute Path</b> always start with forward slash. Specifies the path of current file or directory regardless of current location </p> 
 <p> <b>Relative Path </b> Specifies the path of a file relative to currenct location </p> 
-<pre class="prettyprint lang-unix">
+<pre class="prettyprint lang-c">
   statistics
 ./statistics
 ../mail/statistics
 </pre>
+
+<b> Bin  </b>
+<p> When you run a command it look at the bin path, and see if the command exists on that folder or not. Bin stands for binary </p>
+
+<b>Dev </b>
+<p> it stands for devices in hardware. </p>
+
+<b> etc</b> it stands for etcetra and <b> Home </b> is home directory. Tilda is short form of home directory. <b> echo ~ </b> will show your home directory.
+
+<p> <b> rmdir </b>just use for removing empty directories and <b> rm -r directory </b> using for recursively remove a directory and it is not possible to recover it.</p>
+
+<p><b> ls -a </b> list hidden files which all starts with dot </p>
+
+<p> <b> Touch</b> updates the last access time and when the file doesnt exist it </p>
 
 <script>
  $("h2").click(function(){
