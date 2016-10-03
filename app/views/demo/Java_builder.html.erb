@@ -121,6 +121,7 @@ public class Builder {
 }
 </pre>
 <br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br>
+<h2> Problems </h2>
 <p> It works fine and facilitae what we want, but there are some problems it is not immutable, even if we comment out all setter but it still run and dont have an idea what a real order should looks like. </p>
 <div class="alert alert-info"> Problem  here is we have a structure without parameters, also for every indiviudal item we have a getter and setter which is not immutable, and after we create it we can change it. </div>
 
@@ -148,7 +149,7 @@ public class Builder {
 }
 </pre>
 
-
+<h2> Not Productive </h2>
 <div class="alert alert-info">  you can see that our constructor build upon another. But what happen if we want to build a sandwich that we dont want a bread? or condomnet! So this example wont do this and we have to add another contstructor just for that! </div>
  <div class="alert alert-danger">
 <b> To cover all possiblity who knows how many constructors we need!
@@ -197,7 +198,9 @@ public class Dinner {
 }	 
 </pre>
 
-<div class="alert alert-sucess">  So far by these problems we have to build a builder </div>
+<h2> Builder</h2>
+
+<div class="alert alert-success">  So far by these problems we have to build a builder </div>
 
 <p> Addign all members of a class inside the static class. First it seems kind of redundant but we create the same fields we have in Dinner or outer class
 . The reason is that the </p>
