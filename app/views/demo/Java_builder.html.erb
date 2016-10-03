@@ -115,7 +115,9 @@ public class Builder {
 <p> It works fine and facilitae what we want, but there are some problems it is not immutable, even if we comment out all setter but it still run and dont have an idea what a real order should looks like. </p>
 <div class="alert alert-info"> Problem  here is we have a structure without parameters, also for every indiviudal item we have a getter and setter which is not immutable, and after we create it we can change it. </div>
 
-<p> Next step we use <b> telescping </b> constructor to see if this one solves the problem </p>
+<p> Next step we use <b> telescping </b> constructor to see if this one solves the problem .</p>
+
+ <div class="alert alert-danger"> People use Telescope constructor to use multiple constructors with different parameters mathichng </div>
 
 <br> <br><br>
 <pre class="prettyprint lang-java">
@@ -139,8 +141,10 @@ public class Builder {
 
 
 <div class="alert alert-info">  you can see that our constructor build upon another. But what happen if we want to build a sandwich that we dont want a bread? or condomnet! So this example wont do this and we have to add another contstructor just for that! </div>
+ <div class="alert alert-danger">
 <b> To cover all possiblity who knows how many constructors we need!
 4! </b>
+</div>
  </p>
 <br> <br><br>
 
