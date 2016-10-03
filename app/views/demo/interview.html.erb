@@ -1,3 +1,24 @@
+package builder;
+
+public class Builder {
+
+	public static void main(String[] args) {
+
+		
+	Dinner.Builder obj = new Dinner.Builder();
+	obj.bread("wheat").meat("Ham").dressing("mayo").condement("lettuce");
+	
+	Dinner dinner = obj.build();
+	
+		System.out.println(dinner.getBread());
+		System.out.println(dinner.getCondiment());
+		System.out.println(dinner.getMeat());
+		System.out.println(dinner.getDressing());
+	}
+}
+
+
+
 They look for more experice, somone to build from cracth a web application on relational databases, 
 smart, fundamental experience in web and mobile application development, like to grow with company 
 
