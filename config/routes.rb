@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'demo_with_menu/java'
+
   #get 'demo/index'
   get '/demo/mc_home' => "demo#mc_home"
   get 'demo/angular' => "demo#angular"

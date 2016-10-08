@@ -1,0 +1,2 @@
+module DemoWithMenuHelper
+end
