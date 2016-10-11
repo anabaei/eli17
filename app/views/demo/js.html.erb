@@ -82,10 +82,10 @@ mymodul.setname("jadid");
 </p>
 
 <pre class="prettyprint lang-jquery " >
- 
- $(".sidehdr").click(function(){
-   $('ul:first-child', this).slideToggle("fast");
- });
+$("a").click(function()
+{
+    $(this).next("ul").slideToggle("slow");
+});
 </pre>
 
 

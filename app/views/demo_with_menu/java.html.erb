@@ -14,6 +14,12 @@ background-color: grey;
 color:white;
 font:100%;
 }
+
+a {
+	
+    text-decoration: none;
+    color:white !important;;
+}
 </style>
 
 
@@ -24,17 +30,34 @@ font:100%;
 <div class="class md-col-1"> 
 	<ol>
 		<li> 
-           Four Pilars
+		<a href="#fourpilars"> 
+            Four Pilars </a>
              <ul style="list-style-type:circle">
              	<li> 
                    Encapsulation
              	</li>
              	<li>
-
+                  Abstraction
+             	</li>
+             	<li>
+             	 Inheritence
+             	</li>
+             	<li>
+             	 Polymorphism
              	</li>
              </ul>
 		</li>
-		<li> 3</li>
+		<li> 
+         <a> Data Type </a>
+           <ul style="list-style-type: circle;">
+           <li>Primitive Types </li>
+           <li> </li>
+           <li> </li>
+           <li> </li>
+           <li> </li>
+
+           </ul>
+		</li>
 		<li> 2</li>
 		<li> 4</li>
 		<li> 5</li>
@@ -46,5 +69,13 @@ font:100%;
 
 
 </div>
+
+
+<script> 
+$("a").click(function(){
+    $(this).next("ul").slideToggle("slow");
+
+ });
+</script>
 
 
