@@ -1,0 +1,81 @@
+
+
+<h1>RPG</h1>
+
+
+<p></p>
+
+<style>
+
+.con
+{
+position: relative;
+background-color: grey;
+color:white;
+font:100%;
+}
+
+a {
+	
+    text-decoration: none;
+    color:white !important;;
+}
+</style>
+
+
+<div class= "con">
+
+<%= render "as400" %>
+
+<div class="class md-col-1"> 
+	<ol>
+		<li> 
+		<a href="#fourpilars"> 
+            Four Pilars </a>
+             <ul style="list-style-type:circle">
+             	<li> 
+                   Encapsulation
+             	</li>
+             	<li>
+                  Abstraction
+             	</li>
+             	<li>
+             	 Inheritence
+             	</li>
+             	<li>
+             	 Polymorphism
+             	</li>
+             </ul>
+		</li>
+		<li> 
+         <a> Data Type </a>
+           <ul style="list-style-type: circle;">
+           <li>Primitive Types </li>
+           <li> </li>
+           <li> </li>
+           <li> </li>
+           <li> </li>
+
+           </ul>
+		</li>
+		<li> 2</li>
+		<li> 4</li>
+		<li> 5</li>
+		<li> 5</li>
+		<li> 7</li>
+	</ol>
+
+</div>
+
+
+</div>
+
+
+<script> 
+$("a").click(function(){
+    $(this).next("ul").slideToggle("slow");
+
+ });
+</script>
+
+

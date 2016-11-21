@@ -1,19 +1,19 @@
 
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
 <style>
 
-#leftnav
+  #leftnav
 
-{
-background-color: #e6e6e6;
-margin-left: 173px;
-position: absolute;
-color:black;
-}
+  {
+    background-color: #e6e6e6;
+    margin-left: 173px;
+    position: absolute;
+    color:black;
+  }
 
 </style>
 
@@ -27,33 +27,33 @@ color:black;
   <p> The act of grouping together data and behaviour into logical components. Attributes and/or behaviour can be encapsulated by a class.We want to group data and / or behaviours into logical components. 
    <div class="alert alert-info">Good design aims to achieve high cohesion </div>
    Cohesion is the degree to which components of a class belong together.To encapsulate also means “to surround and cover so that nothing else can touch it”.
-Access to attributes and/or behaviours can be restricted
-Information or details of implementation can be hidden
-  </p>
-  <h5> Coupling</h5>
+   Access to attributes and/or behaviours can be restricted
+   Information or details of implementation can be hidden
+ </p>
+ <h5> Coupling</h5>
  <p> It means one class has knowelege of internal working another class and it is not good. We aim for <b> Low Coupling </b> when desining classes.</p>
 
-<pre class="prettyprint lang-java">
- class A {
-	public int index;
-}
+ <pre class="prettyprint lang-java">
+   class A {
+   public int index;
+ }
 
-class B {
-	public void method() {
-	A a = new A();
-	a.index = 0;	  // tight coupling
-	}
+ class B {
+ public void method() {
+ A a = new A();
+ a.index = 0;    // tight coupling
+}
 }
 </pre> 
 
 <h4>Abstraction</h4>
-  <p>Hiding the complexity of a system. Extracting relevant and essential 
-information and behaviour.
- </p>
- <p> Where similar functions are carried out by distinct pieces of code, it is generally beneficial to combine them into one by abstracting out the varying parts.</p>
+<p>Hiding the complexity of a system. Extracting relevant and essential 
+  information and behaviour.
+</p>
+<p> Where similar functions are carried out by distinct pieces of code, it is generally beneficial to combine them into one by abstracting out the varying parts.</p>
 <div class="alert alert-info">
-Rule of Three:
-“If a piece of code is copied more than once, i.e. it would end up having three or more copies, then it needs to be abstracted out.”
+  Rule of Three:
+  “If a piece of code is copied more than once, i.e. it would end up having three or more copies, then it needs to be abstracted out.”
 </div>
 
 <h4> Inheritance</h4>
@@ -62,28 +62,33 @@ Rule of Three:
 <p> By using this key word compiler knows it should go to parent class to for this method.</p>
 <h5> Overloading </h5>
 <p> When two  methods have the same name but diffrent <b>type</b> of parameters or different <b> number </b> of parameters. It is important that compiler checks these for us. 
-<div class="alert alert-info"> Changing return type of a method doesnt make difference for compilers </div>
-<h5> Overriding </h5>
-<p> When in a parent class there is a method exactly with same name, method numbers and types in the child extended class. In this case only at <b>run time </b> system recognize this difference and in compile time system always consider the parent method as the only one existed.</p> 
+  <div class="alert alert-info"> Changing return type of a method doesnt make difference for compilers </div>
+  <h5> Overriding </h5>
+  <p> When in a parent class there is a method exactly with same name, method numbers and types in the child extended class. In this case only at <b>run time </b> system recognize this difference and in compile time system always consider the parent method as the only one existed.</p> 
 
- <h4>Polymorphism </h4>
+  <h4>Polymorphism </h4>
   <p> Having multiple forms or versions of the same type of methods and the same types of behaviour.
- </p>
- <h5> Early Binding : 
-Attributes and method calls are bound when compiling source code
+  </p>
+  <h5> Early Binding : 
+    Attributes and method calls are bound when compiling source code
 
-</h5>
- <h5> Late Binding : Attributes and method calls are bound when the program is running</h5>
- <h2> 
+  </h5>
+  <h5> Late Binding : Attributes and method calls are bound when the program is running</h5>
+  <h2> 
 
 
 
- <h2 name="datatype"> Data Type </h2>
- <p> Primitive variables holds literal values like int var1 = 2; and Java manipulate them with operators like +,-, &&  </p> 
+   <h2 name="datatype"> Data Type </h2>
+   <h4> Primitive Type </h4>
+   <p> Primitive variables holds literal values like int var1 = 2; and Java manipulate them with operators like +,-, &&  
+    <img src="<%= asset_path('primitive.png') %>">
+    </p> 
+    <h4> 
 
- </div>
 
- 
+  </div>
+
+
 </div>
 
 
