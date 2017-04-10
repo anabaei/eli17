@@ -20,8 +20,8 @@ Rails.application.routes.draw do
 
   match ':controller(/:action(/:id))', :via => :get
   # You can have the root of your site routed with "root"
-  root 'demo#index'
-
+  root 'demo#RoR'
+  # root 'demo#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
