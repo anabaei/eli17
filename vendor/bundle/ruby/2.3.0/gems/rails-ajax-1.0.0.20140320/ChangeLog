@@ -1,0 +1,56 @@
+= Rails-Ajax Release History
+
+== 1.0.0.20140320 (Beta)
+
+! Compatibility break !
+The way to test if RailsAjax is enabled changes from:
+RailsAjax.config.Enabled
+to:
+RailsAjax.config.enabled?
+Unless you specifically used this method, this only impacts the generated config file app/assets/javascripts/RailsAjax-Config.js.erb.
+
+* Added support for Rails button_to helper.
+* Handled the case when servers return an empty content.
+* Update page when a 4xx status gets to rails-ajax.
+* Now compatible with Devise.
+* Complete code review.
+* Adapted Travis configuration to take database into account.
+
+== 0.3.3.20140307 (Beta)
+
+* Adapted tests environment to Travis
+* Updated Travis environments
+* Bug correction: Rails-Ajax did not work with Devise.
+
+== 0.3.2.20131227 (Beta)
+
+* Bug correction: link_to used with a block in Rails 4 did not use rails-ajax
+* Added tests for link_to with block syntax
+* Corrected wrong testing in Ajax calls.
+
+== 0.3.1.20131223 (Beta)
+
+* Corrected Rails dependency. Now works for Rails 4.
+
+== 0.3.0.20130913 (Beta)
+
+* Implemented use_rails_ajax switch.
+* Do not mess with user Ajax anymore
+
+== 0.2.0.20130731 (Beta)
+
+* Added support for Rails 4
+* Integrate same test cases running for both Rails 3 and 4
+* Added Travis CI and migrated to last Rails version
+
+== 0.1.2.20130211 (Beta)
+
+* Migrated to Rails 3.2.11 and jQuery >=1.9
+
+== 0.1.1.20120710 (Beta)
+
+* Bug correction: Invalid Rails version specified
+
+== 0.1.0.20120706 (Beta)
+
+* Initial public release.

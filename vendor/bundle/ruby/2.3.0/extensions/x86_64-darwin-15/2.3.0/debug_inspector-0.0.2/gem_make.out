@@ -1,0 +1,15 @@
+current directory: /Users/amir_nabaei/sites/eli17/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+/Users/amir_nabaei/.rvm/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20170410-53157-17s23d2.rb extconf.rb
+creating Makefile
+
+current directory: /Users/amir_nabaei/sites/eli17/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/amir_nabaei/sites/eli17/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/amir_nabaei/sites/eli17/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20170410-53157-1yea7zx
