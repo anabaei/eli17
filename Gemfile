@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
+ruby "2.3.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
+#ruby 2.3.1p112
 
 
 # Use sqlite3 as the database for Active Record
@@ -63,3 +65,4 @@ gem 'open-weather'
 #gem 'appsignal'
 gem 'simple_form'
 gem 'bootstrap-sass', '3.3.6'
+gem 'nokogiri', '~> 1.7', '>= 1.7.2'
