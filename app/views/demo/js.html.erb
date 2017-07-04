@@ -1,5 +1,5 @@
-          
-<style>  
+
+<style>
 h1,h2,h3
   {
   	font-family: 'Slabo 27px', serif;
@@ -64,7 +64,7 @@ add(2,3,done);
 </ol>
 <p> Define an object (module) </p>
 <pre class="prettyprint lang-javascript " >
-var mymodul ={ 
+var mymodul ={
 name: "amir",
 age: 99,
 sayname: function()  {document.write(this.name);},
@@ -74,6 +74,29 @@ setname: function(new) {this.name = new;}
 mymodul.sayname();
 mymodul.setname("jadid");
 </pre>
+
+<h3> Add to objects  </h3>
+<pre class="prettyprint lang-javascript " >
+mymodul.email = "amircmpt@gmail.com";
+OR
+mymodule["email"] = "amircmpt@gmail.com";
+</pre>
+Also usually prototype is used to add a new property to an object
+<pre class="prettyprint lang-javascript " >
+mymodul.prototype.email = "amircmpt@gmail.com";
+</pre>
+
+OR a function  
+<pre class="prettyprint lang-javascript " >
+mymodule.prototype.email = function() {
+    return this.age + " no email!" ;
+};
+</pre>
+
+
+
+
+
 
 <h2> jQuery </h2>
 
@@ -117,13 +140,13 @@ adjuststyle function
 	   {
 	     $("#defaut-stylesheet").attr("href", "css/style_2.css");
 	   }
-   
+
    }
 &ltlink id="defaut-stylesheet" rel="stylesheet" type="text/css" href="css/style_1.css" />
 </pre>
 
 
-<h3> Pop up boostrap</h3> 
+<h3> Pop up boostrap</h3>
  <pre class="prettyprint lang-javascript" >
          &lt!-- Modal -->
         &ltdiv class="modal fade" id="myModal" role="dialog">
@@ -135,14 +158,14 @@ adjuststyle function
        &lt!--End of  Modal content-->
   </pre>
 <p>
-css attribute selectors: 
+css attribute selectors:
 </p>
 <pre class="prettyprint lang-javascript" >
 $("p").css({"background-color": "yellow", "font-size": "200%"});
 </pre>
 
-<p> Find the specific row and column in a table and change the color by adding a style class 
-like this <a hre="http://jsfiddle.net/ZZYD4/">example </a> and <a href="http://jsfiddle.net/simevidas/qJ3tP/1/"> this </a> for a tabale 
+<p> Find the specific row and column in a table and change the color by adding a style class
+like this <a hre="http://jsfiddle.net/ZZYD4/">example </a> and <a href="http://jsfiddle.net/simevidas/qJ3tP/1/"> this </a> for a tabale
 </p>
 <pre class="prettyprint lang-javascript" >
 $('#mytable tr:eq(0) td:eq(1)').addClass('red');
@@ -162,13 +185,13 @@ $('#mytable tr:eq(0) td:eq(1)').addClass('red');
   <li class="yup">Chips</li>
   <li class="yup">Socks</li>
 </ul>
-  
+
   <script>
 $( ".yup" ).hover(
   function() {
     $( this ).append( $( "<span> ***</span>" ) );
      $( this ).append( $( "<li> __ || __ </li>" ) );
-   
+
   }, function() {
     $( this ).find( "li:last" ).remove();
      console.log("CC"+$(this));
@@ -183,7 +206,7 @@ $( ".yup" ).hover(
   &ltli&gtChips&lt/li&gt
   &ltli&gtSocks&lt/li&gt
 &lt/ul&gt
-  
+
   &ltscript&gt
 $( "li" ).hover(
   function() {
@@ -199,11 +222,11 @@ $( "li" ).hover(
 
 <h3> Find which key is pressed & check the length </h3>
  <pre class="prettyprint lang-javascript" >
-   $( "#idOfInputField" ).keyup(function(e) 
+   $( "#idOfInputField" ).keyup(function(e)
    {
     console.log(e.which)
     var value = $(this).val();
-    if ( value.length > 4 && e.which != 8 ) 
+    if ( value.length > 4 && e.which != 8 )
          {
           $("#sth").click();
         }
@@ -223,7 +246,7 @@ $( "li" ).hover(
       &lt;table class = "table" &gt;
        &lt;&#37; @counter = 0 &gt;
       &lt;&#37; @pros.each do |j| %&gt;
-      &lt;tr &lt;&#37;= "id=#{@counter}" %&gt; &gt; 
+      &lt;tr &lt;&#37;= "id=#{@counter}" %&gt; &gt;
         &lt;td>
         &lt;&#37;= j.sku &#37;&gt;
         &lt;td>
@@ -236,14 +259,14 @@ $( "li" ).hover(
       &lt;td&gt;&lt;&#37;= link_to 'Details', 'http://www.bcliquorstores.com/product/'+j.sku &#37;&gt;&lt;td&gt;
       &lt;tr&gt;
        &lt;&#37; @counter +=1 &#37;&gt;
-       &lt;&#37; end &#37;&gt; 
+       &lt;&#37; end &#37;&gt;
       &lt;table&gt;
-      &lt;&#37; end &#37;&gt; 
+      &lt;&#37; end &#37;&gt;
   &lt;div&gt;
 </pre>
 </li>
 <li>
-<p> 
+<p>
 Now we assign defaults to variables when the page load.
 </p>
 <pre class="prettyprint lang-javascript" >
@@ -252,10 +275,10 @@ Now we assign defaults to variables when the page load.
  start &#61; 0
  en = "&lt;%&#61; @counter %&gt;";
  total &#61; 0;
- i &#61; 0; 
+ i &#61; 0;
 
  /////////// first hide all results ////////
-  while (i&lt;en) 
+  while (i&lt;en)
   {
     &#36;("#"+i).css("display", "none");
     i +&#61;1;
@@ -268,9 +291,9 @@ Nowe we define next key to show the next block and hide the previous ones
 </p>
 <pre class="prettyprint lang-javascript" >
             $("#key").click(function() {
-               tempo_counter = 0;             
-              //// display only 3 icons and also go until you reaching end 
-              while (tempo_counter  &lt; 7 &#38;&#38; total  &lt; en) 
+               tempo_counter = 0;
+              //// display only 3 icons and also go until you reaching end
+              while (tempo_counter  &lt; 7 &#38;&#38; total  &lt; en)
                 {
                   // count_hiting_next save how many times you pressed next and total check is it last one!
                   selector = count_hiting_next + total;
@@ -285,7 +308,7 @@ Nowe we define next key to show the next block and hide the previous ones
               hidecounter = selector - 7;
               while (hidecounter &gt; -1)
               {
-                 $("#"+hidecounter).css("display", "none"); 
+                 $("#"+hidecounter).css("display", "none");
                   hidecounter -=1;
               }
         });
@@ -296,7 +319,7 @@ Nowe we define next key to show the next block and hide the previous ones
   Then we define the back bottom which hide current ones and display last 7
  </p>
 <pre class="prettyprint lang-javascript" >
-   
+
                 $("#resetsession").click(function() {
 
               if (total &gt; 1 &#38;&#38; selector &gt; -1)
@@ -305,11 +328,11 @@ Nowe we define next key to show the next block and hide the previous ones
                     count_hiting_next -=1;
                     total -=7;
                     total_dis = total ;
-                     while (tempo_counter  &lt; 7 &#38;&#38; total_dis &gt; -1 ) 
+                     while (tempo_counter  &lt; 7 &#38;&#38; total_dis &gt; -1 )
                       {
                         // count_hiting_next save how many times you pressed next and total check is it last one!
                         selector = count_hiting_next + total_dis;
-                       
+
                       $("#"+selector).css("display", "block");
                       console.log(selector);
                        tempo_counter +=1;
@@ -325,7 +348,7 @@ Nowe we define next key to show the next block and hide the previous ones
 
               {
 
-                 $("#"+hid).css("display", "none"); 
+                 $("#"+hid).css("display", "none");
                   hid +=1;
               }
 
@@ -342,19 +365,19 @@ Nowe we define next key to show the next block and hide the previous ones
 <pre class="prettyprint lang-c " >
 stack= [];
 stack.push(2);stack.push(4);
-i = stack.pop(); 
+i = stack.pop();
 results:  i = 4 and stack = [2]
 
 queue = [];
 queue.push(2);queue.push(6);
-i = stack.pop(); 
+i = stack.pop();
 results:  i = 2 and stack = [6]
 </pre>
 <P>
  An asynchronous call ,AJAX, completes after function has returned its value, so we can not return the ajax call result  before all funtions has been completed on the web page. (Ajax is always the last one be completed)
 </p>
 
-<p> 
+<p>
   to find the content of an string inside another string using mystring.indexOf("a") !== -1.
 </p>
 
@@ -408,13 +431,13 @@ $("selector").html("&ltp>New html content&lt/p>")
 <h3> module </h3>
 <p>it is like main(). To create a module we use below code. First one is the name of module and the second one is dependencies to module. </p>
 <pre class="prettyprint lang-javascript" >
-var myvar= angular.module("mymodule",[]); 
+var myvar= angular.module("mymodule",[]);
 </pre>
 <h3>Controller </h3>
 <p> Is a function that controlls views, managing models, call a database to parse data. We pass a parameter($scope) to this function which attach a model(just a method) to this parameter. Then it can be seen in view.</p>
 <p>Controller set the behaviour of $scope object </p>
 <pre class="prettyprint lang-javascript" >
-var controllername = function($scope){ 
+var controllername = function($scope){
 $scope.message= "this is a message Angular";};
 </pre>
 <h4> wire Controller to a module</h4>
@@ -450,16 +473,16 @@ myvar.controller("newname", controllername);
 <pre class="prettyprint lang-javascript" >
  function me(sku)
            {
-              $.post("http://www.bcliquorstores.com/product/"+sku,  
+              $.post("http://www.bcliquorstores.com/product/"+sku,
                         {
-                          send_one_variable: getElementById("example").value,      
+                          send_one_variable: getElementById("example").value,
                         }
                        function(data)
-                        {   
+                        {
                         arr1 = data.split(",");
                         console.log("here is resultss: "+arr1[0]);
                         }
-                  ); 
+                  );
          }
 </pre>
 
@@ -471,8 +494,3 @@ To prevent this, you can create a callback function.
 A callback function is executed after the current effect is finished.
 
 Typical syntax: $(selector).hide(speed,callback);
-
-   
-    
-    
-    
